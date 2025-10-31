@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SMAT Concept & Innovative Solutions
 
 > Your Fastest Route to the Digital World
@@ -144,3 +145,7 @@ This project is proprietary software owned by SMAT Concept & Innovative Solution
 ---
 
 *Built with ❤️ for Africa's digital transformation*
+=======
+# smat-concept-website
+company wbsite
+>>>>>>> e2880c8de0e1dc72ef35c5bd221593786a888a61
