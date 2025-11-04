@@ -14,7 +14,12 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0)`,
+              backgroundSize: '50px 50px'
+            }}></div>
+          </div>
           {/* Floating Elements */}
           <motion.div 
             animate={{ y: [-20, 20, -20], rotate: [0, 180, 360] }}
@@ -349,7 +354,12 @@ export default function Home() {
 
       {/* LEADERSHIP & VISION */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.05) 2px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
         
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div
@@ -441,7 +451,12 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.02\"%3E%3Cpath d=\"M20 20c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z\"/%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.02) 2px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
         
         <div className="relative z-10">
           {/* Main Footer Content */}
