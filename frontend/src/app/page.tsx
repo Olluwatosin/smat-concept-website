@@ -12,8 +12,14 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" 
+            alt="Digital Technology Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
           <div className="absolute inset-0 opacity-20">
             <div className="absolute inset-0" style={{
               backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0)`,
@@ -177,11 +183,18 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
             >
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-                <Database className="w-12 h-12 mb-4 relative z-10" />
-                <h3 className="text-2xl font-bold mb-2 relative z-10">Data Digitalization</h3>
-                <p className="text-blue-100 relative z-10">Transform paper to digital intelligence</p>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Data Analytics Dashboard" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Database className="w-8 h-8 mb-2" />
+                  <h3 className="text-xl font-bold">Data Digitalization</h3>
+                  <p className="text-blue-100 text-sm">Transform paper to digital intelligence</p>
+                </div>
               </div>
               <div className="p-8">
                 <DataDigitalizationDemo />
@@ -212,11 +225,18 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
             >
-              <div className="bg-gradient-to-br from-green-500 to-green-600 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-                <Leaf className="w-12 h-12 mb-4 relative z-10" />
-                <h3 className="text-2xl font-bold mb-2 relative z-10">Smart Agriculture</h3>
-                <p className="text-green-100 relative z-10">IoT-powered farming revolution</p>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Smart Agriculture Technology" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-600/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Leaf className="w-8 h-8 mb-2" />
+                  <h3 className="text-xl font-bold">Smart Agriculture</h3>
+                  <p className="text-green-100 text-sm">IoT-powered farming revolution</p>
+                </div>
               </div>
               <div className="p-8">
                 <SmartAgricultureDemo />
@@ -247,11 +267,18 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
             >
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-                <Shield className="w-12 h-12 mb-4 relative z-10" />
-                <h3 className="text-2xl font-bold mb-2 relative z-10">Networking & Security</h3>
-                <p className="text-purple-100 relative z-10">Enterprise-grade protection</p>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Cybersecurity Network" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Shield className="w-8 h-8 mb-2" />
+                  <h3 className="text-xl font-bold">Networking & Security</h3>
+                  <p className="text-purple-100 text-sm">Enterprise-grade protection</p>
+                </div>
               </div>
               <div className="p-8">
                 <NetworkingDemo />
@@ -282,11 +309,18 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
             >
-              <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-                <Cpu className="w-12 h-12 mb-4 relative z-10" />
-                <h3 className="text-2xl font-bold mb-2 relative z-10">IoT Solutions</h3>
-                <p className="text-indigo-100 relative z-10">Connected device ecosystem</p>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="IoT Connected Devices" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-600/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Cpu className="w-8 h-8 mb-2" />
+                  <h3 className="text-xl font-bold">IoT Solutions</h3>
+                  <p className="text-indigo-100 text-sm">Connected device ecosystem</p>
+                </div>
               </div>
               <div className="p-8">
                 <IoTDemo />
@@ -317,11 +351,18 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 md:col-span-2 lg:col-span-1"
             >
-              <div className="bg-gradient-to-br from-yellow-500 to-orange-500 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-                <Zap className="w-12 h-12 mb-4 relative z-10" />
-                <h3 className="text-2xl font-bold mb-2 relative z-10">Energy Solutions</h3>
-                <p className="text-yellow-100 relative z-10">Sustainable power systems</p>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Solar Energy Solutions" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Zap className="w-8 h-8 mb-2" />
+                  <h3 className="text-xl font-bold">Energy Solutions</h3>
+                  <p className="text-yellow-100 text-sm">Sustainable power systems</p>
+                </div>
               </div>
               <div className="p-8">
                 <EnergyDemo />
@@ -423,26 +464,51 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="relative inline-block">
+              <div className="relative inline-block mb-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="w-80 h-80 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl"
+                  className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white/20"
                 >
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🚀</div>
-                    <div className="text-lg font-semibold">SMAT</div>
-                    <div className="text-sm opacity-80">Concept</div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="CEO - Leading Innovation" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
                 </motion.div>
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center text-2xl animate-pulse">
-                  ⭐
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                  CEO & Founder
                 </div>
               </div>
               <div className="mt-8">
                 <h3 className="text-2xl font-bold mb-4">Leading Innovation</h3>
-                <p className="text-gray-300 max-w-md mx-auto">
+                <p className="text-gray-300 max-w-md mx-auto mb-6">
                   Pioneering technological advancement with passion, expertise, and an unwavering commitment to Africa's digital transformation.
                 </p>
+                <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                  >
+                    <img 
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                      alt="CTO" 
+                      className="w-16 h-16 rounded-full mx-auto mb-2 object-cover"
+                    />
+                    <p className="text-sm font-semibold">Chief Technology Officer</p>
+                  </motion.div>
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                  >
+                    <img 
+                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                      alt="Head of Operations" 
+                      className="w-16 h-16 rounded-full mx-auto mb-2 object-cover"
+                    />
+                    <p className="text-sm font-semibold">Head of Operations</p>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -450,10 +516,18 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <footer id="contact" className="relative overflow-hidden text-white">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Technology Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/85 to-black/90"></div>
+        </div>
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.02) 2px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0)`,
             backgroundSize: '40px 40px'
           }}></div>
         </div>
