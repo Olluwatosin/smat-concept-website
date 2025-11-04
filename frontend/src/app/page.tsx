@@ -19,7 +19,8 @@ export default function Home() {
             alt="Digital Technology Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-purple-900/80 to-indigo-900/90"></div>
           <div className="absolute inset-0 opacity-20">
             <div className="absolute inset-0" style={{
               backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0)`,
@@ -45,7 +46,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+        <div className="relative z-20 max-w-6xl mx-auto px-6 text-center text-white drop-shadow-2xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,9 +68,10 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}
             >
               Your Fastest Route to the
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent block">
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent block drop-shadow-lg">
                 Digital World
               </span>
             </motion.h1>
@@ -78,13 +80,14 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl mb-12 text-white max-w-4xl mx-auto leading-relaxed font-medium"
+              style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}
             >
               Transforming Africa through cutting-edge technology solutions in 
-              <span className="text-blue-400 font-semibold"> Data Digitalization</span>, 
-              <span className="text-green-400 font-semibold"> Smart Agriculture</span>, 
-              <span className="text-purple-400 font-semibold"> IoT Innovation</span>, and 
-              <span className="text-yellow-400 font-semibold"> Energy Solutions</span>
+              <span className="text-cyan-300 font-bold"> Data Digitalization</span>, 
+              <span className="text-green-300 font-bold"> Smart Agriculture</span>, 
+              <span className="text-purple-300 font-bold"> IoT Innovation</span>, and 
+              <span className="text-yellow-300 font-bold"> Energy Solutions</span>
             </motion.p>
             
             <motion.div
@@ -120,23 +123,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/10"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
           >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">150+</div>
-              <div className="text-sm text-gray-300">Projects Delivered</div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-3xl font-bold text-cyan-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>150+</div>
+              <div className="text-sm text-white font-medium">Projects Delivered</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">50+</div>
-              <div className="text-sm text-gray-300">Happy Clients</div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-3xl font-bold text-green-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>50+</div>
+              <div className="text-sm text-white font-medium">Happy Clients</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">5+</div>
-              <div className="text-sm text-gray-300">Years Experience</div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-3xl font-bold text-purple-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>5+</div>
+              <div className="text-sm text-white font-medium">Years Experience</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
-              <div className="text-sm text-gray-300">Support</div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-3xl font-bold text-yellow-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>24/7</div>
+              <div className="text-sm text-white font-medium">Support</div>
             </div>
           </motion.div>
         </div>
