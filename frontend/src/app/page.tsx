@@ -6,10 +6,19 @@ import { DataDigitalizationDemo, SmartAgricultureDemo, NetworkingDemo, EnergyDem
 import AnimatedStats from "./components/AnimatedStats";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import ServiceCalculator from "./components/ServiceCalculator";
+import Navigation from "./components/Navigation";
+import ContactForm from "./components/ContactForm";
+import FAQ from "./components/FAQ";
+import Testimonials from "./components/Testimonials";
+import ClientLogos from "./components/ClientLogos";
+import Portfolio from "./components/Portfolio";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* NAVIGATION */}
+      <Navigation />
+
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Hero Background Image */}
@@ -393,11 +402,23 @@ export default function Home() {
       {/* ANIMATED STATS */}
       <AnimatedStats />
 
+      {/* CLIENT LOGOS */}
+      <ClientLogos />
+
       {/* SERVICE CALCULATOR */}
       <ServiceCalculator />
 
+      {/* PORTFOLIO */}
+      <Portfolio />
+
+      {/* TESTIMONIALS */}
+      <Testimonials />
+
+      {/* FAQ */}
+      <FAQ />
+
       {/* LEADERSHIP & VISION */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+      <section id="about" className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.05) 2px, transparent 0)`,
@@ -518,8 +539,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CONTACT FORM */}
+      <ContactForm />
+
       {/* FOOTER */}
-      <footer id="contact" className="relative overflow-hidden text-white">
+      <footer className="relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
