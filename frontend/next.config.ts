@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
+  output: 'export',
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true
   },
   images: {
-    domains: ['images.unsplash.com'],
-    formats: ['image/webp', 'image/avif']
+    unoptimized: true
   },
   compress: true,
   poweredByHeader: false,
