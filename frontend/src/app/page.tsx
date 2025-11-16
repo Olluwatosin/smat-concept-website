@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Shield, Cpu, Leaf, Database, MessageCircle, ArrowRight, CheckCircle, Star, Users, Award, TrendingUp } from "lucide-react";
+import { Zap, Shield, Cpu, Leaf, Database, MessageCircle, ArrowRight, CheckCircle, Users, Award, TrendingUp } from "lucide-react";
 import { DataDigitalizationDemo, SmartAgricultureDemo, NetworkingDemo, EnergyDemo, IoTDemo } from "./components/ServiceDemos";
 import AnimatedStats from "./components/AnimatedStats";
 import WhatsAppWidget from "./components/WhatsAppWidget";
@@ -10,8 +10,33 @@ import ServiceCalculator from "./components/ServiceCalculator";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* HEADER */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                S
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">SMAT Concept</h1>
+                <p className="text-sm text-blue-600">Innovative Solutions Ltd.</p>
+              </div>
+            </div>
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#services" className="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+              <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">About</a>
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+                Get Quote
+              </button>
+            </nav>
+          </div>
+        </div>
+      </header>
+
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -415,7 +440,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Visionary Leadership for
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block">
-                Africa's Digital Future
+                Africa&apos;s Digital Future
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -441,7 +466,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  To accelerate Africa's digital transformation by delivering cutting-edge technology solutions that drive economic growth, improve lives, and create sustainable opportunities for future generations.
+                  To accelerate Africa&apos;s digital transformation by delivering cutting-edge technology solutions that drive economic growth, improve lives, and create sustainable opportunities for future generations.
                 </p>
               </div>
               
@@ -452,11 +477,11 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold">Our Vision</h3>
-                    <p className="text-green-300">Leading Africa's tech revolution</p>
+                    <p className="text-green-300">Leading Africa&apos;s tech revolution</p>
                   </div>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  To be Africa's premier technology solutions provider, recognized for innovation, excellence, and transformative impact across industries and communities.
+                  To be Africa&apos;s premier technology solutions provider, recognized for innovation, excellence, and transformative impact across industries and communities.
                 </p>
               </div>
             </motion.div>
@@ -473,7 +498,7 @@ export default function Home() {
                   className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white/20"
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    src="/ceo.jpg" 
                     alt="CEO - Leading Innovation" 
                     className="w-full h-full object-cover"
                   />
@@ -486,7 +511,7 @@ export default function Home() {
               <div className="mt-8">
                 <h3 className="text-2xl font-bold mb-4">Leading Innovation</h3>
                 <p className="text-gray-300 max-w-md mx-auto mb-6">
-                  Pioneering technological advancement with passion, expertise, and an unwavering commitment to Africa's digital transformation.
+                  Pioneering technological advancement with passion, expertise, and an unwavering commitment to Africa&apos;s digital transformation.
                 </p>
                 <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
                   <motion.div 
@@ -494,7 +519,7 @@ export default function Home() {
                     className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
                   >
                     <img 
-                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                      src="/cto.jpg" 
                       alt="CTO" 
                       className="w-16 h-16 rounded-full mx-auto mb-2 object-cover"
                     />
@@ -505,7 +530,7 @@ export default function Home() {
                     className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
                   >
                     <img 
-                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                      src="/Hoo.jpg" 
                       alt="Head of Operations" 
                       className="w-16 h-16 rounded-full mx-auto mb-2 object-cover"
                     />
@@ -651,7 +676,7 @@ export default function Home() {
                   © 2025 SMAT Concept & Innovative Solutions Ltd. All rights reserved.
                 </div>
                 <div className="flex items-center gap-6 text-sm text-gray-400">
-                  <span>Built with ❤️ for Africa's digital future</span>
+                  <span>Built with ❤️ for Africa&apos;s digital future</span>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-green-400" />
                     <span className="text-green-400">Growing Fast</span>

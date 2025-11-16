@@ -51,7 +51,7 @@ Modern, interactive website for SMAT Concept & Innovative Solutions Ltd - a lead
 - Python 3.8+
 - Git
 
-### Installation
+### Quick Start (Development)
 
 1. **Clone the repository**
    ```bash
@@ -68,8 +68,8 @@ Modern, interactive website for SMAT Concept & Innovative Solutions Ltd - a lead
 
 3. **Backend Setup**
    ```bash
-   cd company_site
-   pip install django
+   cd company_site/backend
+   pip install -r requirements.txt
    python manage.py migrate
    python manage.py runserver
    ```
@@ -77,6 +77,19 @@ Modern, interactive website for SMAT Concept & Innovative Solutions Ltd - a lead
 4. **Access the application**
    - Frontend: http://localhost:3000
    - Backend: http://localhost:8000
+
+### Production Deployment
+
+**Status: ✅ PRODUCTION READY**
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment instructions.
+
+**Quick Deploy to Vercel:**
+```bash
+cd frontend
+npm install -g vercel
+vercel --prod
+```
 
 ## 📁 Project Structure
 
