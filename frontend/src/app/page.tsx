@@ -150,21 +150,21 @@ onClick={() => window.location.href = '/contact'}
             transition={{ duration: 0.8, delay: 1 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
           >
-            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
-              <div className="text-3xl font-bold text-black mb-2">150+</div>
-              <div className="text-sm text-gray-700 font-medium">Projects Delivered</div>
+            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
+              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>150+</div>
+              <div className="text-sm text-gray-800 font-semibold">Projects Delivered</div>
             </div>
-            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
-              <div className="text-3xl font-bold text-black mb-2">50+</div>
-              <div className="text-sm text-gray-700 font-medium">Happy Clients</div>
+            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
+              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>50+</div>
+              <div className="text-sm text-gray-800 font-semibold">Happy Clients</div>
             </div>
-            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
-              <div className="text-3xl font-bold text-black mb-2">5+</div>
-              <div className="text-sm text-gray-700 font-medium">Years Experience</div>
+            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
+              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>5+</div>
+              <div className="text-sm text-gray-800 font-semibold">Years Experience</div>
             </div>
-            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
-              <div className="text-3xl font-bold text-black mb-2">24/7</div>
-              <div className="text-sm text-gray-700 font-medium">Support</div>
+            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
+              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>24/7</div>
+              <div className="text-sm text-gray-800 font-semibold">Support</div>
             </div>
           </motion.div>
         </div>
@@ -637,8 +637,9 @@ onClick={() => window.location.href = '/contact'}
                       </motion.a>
                       
                       <motion.a 
-                        href="https://instagram.com/smatconcept"
+                        href="https://www.instagram.com/smatconcept/"
                         target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }} 
                         className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
                       >
@@ -652,8 +653,9 @@ onClick={() => window.location.href = '/contact'}
                       </motion.a>
                       
                       <motion.a 
-                        href="https://facebook.com/smatconceptinnovativesolutions"
+                        href="https://www.facebook.com/profile.php?id=61571142658853"
                         target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }} 
                         className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
                       >
