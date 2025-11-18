@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SMAT Concept & Innovative Solutions Ltd",
     description: "Data Digitalization • Smart Agriculture • Networking & Security • IoT • Energy",
-    url: "http://localhost:3000",
+    url: "https://smatconcept.name.ng",
     siteName: "SMAT Concept",
     images: [{ url: "/data-digitalization.png", width: 1200, height: 630 }],
     type: "website",

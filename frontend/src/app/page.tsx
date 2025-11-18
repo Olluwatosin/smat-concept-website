@@ -27,9 +27,9 @@ export default function Home() {
               <a href="#services" className="text-gray-700 hover:text-blue-600 font-medium">Services</a>
               <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">About</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                Get Quote
-              </button>
+              <a href="/contact" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+                Contact Us
+              </a>
             </nav>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center gap-2"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+onClick={() => window.location.href = '/contact'}
               >
                 <MessageCircle className="w-5 h-5" />
                 Start Your Journey
@@ -150,21 +150,21 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
           >
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-3xl font-bold text-cyan-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>150+</div>
-              <div className="text-sm text-white font-medium">Projects Delivered</div>
+            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>150+</div>
+              <div className="text-sm text-cyan-200 font-medium">Projects Delivered</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-3xl font-bold text-green-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>50+</div>
-              <div className="text-sm text-white font-medium">Happy Clients</div>
+            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>50+</div>
+              <div className="text-sm text-green-200 font-medium">Happy Clients</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-3xl font-bold text-purple-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>5+</div>
-              <div className="text-sm text-white font-medium">Years Experience</div>
+            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>5+</div>
+              <div className="text-sm text-purple-200 font-medium">Years Experience</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-3xl font-bold text-yellow-300 mb-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>24/7</div>
-              <div className="text-sm text-white font-medium">Support</div>
+            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>24/7</div>
+              <div className="text-sm text-yellow-200 font-medium">Support</div>
             </div>
           </motion.div>
         </div>
@@ -225,21 +225,37 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-8">
-                <DataDigitalizationDemo />
-                <p className="text-gray-600 mb-6 mt-4 leading-relaxed">
-                  Advanced OCR, document management, and intelligent dashboards for instant data access and powerful business insights.
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg mb-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Database className="text-blue-600" size={24} />
+                    <h4 className="font-semibold text-blue-900">Professional Data Solutions</h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white p-3 rounded text-center">
+                      <div className="text-2xl font-bold text-blue-600">99%</div>
+                      <div className="text-xs text-gray-600">Accuracy Rate</div>
+                    </div>
+                    <div className="bg-white p-3 rounded text-center">
+                      <div className="text-2xl font-bold text-green-600">Fast</div>
+                      <div className="text-xs text-gray-600">Processing</div>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Transform your paper documents into intelligent digital systems. We provide document management, data extraction, and business intelligence dashboards for instant access to your information.
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>99% Accuracy</span>
                   </div>
-                  <motion.button
+                  <motion.a
+                    href="/contact"
                     whileHover={{ x: 5 }}
                     className="text-blue-600 font-semibold flex items-center gap-2 group-hover:text-blue-700"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                    Get Quote <ArrowRight className="w-4 h-4" />
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -276,12 +292,13 @@ export default function Home() {
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>40% Yield Increase</span>
                   </div>
-                  <motion.button
+                  <motion.a
+                    href="/contact"
                     whileHover={{ x: 5 }}
                     className="text-green-600 font-semibold flex items-center gap-2 group-hover:text-green-700"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                    Get Quote <ArrowRight className="w-4 h-4" />
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -318,12 +335,13 @@ export default function Home() {
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>99.9% Uptime</span>
                   </div>
-                  <motion.button
+                  <motion.a
+                    href="/contact"
                     whileHover={{ x: 5 }}
                     className="text-purple-600 font-semibold flex items-center gap-2 group-hover:text-purple-700"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                    Get Quote <ArrowRight className="w-4 h-4" />
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -360,12 +378,13 @@ export default function Home() {
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>Real-time Monitoring</span>
                   </div>
-                  <motion.button
+                  <motion.a
+                    href="/contact"
                     whileHover={{ x: 5 }}
                     className="text-indigo-600 font-semibold flex items-center gap-2 group-hover:text-indigo-700"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                    Get Quote <ArrowRight className="w-4 h-4" />
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -402,12 +421,13 @@ export default function Home() {
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span>60% Cost Savings</span>
                   </div>
-                  <motion.button
+                  <motion.a
+                    href="/contact"
                     whileHover={{ x: 5 }}
                     className="text-orange-600 font-semibold flex items-center gap-2 group-hover:text-orange-700"
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                    Get Quote <ArrowRight className="w-4 h-4" />
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -585,15 +605,37 @@ export default function Home() {
                     Your fastest route to the digital world. Transforming Africa through cutting-edge technology solutions that drive growth, innovation, and sustainable development.
                   </p>
                   <div className="flex gap-4">
-                    <motion.div whileHover={{ scale: 1.1 }} className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center cursor-pointer">
+                    <motion.a 
+                      href="mailto:info@smatconcept.com"
+                      whileHover={{ scale: 1.1 }} 
+                      className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center cursor-pointer"
+                    >
                       <span className="text-xl">📧</span>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.1 }} className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center cursor-pointer">
+                    </motion.a>
+                    <motion.a 
+                      href="https://wa.me/2348101235007"
+                      target="_blank"
+                      whileHover={{ scale: 1.1 }} 
+                      className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center cursor-pointer"
+                    >
                       <span className="text-xl">📱</span>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.1 }} className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center cursor-pointer">
-                      <span className="text-xl">🌐</span>
-                    </motion.div>
+                    </motion.a>
+                    <motion.a 
+                      href="https://instagram.com/smatconcept"
+                      target="_blank"
+                      whileHover={{ scale: 1.1 }} 
+                      className="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                      <span className="text-xl">📷</span>
+                    </motion.a>
+                    <motion.a 
+                      href="https://facebook.com/smatconceptinnovativesolutions"
+                      target="_blank"
+                      whileHover={{ scale: 1.1 }} 
+                      className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                      <span className="text-xl">📘</span>
+                    </motion.a>
                   </div>
                 </motion.div>
               </div>
