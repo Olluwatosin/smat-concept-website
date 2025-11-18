@@ -123,8 +123,30 @@ onClick={() => window.location.href = '/contact'}
             </motion.div>
           </motion.div>
           
-          {/* Animated Impact Numbers */}
-          <AnimatedImpactNumbers />
+          {/* Trust Indicators - Simple version for hero */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
+          >
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">150+</div>
+              <div className="text-sm text-gray-300">Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">50+</div>
+              <div className="text-sm text-gray-300">Clients</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">5+</div>
+              <div className="text-sm text-gray-300">Years</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-sm text-gray-300">Support</div>
+            </div>
+          </motion.div>
         </div>
         
         {/* Scroll Indicator */}
