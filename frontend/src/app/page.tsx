@@ -508,7 +508,8 @@ onClick={() => window.location.href = '/contact'}
                 </div>
               </div>
               <div className="mt-8">
-                <h3 className="text-2xl font-bold mb-4">Leading Innovation</h3>
+                <h3 className="text-2xl font-bold mb-2">Salami Muhydeen</h3>
+                <p className="text-cyan-400 font-semibold mb-4">Leading Innovation</p>
                 <p className="text-gray-300 max-w-md mx-auto mb-6">
                   Pioneering technological advancement with passion, expertise, and an unwavering commitment to Africa&apos;s digital transformation.
                 </p>
