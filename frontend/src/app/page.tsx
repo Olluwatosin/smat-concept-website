@@ -608,7 +608,7 @@ onClick={() => window.location.href = '/contact'}
                     <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
                     <div className="space-y-3">
                       <motion.a 
-                        href="mailto:info@smatconcept.com"
+                        href="mailto:smatconceptsolutions@gmail.com"
                         whileHover={{ scale: 1.05 }} 
                         className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
                       >
@@ -617,7 +617,7 @@ onClick={() => window.location.href = '/contact'}
                         </div>
                         <div>
                           <p className="text-white font-medium">Email</p>
-                          <p className="text-blue-200 text-sm">info@smatconcept.com</p>
+                          <p className="text-blue-200 text-sm">smatconceptsolutions@gmail.com</p>
                         </div>
                       </motion.a>
                       
@@ -696,7 +696,7 @@ onClick={() => window.location.href = '/contact'}
                     </div>
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-gray-300">info@smatconcept.com</p>
+                      <p className="text-gray-300">smatconceptsolutions@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
