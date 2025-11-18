@@ -150,21 +150,21 @@ onClick={() => window.location.href = '/contact'}
             transition={{ duration: 0.8, delay: 1 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
           >
-            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
-              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>150+</div>
-              <div className="text-sm text-gray-800 font-semibold">Projects Delivered</div>
+            <div className="text-center bg-white rounded-lg p-6 border-4 border-gray-300 shadow-2xl">
+              <div className="text-5xl font-black mb-2" style={{ color: '#000000', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>150+</div>
+              <div className="text-sm font-bold" style={{ color: '#1f2937' }}>Projects Delivered</div>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
-              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>50+</div>
-              <div className="text-sm text-gray-800 font-semibold">Happy Clients</div>
+            <div className="text-center bg-white rounded-lg p-6 border-4 border-gray-300 shadow-2xl">
+              <div className="text-5xl font-black mb-2" style={{ color: '#000000', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>50+</div>
+              <div className="text-sm font-bold" style={{ color: '#1f2937' }}>Happy Clients</div>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
-              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>5+</div>
-              <div className="text-sm text-gray-800 font-semibold">Years Experience</div>
+            <div className="text-center bg-white rounded-lg p-6 border-4 border-gray-300 shadow-2xl">
+              <div className="text-5xl font-black mb-2" style={{ color: '#000000', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>5+</div>
+              <div className="text-sm font-bold" style={{ color: '#1f2937' }}>Years Experience</div>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 border-2 border-gray-200 shadow-lg">
-              <div className="text-4xl font-black text-gray-900 mb-2" style={{ color: '#000000', fontWeight: '900' }}>24/7</div>
-              <div className="text-sm text-gray-800 font-semibold">Support</div>
+            <div className="text-center bg-white rounded-lg p-6 border-4 border-gray-300 shadow-2xl">
+              <div className="text-5xl font-black mb-2" style={{ color: '#000000', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>24/7</div>
+              <div className="text-sm font-bold" style={{ color: '#1f2937' }}>Support</div>
             </div>
           </motion.div>
         </div>
