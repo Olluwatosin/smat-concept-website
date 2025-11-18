@@ -150,21 +150,21 @@ onClick={() => window.location.href = '/contact'}
             transition={{ duration: 0.8, delay: 1 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
           >
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>150+</div>
-              <div className="text-sm text-cyan-200 font-medium">Projects Delivered</div>
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
+              <div className="text-3xl font-bold text-black mb-2">150+</div>
+              <div className="text-sm text-gray-700 font-medium">Projects Delivered</div>
             </div>
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>50+</div>
-              <div className="text-sm text-green-200 font-medium">Happy Clients</div>
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
+              <div className="text-3xl font-bold text-black mb-2">50+</div>
+              <div className="text-sm text-gray-700 font-medium">Happy Clients</div>
             </div>
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>5+</div>
-              <div className="text-sm text-purple-200 font-medium">Years Experience</div>
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
+              <div className="text-3xl font-bold text-black mb-2">5+</div>
+              <div className="text-sm text-gray-700 font-medium">Years Experience</div>
             </div>
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>24/7</div>
-              <div className="text-sm text-yellow-200 font-medium">Support</div>
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-white/50">
+              <div className="text-3xl font-bold text-black mb-2">24/7</div>
+              <div className="text-sm text-gray-700 font-medium">Support</div>
             </div>
           </motion.div>
         </div>
@@ -604,38 +604,68 @@ onClick={() => window.location.href = '/contact'}
                   <p className="text-gray-300 text-lg leading-relaxed mb-6">
                     Your fastest route to the digital world. Transforming Africa through cutting-edge technology solutions that drive growth, innovation, and sustainable development.
                   </p>
-                  <div className="flex gap-4">
-                    <motion.a 
-                      href="mailto:info@smatconcept.com"
-                      whileHover={{ scale: 1.1 }} 
-                      className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center cursor-pointer"
-                    >
-                      <span className="text-xl">📧</span>
-                    </motion.a>
-                    <motion.a 
-                      href="https://wa.me/2348101235007"
-                      target="_blank"
-                      whileHover={{ scale: 1.1 }} 
-                      className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center cursor-pointer"
-                    >
-                      <span className="text-xl">📱</span>
-                    </motion.a>
-                    <motion.a 
-                      href="https://instagram.com/smatconcept"
-                      target="_blank"
-                      whileHover={{ scale: 1.1 }} 
-                      className="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center cursor-pointer"
-                    >
-                      <span className="text-xl">📷</span>
-                    </motion.a>
-                    <motion.a 
-                      href="https://facebook.com/smatconceptinnovativesolutions"
-                      target="_blank"
-                      whileHover={{ scale: 1.1 }} 
-                      className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center cursor-pointer"
-                    >
-                      <span className="text-xl">📘</span>
-                    </motion.a>
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                    <div className="space-y-3">
+                      <motion.a 
+                        href="mailto:info@smatconcept.com"
+                        whileHover={{ scale: 1.05 }} 
+                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
+                      >
+                        <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold">@</span>
+                        </div>
+                        <div>
+                          <p className="text-white font-medium">Email</p>
+                          <p className="text-blue-200 text-sm">info@smatconcept.com</p>
+                        </div>
+                      </motion.a>
+                      
+                      <motion.a 
+                        href="https://wa.me/2348101235007"
+                        target="_blank"
+                        whileHover={{ scale: 1.05 }} 
+                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
+                      >
+                        <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">W</span>
+                        </div>
+                        <div>
+                          <p className="text-white font-medium">WhatsApp</p>
+                          <p className="text-green-200 text-sm">+234 810 123 5007</p>
+                        </div>
+                      </motion.a>
+                      
+                      <motion.a 
+                        href="https://instagram.com/smatconcept"
+                        target="_blank"
+                        whileHover={{ scale: 1.05 }} 
+                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
+                      >
+                        <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold">IG</span>
+                        </div>
+                        <div>
+                          <p className="text-white font-medium">Instagram</p>
+                          <p className="text-pink-200 text-sm">@smatconcept</p>
+                        </div>
+                      </motion.a>
+                      
+                      <motion.a 
+                        href="https://facebook.com/smatconceptinnovativesolutions"
+                        target="_blank"
+                        whileHover={{ scale: 1.05 }} 
+                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 hover:bg-white/20 transition-all"
+                      >
+                        <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold">f</span>
+                        </div>
+                        <div>
+                          <p className="text-white font-medium">Facebook</p>
+                          <p className="text-blue-200 text-sm">SMAT Concept & Innovative Solutions</p>
+                        </div>
+                      </motion.a>
+                    </div>
                   </div>
                 </motion.div>
               </div>
