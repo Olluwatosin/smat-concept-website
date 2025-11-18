@@ -6,34 +6,13 @@ import { DataDigitalizationDemo, SmartAgricultureDemo, NetworkingDemo, EnergyDem
 import AnimatedStats from "./components/AnimatedStats";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import ServiceCalculator from "./components/ServiceCalculator";
+import TechHeader from "./components/TechHeader";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                S
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">SMAT Concept</h1>
-                <p className="text-sm text-blue-600">Innovative Solutions Ltd.</p>
-              </div>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a href="#services" className="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
-              <a href="/contact" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                Contact Us
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
+      {/* TECH HEADER */}
+      <TechHeader />
 
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
