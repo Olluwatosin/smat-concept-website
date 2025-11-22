@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SMAT Concept & Innovative Solutions Ltd",
   description: "Your fastest route to the digital world.",
-  icons: { icon: "/logo.png" }, // temporary favicon using your logo
+  icons: { icon: "/mainlogo.png" },
   openGraph: {
     title: "SMAT Concept & Innovative Solutions Ltd",
     description: "Data Digitalization • Smart Agriculture • Networking & Security • IoT • Energy",

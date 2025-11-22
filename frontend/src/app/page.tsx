@@ -574,8 +574,8 @@ onClick={() => window.location.href = '/contact'}
                   className="mb-8"
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                      S
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center p-2">
+                      <img src="/mainlogo.png" alt="SMAT Concept Logo" className="w-full h-full object-contain" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold">SMAT Concept</h3>

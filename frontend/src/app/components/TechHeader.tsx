@@ -96,7 +96,7 @@ export default function TechHeader() {
             >
               <div className="relative">
                 <motion.div 
-                  className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center text-white font-black text-xl lg:text-2xl relative overflow-hidden"
+                  className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center relative overflow-hidden"
                   style={{
                     background: 'linear-gradient(135deg, #0066FF 0%, #00D4FF 50%, #8B5CF6 100%)',
                     boxShadow: '0 0 30px rgba(0, 212, 255, 0.3)'
@@ -110,7 +110,11 @@ export default function TechHeader() {
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <span className="relative z-10">S</span>
+                  <img 
+                    src="/mainlogo.png" 
+                    alt="SMAT Concept Logo" 
+                    className="w-8 h-8 lg:w-10 lg:h-10 object-contain relative z-10"
+                  />
                   <motion.div 
                     className="absolute inset-0 opacity-30"
                     style={{
