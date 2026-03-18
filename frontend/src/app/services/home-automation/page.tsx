@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import {
   Home, Check, ArrowRight, MessageCircle,
-  Lightbulb, Camera, Lock, Zap, Mic, Smartphone, Wind, Phone,
-  Shield, Settings, Star,
+  Camera, Zap, Mic, Smartphone,
+  Shield, Star, Eye, Wifi, HardDrive, Bell,
 } from "lucide-react";
 import TechHeader from "../../components/TechHeader";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
@@ -19,13 +19,24 @@ const fadeUp = {
 
 const features = [
   "Smart lighting with scenes & schedules",
-  "HD security cameras with night vision & cloud storage",
+  "CCTV cameras — indoor, outdoor & night vision",
   "Automated gate & door access control",
   "Real-time energy consumption monitoring",
   "Voice control via Alexa & Google Home",
   "Full remote access via smartphone app",
   "Smart AC scheduling & temperature automation",
   "Video intercom systems for gates & doors",
+  "Cloud & local NVR storage for footage",
+  "Motion detection with instant phone alerts",
+];
+
+const cctvFeatures = [
+  { icon: Camera, title: "Indoor & Outdoor Cameras", desc: "Full HD and 4K cameras for every corner — living rooms, gates, driveways, and perimeter fencing." },
+  { icon: Eye, title: "Night Vision & IR", desc: "Crystal-clear footage even in total darkness, with infrared and colour night vision options." },
+  { icon: Wifi, title: "Remote Live View", desc: "Watch any camera live on your phone from anywhere in the world — no technical knowledge needed." },
+  { icon: Bell, title: "Motion & Intruder Alerts", desc: "Instant push notifications the moment movement is detected on your property. Never miss an event." },
+  { icon: HardDrive, title: "Cloud & NVR Storage", desc: "Footage stored securely on local NVR (up to 30 days) and optional cloud backup for critical zones." },
+  { icon: Mic, title: "Two-Way Audio", desc: "Talk to visitors, delivery persons, or deter intruders directly through select cameras." },
 ];
 
 const steps = [
@@ -68,7 +79,7 @@ export default function HomeAutomationPage() {
             <br /><span className="text-white">Intelligently Controlled</span>
           </motion.h1>
           <motion.p {...fadeUp} transition={{ delay: 0.2, duration: 0.55 }} className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            Transform your house into a smart, secure, energy-efficient home. Control everything — lights, gates, ACs, cameras — from one app.
+            Transform your house into a smart, secure, energy-efficient home. Control everything — lights, gates, ACs, CCTV cameras — from one app, anywhere in the world.
           </motion.p>
           <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.55 }} className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="btn-gold px-7 py-3 rounded-lg font-semibold flex items-center gap-2">
@@ -94,8 +105,89 @@ export default function HomeAutomationPage() {
         </div>
       </section>
 
+      {/* CCTV SPOTLIGHT */}
+      <section className="section-divider py-20" style={{ backgroundColor: "#0C0F1E" }}>
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(212,175,55,0.12)", border: "1px solid rgba(212,175,55,0.25)" }}>
+              <Camera size={20} style={{ color: "#D4AF37" }} />
+            </div>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D4AF37" }}>Featured Service</span>
+          </motion.div>
+          <motion.h2 {...fadeUp} transition={{ delay: 0.05 }} className="text-3xl md:text-4xl font-black text-white mb-3">
+            CCTV & Home Surveillance
+          </motion.h2>
+          <motion.p {...fadeUp} transition={{ delay: 0.1 }} className="text-gray-400 leading-relaxed max-w-2xl mb-12">
+            We supply, install, and configure professional-grade CCTV systems for homes across Nigeria.
+            Whether you need 2 cameras for a flat or 16 cameras covering a large compound, we design
+            the right system and have it running the same day — with full remote viewing on your phone.
+          </motion.p>
+
+          {/* Camera image banner */}
+          <motion.div {...fadeUp} transition={{ delay: 0.15 }} className="relative rounded-2xl overflow-hidden mb-12 h-56 md:h-72">
+            <img
+              src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="CCTV Security Camera Installation"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,11,22,0.85) 0%, rgba(8,11,22,0.2) 100%)" }} />
+            <div className="absolute inset-0 flex items-center px-10">
+              <div>
+                <p className="text-3xl md:text-5xl font-black text-white mb-2">
+                  See Everything.<br />
+                  <span className="text-gold-gradient">Miss Nothing.</span>
+                </p>
+                <p className="text-gray-300 text-sm md:text-base max-w-sm">
+                  Live on your phone. 24/7. From anywhere.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CCTV feature grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {cctvFeatures.map((f, i) => (
+              <motion.div
+                key={f.title}
+                {...fadeUp}
+                transition={{ delay: i * 0.07 }}
+                className="glass-card glass-card-hover rounded-2xl p-6"
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.2)" }}>
+                  <f.icon size={20} style={{ color: "#D4AF37" }} />
+                </div>
+                <h3 className="font-bold text-white mb-2">{f.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CCTV packages hint */}
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.4 }}
+            className="mt-10 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
+            style={{ background: "rgba(212,175,55,0.06)", border: "1px solid rgba(212,175,55,0.2)" }}
+          >
+            <div>
+              <p className="font-bold text-white mb-1">Ready to secure your home?</p>
+              <p className="text-gray-400 text-sm">Packages start from 2-camera basic setups. Custom quotes in 24 hours.</p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <a href="/contact" className="btn-gold px-5 py-2.5 rounded-lg font-semibold text-sm flex items-center gap-2">
+                Get a Quote <ArrowRight size={14} />
+              </a>
+              <a href="https://wa.me/2348101235007" target="_blank" rel="noopener noreferrer" className="btn-gold-outline px-5 py-2.5 rounded-lg font-semibold text-sm flex items-center gap-2">
+                <Smartphone size={14} /> WhatsApp
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* WHAT'S INCLUDED */}
-      <section className="section-divider py-16" style={{ backgroundColor: "#0C0F1E" }}>
+      <section className="section-divider py-16" style={{ backgroundColor: "#080B16" }}>
         <div className="max-w-5xl mx-auto px-6">
           <motion.h2 {...fadeUp} className="text-3xl font-bold mb-10 text-gold-gradient">What's Included</motion.h2>
           <div className="grid sm:grid-cols-2 gap-4">

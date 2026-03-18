@@ -12,7 +12,7 @@ const services = [
   { id: "task-management", name: "Task Management", icon: CheckSquare, description: "Productivity systems & workflow tools", color: "from-amber-500 to-yellow-400", href: "/services/task-management" },
   { id: "web-development", name: "Web Development", icon: Globe, description: "Full-stack web apps & platforms", color: "from-blue-500 to-cyan-400", href: "/services/web-development" },
   { id: "smart-farming", name: "Smart Farming", icon: Leaf, description: "IoT-powered agriculture revolution", color: "from-green-500 to-emerald-400", href: "/services/smart-farming" },
-  { id: "home-automation", name: "Home Automation", icon: Home, description: "Intelligent smart home systems", color: "from-purple-500 to-violet-400", href: "/services/home-automation" },
+  { id: "home-automation", name: "Home Automation & CCTV", icon: Home, description: "Smart home systems & surveillance", color: "from-purple-500 to-violet-400", href: "/services/home-automation" },
   { id: "document-digitalization", name: "Document Digitalization", icon: Database, description: "Paper to digital intelligence", color: "from-rose-500 to-pink-400", href: "/services/document-digitalization" },
   { id: "networking", name: "Networking & Security", icon: Shield, description: "Enterprise-grade protection", color: "from-indigo-500 to-blue-400", href: "/services/networking" },
   { id: "iot", name: "IoT Solutions", icon: Cpu, description: "Connected device ecosystems", color: "from-teal-500 to-cyan-400", href: "/services/iot" },
