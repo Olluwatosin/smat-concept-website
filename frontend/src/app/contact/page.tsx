@@ -1,16 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, MessageCircle, Send, Clock, CheckCircle, Star } from "lucide-react";
 import { useState } from "react";
+import TechHeader from "../components/TechHeader";
+import WhatsAppWidget from "../components/WhatsAppWidget";
+
+const inputClass =
+  "w-full px-4 py-3 rounded-lg text-white placeholder-gray-500 outline-none transition-all duration-200 " +
+  "bg-[#0F1629] border border-[rgba(212,175,55,0.2)] " +
+  "focus:border-[rgba(212,175,55,0.6)] focus:ring-1 focus:ring-[rgba(212,175,55,0.3)]";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,257 +26,403 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      const form = e.target as HTMLFormElement;
-      const formData = new FormData(form);
-      
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: `New Enquiry from ${formData.name} — SMAT Concept`,
+          from_name: formData.name,
+          ...formData,
+        }),
       });
-      
-      if (response.ok) {
+
+      const result = await response.json();
+
+      if (result.success) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      } else {
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
-      alert('Error sending message. Please try again or contact us directly.');
+      console.error("Contact form error:", error);
+      alert("Error sending message. Please try again or contact us directly via WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 pt-20">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                S
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">SMAT Concept</h1>
-                <p className="text-sm text-blue-600">Innovative Solutions Ltd.</p>
-              </div>
-            </div>
-            <a href="/" className="text-blue-600 hover:text-blue-700 font-medium">← Back to Home</a>
-          </div>
-        </div>
-      </header>
+    <div
+      className="min-h-screen"
+      style={{ background: "linear-gradient(160deg, #080B16 0%, #0C0F1E 60%, #080B16 100%)" }}
+    >
+      <TechHeader />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-16 px-6 overflow-hidden">
+        {/* Dot grid background */}
+        <div className="dot-grid absolute inset-0 opacity-30 pointer-events-none" />
+
+        {/* Gold glow orb */}
+        <div
+          className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse, rgba(212,175,55,0.08) 0%, transparent 70%)",
+          }}
+        />
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="relative text-center max-w-3xl mx-auto"
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Get In <span className="text-blue-600">Touch</span>
+          <span
+            className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-4 py-1.5 rounded-full"
+            style={{
+              color: "#D4AF37",
+              border: "1px solid rgba(212,175,55,0.3)",
+              background: "rgba(212,175,55,0.07)",
+            }}
+          >
+            Contact Us
+          </span>
+
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            <span className="text-white">Get </span>
+            <span className="text-gold-gradient">In Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your business with cutting-edge technology? Let&apos;s discuss your project.
+
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+            Ready to transform your business with cutting-edge technology?
+            <br className="hidden md:block" />
+            Let&apos;s discuss your project and craft the perfect solution.
           </p>
         </motion.div>
+      </section>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+      {/* Section divider */}
+      <div className="section-divider mx-6 mb-16" />
+
+      {/* Two-column layout */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="grid lg:grid-cols-2 gap-10">
+
+          {/* ── LEFT: Contact Form ── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-white rounded-2xl shadow-xl p-8"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="glass-card p-8 rounded-2xl"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-white mb-2">Send Us a Message</h2>
+            <p className="text-gray-500 text-sm mb-8">
+              Fill in the form and our team will respond within 24 hours.
+            </p>
+
             {isSubmitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-12"
+                transition={{ duration: 0.4 }}
+                className="flex flex-col items-center justify-center py-16 text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                <div
+                  className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
+                  style={{
+                    background: "rgba(212,175,55,0.1)",
+                    border: "2px solid rgba(212,175,55,0.4)",
+                  }}
+                >
+                  <CheckCircle className="w-10 h-10" style={{ color: "#D4AF37" }} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h3>
-                <p className="text-gray-600 mb-6">Thank you for contacting SMAT Concept. We&apos;ll get back to you within 24 hours.</p>
+                <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
+                <p className="text-gray-400 mb-8 max-w-xs">
+                  Thank you for reaching out to SMAT Concept. We&apos;ll get back to you within 24 hours.
+                </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="btn-gold-outline px-6 py-2 rounded-lg text-sm font-semibold"
                 >
                   Send Another Message
                 </button>
               </motion.div>
             ) : (
-            <form 
-              name="contact" 
-              method="POST" 
-              data-netlify="true" 
-              data-netlify-honeypot="bot-field"
-              onSubmit={handleSubmit} 
-              className="space-y-6"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="bot-field" />
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Your full name"
-                  />
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Name + Email */}
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                      Full Name <span style={{ color: "#D4AF37" }}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className={inputClass}
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                      Email Address <span style={{ color: "#D4AF37" }}>*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className={inputClass}
+                      placeholder="your@email.com"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="+234 xxx xxx xxxx"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={(e) => setFormData({...formData, service: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="Data Digitalization">Data Digitalization</option>
-                    <option value="Smart Agriculture">Smart Agriculture</option>
-                    <option value="Networking & Security">Networking & Security</option>
-                    <option value="IoT Solutions">IoT Solutions</option>
-                    <option value="Energy Solutions">Energy Solutions</option>
-                    <option value="Custom Solution">Custom Solution</option>
-                  </select>
-                </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Tell us about your project requirements..."
-                />
-              </div>
+                {/* Phone + Service */}
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className={inputClass}
+                      placeholder="+234 xxx xxx xxxx"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                      Service Interest
+                    </label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className={inputClass}
+                      style={{ colorScheme: "dark" }}
+                    >
+                      <option value="" className="bg-[#0F1629] text-gray-400">
+                        Select a service
+                      </option>
+                      <option value="Data Digitalization" className="bg-[#0F1629]">
+                        Data Digitalization
+                      </option>
+                      <option value="Smart Agriculture" className="bg-[#0F1629]">
+                        Smart Agriculture
+                      </option>
+                      <option value="Networking & Security" className="bg-[#0F1629]">
+                        Networking &amp; Security
+                      </option>
+                      <option value="IoT Solutions" className="bg-[#0F1629]">
+                        IoT Solutions
+                      </option>
+                      <option value="Energy Solutions" className="bg-[#0F1629]">
+                        Energy Solutions
+                      </option>
+                      <option value="Custom Solution" className="bg-[#0F1629]">
+                        Custom Solution
+                      </option>
+                    </select>
+                  </div>
+                </div>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
-              </motion.button>
-            </form>
+                {/* Message */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                    Project Details <span style={{ color: "#D4AF37" }}>*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={5}
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className={inputClass}
+                    placeholder="Tell us about your project requirements..."
+                  />
+                </div>
+
+                {/* Submit */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-gold w-full py-4 rounded-lg font-semibold text-base flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </>
+                  )}
+                </motion.button>
+              </form>
             )}
           </motion.div>
 
+          {/* ── RIGHT: Info + Benefits ── */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="space-y-8"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col gap-8"
           >
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-blue-600" />
+            {/* Contact Info Card */}
+            <div className="glass-card p-8 rounded-2xl">
+              <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
+
+              <div className="space-y-5">
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "rgba(212,175,55,0.08)",
+                      border: "1px solid rgba(212,175,55,0.25)",
+                    }}
+                  >
+                    <Mail className="w-5 h-5" style={{ color: "#D4AF37" }} />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">smatconceptsolutions@gmail.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Phone</p>
-                    <p className="text-gray-600">+234 810 123 5007</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5">Email</p>
+                    <a
+                      href="mailto:smatconceptsolutions@gmail.com"
+                      className="text-gray-200 hover:text-[#D4AF37] transition-colors text-sm"
+                    >
+                      smatconceptsolutions@gmail.com
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-purple-600" />
+                {/* Phone */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "rgba(212,175,55,0.08)",
+                      border: "1px solid rgba(212,175,55,0.25)",
+                    }}
+                  >
+                    <Phone className="w-5 h-5" style={{ color: "#D4AF37" }} />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">WhatsApp</p>
-                    <p className="text-gray-600">+234 810 123 5007</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5">Phone</p>
+                    <a
+                      href="tel:+2348101235007"
+                      className="text-gray-200 hover:text-[#D4AF37] transition-colors text-sm"
+                    >
+                      +234 810 123 5007
+                    </a>
+                  </div>
+                </div>
+
+                {/* WhatsApp */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "rgba(212,175,55,0.08)",
+                      border: "1px solid rgba(212,175,55,0.25)",
+                    }}
+                  >
+                    <MessageCircle className="w-5 h-5" style={{ color: "#D4AF37" }} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5">WhatsApp</p>
+                    <a
+                      href="https://wa.me/2348101235007"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-200 hover:text-[#D4AF37] transition-colors text-sm"
+                    >
+                      +234 810 123 5007
+                    </a>
+                  </div>
+                </div>
+
+                {/* Office Hours */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "rgba(212,175,55,0.08)",
+                      border: "1px solid rgba(212,175,55,0.25)",
+                    }}
+                  >
+                    <Clock className="w-5 h-5" style={{ color: "#D4AF37" }} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5">Office Hours</p>
+                    <p className="text-gray-200 text-sm">Mon – Sat, 8 am – 6 pm</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Why Choose SMAT Concept?</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span>5+ Years of Excellence</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span>150+ Successful Projects</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span>24/7 Support</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span>Custom Solutions</span>
-                </li>
+            {/* Why SMAT Concept Card */}
+            <div
+              className="glass-card p-8 rounded-2xl relative overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(212,175,55,0.07) 0%, rgba(8,11,22,0.6) 100%)",
+              }}
+            >
+              {/* Subtle gold corner glow */}
+              <div
+                className="absolute -top-10 -right-10 w-40 h-40 rounded-full pointer-events-none"
+                style={{
+                  background: "radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%)",
+                }}
+              />
+
+              <h3 className="text-xl font-bold text-white mb-6 relative">
+                Why{" "}
+                <span className="text-gold-gradient">SMAT Concept</span>?
+              </h3>
+
+              <ul className="space-y-4 relative">
+                {[
+                  { label: "5+ Years of Excellence", sub: "Proven industry expertise" },
+                  { label: "150+ Successful Projects", sub: "Delivered across sectors" },
+                  { label: "24/7 Support", sub: "Always here when you need us" },
+                  { label: "Expert Local Team", sub: "Deep knowledge, real results" },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-start gap-3">
+                    <Star
+                      className="w-4 h-4 mt-0.5 flex-shrink-0"
+                      style={{ color: "#D4AF37" }}
+                      fill="rgba(212,175,55,0.25)"
+                    />
+                    <div>
+                      <p className="text-white font-semibold text-sm">{item.label}</p>
+                      <p className="text-gray-500 text-xs">{item.sub}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
         </div>
-      </div>
+      </section>
+
+      <WhatsAppWidget />
     </div>
   );
 }

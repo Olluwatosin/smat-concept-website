@@ -6,6 +6,16 @@ node_modules/
 .next/
 */build/
 */dist/
+out/
+*/out/
+
+# Build artifacts & archives
+*.zip
+*.tar.gz
+
+# Stray files
+frontend/npm
+frontend/npx
 
 # Environment variables
 .env

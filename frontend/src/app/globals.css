@@ -1,4 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html { scroll-behavior: smooth; }
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F5D56A;
+  --gold-dark: #A08A1E;
+  --navy: #0C0F1E;
+  --navy-dark: #080B16;
+  --navy-light: #111827;
+  --navy-card: #0F1629;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080B16;
+  color: #F9FAFB;
+}
+
+/* Gold gradient text utility */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D56A 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(15, 22, 41, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-card-hover:hover {
+  background: rgba(15, 22, 41, 0.9);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.12);
+}
+
+/* Gold glow border */
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.gold-border:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Dot grid background pattern */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080B16; }
+::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212, 175, 55, 0.6); }
+
+/* Section divider */
+.section-divider {
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Gold button */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D56A 50%, #D4AF37 100%);
+  color: #080B16;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Outline gold button */
+.btn-gold-outline {
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #D4AF37;
+  transition: all 0.3s ease;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #D4AF37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Animated gold line */
+@keyframes gold-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+.gold-scan::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+  animation: gold-scan 3s ease-in-out infinite;
+}
