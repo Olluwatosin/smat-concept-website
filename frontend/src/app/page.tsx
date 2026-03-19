@@ -188,7 +188,7 @@ function ServiceModal({ service, onClose }: { service: typeof services[0]; onClo
           </div>
 
           {/* Features */}
-          <div className="grid grid-cols-2 gap-2 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
             {service.features.map((f) => (
               <div key={f} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
@@ -310,7 +310,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-white"
+            className="text-3xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-white"
           >
             Your Fastest Route to
             <span className="block text-gold-gradient mt-2">the Digital World</span>
@@ -320,7 +320,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"
+            className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"
           >
             We build smart solutions across Task Management, Web Development, Smart Farming,
             Home Automation, Document Digitalization, and more — empowering Africa&apos;s digital future.
@@ -356,7 +356,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 section-divider"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 md:mt-20 pt-8 md:pt-10 section-divider"
           >
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -380,7 +380,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVICES ──────────────────────────────────────────── */}
-      <section id="services" className="py-28 relative">
+      <section id="services" className="py-16 md:py-28 relative">
         <div className="absolute inset-0 dot-grid opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
@@ -401,7 +401,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -545,7 +545,7 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIAL PREVIEW ───────────────────────────────── */}
-      <section className="py-24 section-divider">
+      <section className="py-16 md:py-24 section-divider">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -586,7 +586,7 @@ export default function Home() {
             style={{ background: 'linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.05) 100%)', border: '1px solid rgba(212,175,55,0.3)', boxShadow: '0 0 80px rgba(212,175,55,0.1)' }}
           >
             <div className="absolute inset-0 dot-grid opacity-30" />
-            <div className="relative z-10 p-12 text-center">
+            <div className="relative z-10 p-6 sm:p-12 text-center">
               <h2 className="text-4xl font-black text-white mb-4">
                 Ready to Build Something<br />
                 <span className="text-gold-gradient">Extraordinary?</span>

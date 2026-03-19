@@ -100,7 +100,7 @@ export default function GoodwillPage() {
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-28 px-4 overflow-hidden"
+        className="relative pt-24 pb-16 md:pt-32 md:pb-28 px-4 overflow-hidden"
         style={{
           background:
             "linear-gradient(180deg, #080B16 0%, #0a0d18 60%, #0C0F1E 100%)",
@@ -142,7 +142,7 @@ export default function GoodwillPage() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl lg:text-7xl font-black mb-8 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-7xl font-black mb-8 leading-tight"
           >
             Beyond Business.{" "}
             <span className="text-gold-gradient">For Africa.</span>
@@ -151,7 +151,7 @@ export default function GoodwillPage() {
           <motion.blockquote
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 font-light italic relative"
+            className="text-base sm:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 font-light italic relative"
           >
             <span
               className="text-5xl font-serif absolute -top-4 -left-3 opacity-30"

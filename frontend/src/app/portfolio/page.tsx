@@ -144,7 +144,7 @@ export default function PortfolioPage() {
       <main className="pt-20 lg:pt-24">
 
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden py-24 px-4 dot-grid">
+        <section className="relative overflow-hidden py-16 md:py-24 px-4 dot-grid">
           <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.09) 0%, transparent 70%)" }} />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.p {...fadeUp} transition={{ duration: 0.5 }}
@@ -153,7 +153,7 @@ export default function PortfolioPage() {
               Selected Work
             </motion.p>
             <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold mb-6">
+              className="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-6">
               Our Work <span className="text-gold-gradient">Speaks</span>
             </motion.h1>
             <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }}

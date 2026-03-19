@@ -93,7 +93,7 @@ export default function ContactPage() {
             Contact Us
           </span>
 
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
             <span className="text-white">Get </span>
             <span className="text-gold-gradient">In Touch</span>
           </h1>

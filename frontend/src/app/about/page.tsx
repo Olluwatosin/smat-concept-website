@@ -68,7 +68,7 @@ export default function AboutPage() {
       <main className="pt-20 lg:pt-24">
 
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden py-24 px-4 dot-grid">
+        <section className="relative overflow-hidden py-16 md:py-24 px-4 dot-grid">
           <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 60% 0%, rgba(212,175,55,0.08) 0%, transparent 70%)" }} />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.p {...fadeUp} transition={{ duration: 0.5 }}
@@ -77,12 +77,12 @@ export default function AboutPage() {
               Who We Are
             </motion.p>
             <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+              className="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
               Our Story,{" "}
               <span className="text-gold-gradient">Our Mission</span>
             </motion.h1>
             <motion.blockquote {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass-card rounded-2xl px-8 py-6 text-xl italic text-gray-300 max-w-2xl mx-auto mt-8"
+              className="glass-card rounded-2xl px-5 py-5 sm:px-8 sm:py-6 text-base sm:text-xl italic text-gray-300 max-w-2xl mx-auto mt-8"
               style={{ borderLeft: "4px solid #D4AF37" }}>
               "I started SMAT Concept because I believed African businesses deserved technology partners who truly understood their context — not imported templates, but solutions built for our realities."
               <footer className="mt-4 text-sm not-italic font-semibold" style={{ color: "#D4AF37" }}>

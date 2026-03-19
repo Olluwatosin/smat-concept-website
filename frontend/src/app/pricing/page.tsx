@@ -471,7 +471,7 @@ export default function PricingPage() {
               Pricing
             </motion.p>
             <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+              className="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
               Transparent Pricing.{" "}
               <span className="text-gold-gradient">Real Value.</span>
             </motion.h1>
@@ -511,10 +511,10 @@ export default function PricingPage() {
                   <h2 className="text-2xl font-bold text-white mb-2">{activeService}</h2>
                   <p className="text-gray-400">{pricing.description}</p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-6 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
                   {pricing.tiers.map((tier, i) => (
                     <div key={tier.name}
-                      className={`glass-card rounded-2xl p-8 flex flex-col relative transition-all duration-300 ${tier.popular ? "scale-[1.03]" : ""}`}
+                      className={`glass-card rounded-2xl p-6 md:p-8 flex flex-col relative transition-all duration-300 ${tier.popular ? "md:scale-[1.03]" : ""}`}
                       style={tier.popular
                         ? { border: "2px solid #D4AF37", boxShadow: "0 0 50px rgba(212,175,55,0.15)" }
                         : { border: "1px solid rgba(212,175,55,0.15)" }}>

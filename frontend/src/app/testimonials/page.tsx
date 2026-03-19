@@ -158,7 +158,7 @@ export default function TestimonialsPage() {
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-24 px-4 overflow-hidden"
+        className="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #080B16 0%, #0C0F1E 100%)" }}
       >
         <div className="dot-grid absolute inset-0 opacity-30 pointer-events-none" />
@@ -187,7 +187,7 @@ export default function TestimonialsPage() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl lg:text-7xl font-black mb-6 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight"
           >
             What Our{" "}
             <span className="text-gold-gradient">Clients Say</span>
@@ -196,7 +196,7 @@ export default function TestimonialsPage() {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-2xl mx-auto mb-10"
+            className="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
           >
             Real results. Real people. Real Nigerian businesses transformed by
             technology that actually works.
@@ -276,7 +276,7 @@ export default function TestimonialsPage() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.6 }}
-            className="glass-card rounded-3xl p-10 lg:p-14 relative overflow-hidden"
+            className="glass-card rounded-3xl p-5 sm:p-10 lg:p-14 relative overflow-hidden"
           >
             {/* Background accent */}
             <div

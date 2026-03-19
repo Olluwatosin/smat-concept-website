@@ -142,7 +142,7 @@ export default function BlogPage() {
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-20 px-4 overflow-hidden"
+        className="relative pt-24 pb-16 md:pt-32 md:pb-20 px-4 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #080B16 0%, #0C0F1E 100%)" }}
       >
         <div className="dot-grid absolute inset-0 opacity-30 pointer-events-none" />
@@ -172,7 +172,7 @@ export default function BlogPage() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl lg:text-7xl font-black mb-6 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight"
           >
             SMAT{" "}
             <span className="text-gold-gradient">Insights</span>
@@ -181,7 +181,7 @@ export default function BlogPage() {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-2xl mx-auto mb-10"
+            className="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
           >
             Tech knowledge, African context — practical articles for businesses
             and innovators building a smarter Nigeria.

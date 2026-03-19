@@ -63,7 +63,7 @@ export default function WebDevelopmentPage() {
             <Globe size={16} style={{ color: "#D4AF37" }} />
             <span className="text-sm font-medium" style={{ color: "#D4AF37" }}>Web Development</span>
           </motion.div>
-          <motion.h1 {...fadeUp} transition={{ delay: 0.1, duration: 0.55 }} className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          <motion.h1 {...fadeUp} transition={{ delay: 0.1, duration: 0.55 }} className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
             <span className="text-gold-gradient">Fast, Beautiful,</span>
             <br /><span className="text-white">Revenue-Generating Apps</span>
           </motion.h1>

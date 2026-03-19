@@ -74,7 +74,7 @@ export default function HomeAutomationPage() {
             <Home size={16} style={{ color: "#D4AF37" }} />
             <span className="text-sm font-medium" style={{ color: "#D4AF37" }}>Home Automation</span>
           </motion.div>
-          <motion.h1 {...fadeUp} transition={{ delay: 0.1, duration: 0.55 }} className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          <motion.h1 {...fadeUp} transition={{ delay: 0.1, duration: 0.55 }} className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
             <span className="text-gold-gradient">Your Home,</span>
             <br /><span className="text-white">Intelligently Controlled</span>
           </motion.h1>
