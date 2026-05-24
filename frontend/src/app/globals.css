@@ -31,15 +31,28 @@ body {
 
 /* Glass card utility */
 .glass-card {
-  background: rgba(15, 22, 41, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  background: rgba(15, 22, 41, 0.6);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .glass-card-hover:hover {
-  background: rgba(15, 22, 41, 0.9);
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.12);
+  background: rgba(15, 22, 41, 0.8);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Gold glow border */

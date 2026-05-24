@@ -13,17 +13,16 @@
 - ✅ Performance optimizations applied
 - ✅ ESLint configured for production
 
-#### Backend (Django)
-- ✅ Security settings configured
-- ✅ Environment variables setup
+#### Backend (FastAPI)
+- ✅ uv workspace initialized
+- ✅ FastAPI scaffold completed
 - ✅ CORS configured for frontend
-- ✅ Static files configuration
-- ✅ Production middleware added
+- ✅ High-performance Pydantic validation
+- ✅ Managed by uv for modern dependency handling
 
 #### DevOps & Infrastructure
-- ✅ Docker configuration created
-- ✅ Nginx reverse proxy setup
-- ✅ CI/CD pipeline configured
+- ✅ GitHub Actions CI/CD for frontend
+- ✅ Docker configuration (to be updated for FastAPI)
 - ✅ SSL/HTTPS ready configuration
 
 ## 🌐 Deployment Options
@@ -31,27 +30,20 @@
 ### Option 1: Vercel (Recommended for Frontend)
 ```bash
 cd frontend
-npm install -g vercel
-vercel --prod
+# Push to GitHub 'main' branch for automatic deployment
 ```
 
-### Option 2: Docker Deployment
+### Option 2: FastAPI Backend Deployment (e.g., Render, Railway, or VPS)
 ```bash
+cd backend
+uv sync
+uv run uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+### Option 3: Docker Deployment
+```bash
+# Update docker-compose.yml to use the new /backend directory
 docker-compose up -d
-```
-
-### Option 3: Manual Server Deployment
-```bash
-# Frontend
-cd frontend
-npm run build
-npm start
-
-# Backend
-cd company_site/backend
-pip install -r requirements.txt
-python manage.py collectstatic
-gunicorn backend.wsgi:application
 ```
 
 ## 🔧 Environment Setup

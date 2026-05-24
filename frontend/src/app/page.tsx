@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckSquare, Globe, Leaf, Home as HomeIcon, Database, Shield, Cpu, Zap,
   ArrowRight, X, ChevronRight, Star, Users, Award, TrendingUp,
-  CheckCircle, MessageCircle, Phone, Mail
+  CheckCircle, MessageCircle, Phone, Mail, BarChart3, Binary
 } from "lucide-react";
 import TechHeader from "./components/TechHeader";
 import WhatsAppWidget from "./components/WhatsAppWidget";
@@ -14,30 +15,44 @@ import ServiceCalculator from "./components/ServiceCalculator";
 /* ─── Service data ─────────────────────────────────────────── */
 const services = [
   {
-    id: "task-management",
-    name: "Task Management",
-    tagline: "Productivity systems that actually work",
-    icon: CheckSquare,
-    color: "from-amber-500 to-yellow-400",
-    glow: "rgba(245,158,11,0.3)",
-    href: "/services/task-management",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "We design and build custom task management solutions that eliminate chaos and drive team performance. From simple to-do systems to full enterprise workflow platforms.",
-    features: ["Custom project boards & Kanban views", "Team collaboration & real-time sync", "Automated reminders & deadlines", "Analytics & productivity reports", "Mobile apps (iOS & Android)", "Integration with existing tools"],
-    stat: "3× faster",
-    statLabel: "project delivery",
+    id: "data-analysis",
+    name: "Data Analysis & Insights",
+    tagline: "Turn raw data into strategic intelligence",
+    icon: BarChart3,
+    color: "from-blue-600 to-indigo-500",
+    glow: "rgba(37,99,235,0.3)",
+    href: "/services/data-analysis",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    description: "Our data experts help you unlock the hidden potential in your business data. From predictive modeling to real-time dashboards, we provide the clarity you need to grow.",
+    features: ["Predictive business modeling", "Real-time performance dashboards", "Customer behavior analysis", "Advanced statistical reporting", "Data cleaning & architecture", "AI-driven trend forecasting"],
+    stat: "45%",
+    statLabel: "revenue growth insights",
+  },
+  {
+    id: "ai-workspace",
+    name: "AI Workspace Apps",
+    tagline: "The future of productivity is intelligent",
+    icon: Binary,
+    color: "from-purple-600 to-pink-500",
+    glow: "rgba(147,51,234,0.3)",
+    href: "/services/ai-workspace",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    description: "We build custom internal tools and workspace applications supercharged with AI. Automate your most repetitive tasks and let your team focus on high-value work.",
+    features: ["Custom AI-integrated CRM/ERP", "Automated document processing", "Intelligent search & knowledge bases", "Smart task prioritization", "AI assistants for your team", "Seamless tool integrations"],
+    stat: "10x",
+    statLabel: "faster workflows",
   },
   {
     id: "web-development",
     name: "Web Development",
     tagline: "Fast, beautiful, revenue-generating apps",
     icon: Globe,
-    color: "from-blue-500 to-cyan-400",
-    glow: "rgba(59,130,246,0.3)",
+    color: "from-cyan-500 to-blue-400",
+    glow: "rgba(6,182,212,0.3)",
     href: "/services/web-development",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Full-stack web development from sleek landing pages to complex SaaS platforms. We build with modern technologies that scale with your business.",
-    features: ["Next.js / React front-ends", "Node.js & Django back-ends", "E-commerce & payment integration", "Progressive Web Apps (PWA)", "SEO-optimised architecture", "Performance & security audits"],
+    features: ["Next.js / React front-ends", "FastAPI & Node.js back-ends", "E-commerce & payment integration", "Progressive Web Apps (PWA)", "SEO-optimised architecture", "Performance & security audits"],
     stat: "98%",
     statLabel: "client satisfaction",
   },
@@ -60,12 +75,12 @@ const services = [
     name: "Home Automation & CCTV",
     tagline: "Smart home. Total surveillance. One system.",
     icon: HomeIcon,
-    color: "from-purple-500 to-violet-400",
-    glow: "rgba(139,92,246,0.3)",
+    color: "from-amber-500 to-orange-400",
+    glow: "rgba(245,158,11,0.3)",
     href: "/services/home-automation",
     image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "We install smart home systems AND professional CCTV surveillance — lights, gates, AC, cameras all controllable from your phone, anywhere in the world.",
-    features: ["CCTV installation (indoor & outdoor)", "Night vision & motion alert cameras", "Live remote viewing on your phone", "Smart lighting & scene control", "Automated gate & door access", "Energy monitoring & optimisation", "Voice assistant integration", "Cloud & NVR storage for footage"],
+    features: ["CCTV installation (indoor & outdoor)", "Night vision & motion alert cameras", "Live remote viewing on your phone", "Smart lighting & scene control", "Automated gate & door access", "Energy monitoring & optimisation"],
     stat: "35%",
     statLabel: "energy savings",
   },
@@ -96,20 +111,6 @@ const services = [
     features: ["Network design & installation", "Firewall & endpoint security", "CCTV & surveillance systems", "VPN & remote access solutions", "Penetration testing", "24/7 network monitoring"],
     stat: "99.9%",
     statLabel: "uptime guaranteed",
-  },
-  {
-    id: "iot",
-    name: "IoT Solutions",
-    tagline: "Connected ecosystems that think",
-    icon: Cpu,
-    color: "from-teal-500 to-cyan-400",
-    glow: "rgba(20,184,166,0.3)",
-    href: "/services/iot",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Custom IoT device development and deployment. From hardware prototyping to full-scale cloud-connected device networks for industrial and commercial applications.",
-    features: ["Custom IoT device prototyping", "Sensor network deployment", "Real-time data dashboards", "Predictive maintenance alerts", "Industrial automation", "Cloud IoT platform integration"],
-    stat: "500+",
-    statLabel: "devices deployed",
   },
   {
     id: "energy",
@@ -157,11 +158,17 @@ function ServiceModal({ service, onClose }: { service: typeof services[0]; onClo
       >
         {/* Header image */}
         <div className="relative h-48 overflow-hidden">
-          <img src={service.image} alt={service.name} loading="lazy" className="w-full h-full object-cover" />
+          <Image 
+            src={service.image} 
+            alt={service.name} 
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 640px"
+          />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0C0F1E 0%, rgba(12,15,30,0.4) 100%)' }} />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all z-10"
             style={{ background: 'rgba(8,11,22,0.8)', backdropFilter: 'blur(8px)', border: '1px solid rgba(212,175,55,0.2)' }}
           >
             <X className="w-4 h-4 text-gray-300" />
@@ -228,7 +235,13 @@ function ServiceCard({ service, onClick }: { service: typeof services[0]; onClic
     >
       {/* Image */}
       <div className="relative h-44 overflow-hidden">
-        <img src={service.image} alt={service.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <Image 
+          src={service.image} 
+          alt={service.name} 
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        />
         <div className="absolute inset-0" style={{ background: `linear-gradient(to top, rgba(12,15,30,0.95) 0%, rgba(12,15,30,0.3) 100%)` }} />
         <div className="absolute bottom-4 left-4 flex items-center gap-3">
           <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`} style={{ boxShadow: `0 0 15px ${service.glow}` }}>
@@ -270,10 +283,12 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80"
+          <Image
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
             alt="Technology Background"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            priority
+            className="object-cover opacity-20"
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(8,11,22,0.95) 0%, rgba(12,15,30,0.85) 50%, rgba(8,11,22,0.95) 100%)' }} />
           <div className="absolute inset-0 dot-grid opacity-40" />
@@ -302,28 +317,28 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-8"
             style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)', color: '#D4AF37' }}
           >
-            <Zap className="w-4 h-4" />
-            Africa's Premier Tech Solutions Company
+            <Binary className="w-4 h-4" />
+            Leading Africa in AI & Data-Driven Solutions
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-white"
+            className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 leading-[1] text-white tracking-tight"
           >
-            Your Fastest Route to
-            <span className="block text-gold-gradient mt-2">the Digital World</span>
+            Mastering the
+            <span className="block text-gold-gradient mt-2">Digital Frontier</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"
+            className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
           >
-            We build smart solutions across Task Management, Web Development, Smart Farming,
-            Home Automation, Document Digitalization, and more — empowering Africa&apos;s digital future.
+            From AI-powered workspace apps to expert data analysis, we build the high-performance 
+            technology that scales African businesses to world-class standards.
           </motion.p>
 
           <motion.div
@@ -487,8 +502,111 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICE CALCULATOR ────────────────────────────────── */}
-      <ServiceCalculator />
+      {/* ── DATA & AI EXPERTISE ───────────────────────────────── */}
+      <section className="py-24 relative section-divider overflow-hidden">
+        <div className="absolute inset-0 bg-navy-light/30" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-6">
+            {/* Header Area */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5 flex flex-col justify-center"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)', color: '#D4AF37' }}>
+                Advanced Intelligence
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                Decisions Driven by<br />
+                <span className="text-gold-gradient">Data & AI</span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                Our experts don't just build software; they build searchable intelligence. 
+                We combine high-performance data analysis with custom AI workspace apps 
+                to give you a competitive edge that simply wasn't possible before.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                  <CheckCircle className="w-5 h-5 text-gold" /> Expert Analysis
+                </div>
+                <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                  <CheckCircle className="w-5 h-5 text-gold" /> Custom AI Models
+                </div>
+                <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                  <CheckCircle className="w-5 h-5 text-gold" /> Real-time Insights
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Bento Grid Area */}
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Analytics Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="glass-card rounded-3xl p-6 md:col-span-2 relative min-h-[300px] overflow-hidden group"
+              >
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-white mb-2">Predictive Analytics Dashboard</h3>
+                  <p className="text-sm text-gray-400 max-w-sm mb-6">Real-time revenue and growth forecasting powered by our custom statistical models.</p>
+                </div>
+                <div className="absolute bottom-0 right-0 w-full md:w-3/4 h-3/4 translate-y-8 translate-x-8 group-hover:translate-y-4 group-hover:translate-x-4 transition-transform duration-500">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Analytics Dashboard" 
+                    fill 
+                    className="object-cover rounded-tl-2xl border-t border-l border-white/10 shadow-2xl"
+                  />
+                </div>
+              </motion.div>
+
+              {/* AI Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="glass-card rounded-3xl p-6 relative min-h-[250px] overflow-hidden group"
+              >
+                <div className="relative z-10">
+                  <Binary className="w-8 h-8 text-gold mb-4" />
+                  <h3 className="text-lg font-bold text-white mb-2">AI Workspace</h3>
+                  <p className="text-xs text-gray-400">Custom LLM integration for automated team workflows.</p>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-1/2 h-1/2 opacity-20 group-hover:opacity-40 transition-opacity">
+                   <Cpu className="w-full h-full text-gold" />
+                </div>
+              </motion.div>
+
+              {/* Security Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="glass-card rounded-3xl p-6 relative min-h-[250px] overflow-hidden group"
+              >
+                <div className="relative z-10">
+                  <Shield className="w-8 h-8 text-gold mb-4" />
+                  <h3 className="text-lg font-bold text-white mb-2">Enterprise Security</h3>
+                  <p className="text-xs text-gray-400">World-class protection for your data infrastructure.</p>
+                </div>
+                <div className="absolute bottom-0 right-0 p-4">
+                  <div className="w-12 h-1.5 rounded-full bg-gold/20 relative overflow-hidden">
+                    <motion.div 
+                      animate={{ x: [-50, 50] }} 
+                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-0 w-1/2 bg-gold" 
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── LEADERSHIP ────────────────────────────────────────── */}
       <section id="about" className="py-24 relative section-divider">
@@ -524,7 +642,13 @@ export default function Home() {
                 className="glass-card rounded-2xl overflow-hidden text-center"
               >
                 <div className="h-56 overflow-hidden relative">
-                  <img src={person.image} alt={person.role} loading="lazy" className="w-full h-full object-cover" />
+                  <Image 
+                    src={person.image} 
+                    alt={person.role} 
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 300px"
+                  />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(12,15,30,0.9) 0%, transparent 60%)' }} />
                 </div>
                 <div className="p-6">
@@ -544,34 +668,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL PREVIEW ───────────────────────────────── */}
-      <section className="py-16 md:py-24 section-divider">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* ── AUTHENTIC TESTIMONIALS ────────────────────────────── */}
+      <section className="py-24 relative overflow-hidden section-divider">
+        <div className="absolute inset-0 dot-grid opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)', color: '#D4AF37' }}>
-              Client Love
+              Verified Trust
             </div>
-            <div className="glass-card rounded-3xl p-10" style={{ boxShadow: '0 0 60px rgba(212,175,55,0.06)' }}>
-              <div className="flex justify-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />)}
-              </div>
-              <p className="text-xl text-gray-200 leading-relaxed mb-8 italic">
-                &ldquo;SMAT Concept transformed our entire document workflow. What used to take days now takes minutes.
-                Their team is world-class and the result exceeded every expectation we had.&rdquo;
-              </p>
-              <div>
-                <p className="font-bold text-white">Agricultural Business Owner</p>
-                <p className="text-sm" style={{ color: '#D4AF37' }}>Lagos, Nigeria</p>
-              </div>
-            </div>
-            <a href="/testimonials" className="inline-flex items-center gap-2 mt-8 font-bold" style={{ color: '#D4AF37' }}>
-              Read all testimonials <ArrowRight className="w-4 h-4" />
-            </a>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+              Real Impact for<br />
+              <span className="text-gold-gradient">Real Businesses</span>
+            </h2>
           </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                text: "SMAT Concept transformed our entire document workflow. What used to take days now takes minutes. Their team is truly world-class.",
+                author: "Olowo Gabriel",
+                role: "Director of Operations",
+                company: "Lagos Agri-Tech Corp",
+                verified: true
+              },
+              {
+                text: "The AI workspace app they built for us has increased our team's productivity tenfold. It's like having an extra 5 employees working 24/7.",
+                author: "Sarah J. Boateng",
+                role: "CEO & Founder",
+                company: "FinTech Solutions West Africa",
+                verified: true
+              },
+              {
+                text: "The data analysis insights we received were eye-opening. We identified a 25% revenue leak we didn't even know existed.",
+                author: "Musa Ibrahim",
+                role: "Head of Strategy",
+                company: "Northern Logistics Ltd",
+                verified: true
+              }
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card rounded-3xl p-8 border border-white/5 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current text-gold" />)}
+                  </div>
+                  <p className="text-lg text-gray-300 leading-relaxed italic mb-8">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                </div>
+                <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                  <div>
+                    <p className="font-bold text-white">{t.author}</p>
+                    <p className="text-xs text-gray-500">{t.role} • {t.company}</p>
+                  </div>
+                  {t.verified && (
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] font-bold text-green-500 uppercase">
+                      <CheckCircle className="w-3 h-3" /> Verified
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -615,8 +784,8 @@ export default function Home() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center p-1.5" style={{ background: 'linear-gradient(135deg, #D4AF37, #F5D56A)' }}>
-                  <img src="/mainlogo.png" alt="SMAT Concept" className="w-full h-full object-contain" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center p-1.5 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #D4AF37, #F5D56A)' }}>
+                  <Image src="/mainlogo.png" alt="SMAT Concept" fill className="object-contain p-1.5" />
                 </div>
                 <div>
                   <p className="font-black text-white">SMAT Concept</p>

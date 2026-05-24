@@ -1,57 +1,55 @@
-<<<<<<< HEAD
-# SMAT Concept & Innovative Solutions
+# SMAT Concept & Innovative Solutions Ltd.
 
-> Your Fastest Route to the Digital World
+> Mastering the Digital Frontier: Leading Africa in AI & Data-Driven Solutions
 
 ## 🚀 Project Overview
 
-Modern, interactive website for SMAT Concept & Innovative Solutions Ltd - a leading technology company specializing in Data Digitalization, Smart Agriculture, Networking & Security, IoT Devices, and Energy Solutions across Africa.
+A world-class technology platform for SMAT Concept & Innovative Solutions Ltd. This project showcases our expertise in building high-performance workspace apps with AI capabilities, expert data analysis, and modern digital infrastructure.
 
-## ✨ Features
+## ✨ Core Services
 
-### 🎯 Interactive Service Demos
-- **Data Digitalization**: Live OCR simulation with progress tracking
-- **Smart Agriculture**: Real-time IoT dashboard with sensor data visualization
-- **Networking & Security**: Network monitoring with animated indicators
-- **Energy Solutions**: Solar power monitoring with dynamic output display
-- **IoT Devices**: Device status monitoring with live indicators
-
-### 🎨 Modern UI/UX
-- Smooth scroll-triggered animations using Framer Motion
-- Responsive design with Tailwind CSS
-- Interactive hover effects and micro-interactions
-- Animated statistics counters
-- Professional gradient backgrounds
-
-### 💬 Customer Engagement
-- Floating WhatsApp widget for instant communication
-- Interactive project cost calculator
-- Contact forms and service inquiries
+- **AI Workspace Apps**: Custom internal tools supercharged with LLM integration and intelligent automation.
+- **Data Analysis & Insights**: Turning raw business data into strategic, actionable intelligence through predictive modeling.
+- **Web Development**: Fast, beautiful, and revenue-generating applications built with Next.js and FastAPI.
+- **Smart Farming**: IoT-powered precision agriculture solutions for the modern African farm.
+- **Digital Infrastructure**: Enterprise-grade networking, security, and document digitalization.
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 15** - React framework with App Router
-- **React 19** - Latest React features
-- **TypeScript** - Type-safe development
-- **Tailwind CSS 4** - Utility-first styling
-- **Framer Motion** - Smooth animations
-- **Recharts** - Data visualization
-- **Lucide React** - Modern icons
+- **Next.js (App Router)** - React framework for the modern web.
+- **TypeScript** - For robust, type-safe development.
+- **Tailwind CSS** - Utility-first styling for a premium aesthetic.
+- **Framer Motion** - Cinematic micro-interactions and animations.
+- **Next Font (Inter)** - Premium typography for a world-class feel.
 
 ### Backend
-- **Django 5.2** - Python web framework
-- **SQLite** - Development database
-- **Django REST Framework** (planned)
+- **FastAPI** - High-performance Python backend framework.
+- **uv** - Ultra-fast Python package and project manager.
+- **Pydantic** - Robust data validation.
+
+## 📁 Project Structure
+
+```
+.
+├── frontend/             # Next.js application
+│   ├── src/app/          # App Router pages and components
+│   └── public/           # Optimized assets
+├── backend/              # FastAPI application (Managed by uv)
+│   ├── main.py           # API entry point
+│   └── pyproject.toml    # Modern Python dependencies
+├── company_site/         # (Legacy) Django backend
+└── README.md
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
-- Python 3.8+
-- Git
+- **Node.js 18+**
+- **Python 3.11+**
+- **uv** (Install via `curl -LsSf https://astral.sh/uv/install.sh | sh`)
 
-### Quick Start (Development)
+### Development Setup
 
 1. **Clone the repository**
    ```bash
@@ -68,97 +66,17 @@ Modern, interactive website for SMAT Concept & Innovative Solutions Ltd - a lead
 
 3. **Backend Setup**
    ```bash
-   cd company_site/backend
-   pip install -r requirements.txt
-   python manage.py migrate
-   python manage.py runserver
+   cd backend
+   uv sync
+   uv run python main.py
    ```
 
-4. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend: http://localhost:8000
+## 🚢 Deployment
 
-### Production Deployment
+The frontend is automatically deployed to **Vercel** upon pushing to the `main` branch via GitHub Actions.
 
-**Status: ✅ PRODUCTION READY**
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment instructions.
-
-**Quick Deploy to Vercel:**
-```bash
-cd frontend
-npm install -g vercel
-vercel --prod
-```
-
-## 📁 Project Structure
-
-```
-myproject2/
-├── frontend/                 # Next.js application
-│   ├── src/
-│   │   └── app/
-│   │       ├── components/   # Reusable components
-│   │       ├── page.tsx      # Main landing page
-│   │       └── layout.tsx    # App layout
-│   ├── public/              # Static assets
-│   └── package.json
-├── company_site/            # Django backend
-│   ├── backend/
-│   └── manage.py
-└── README.md
-```
-
-## 🎨 Key Components
-
-- **ServiceDemos.tsx** - Interactive service demonstrations
-- **AnimatedStats.tsx** - Animated statistics counters
-- **WhatsAppWidget.tsx** - Floating chat widget
-- **ServiceCalculator.tsx** - Project cost estimator
-
-## 🌟 Roadmap
-
-### Phase 1 ✅ (Completed)
-- Interactive service demos
-- Smooth animations
-- Responsive design
-- WhatsApp integration
-
-### Phase 2 🚧 (In Progress)
-- Real-time dashboard
-- User authentication
-- Payment integration
-- Multi-language support
-
-### Phase 3 📋 (Planned)
-- PWA capabilities
-- Advanced analytics
-- CRM integration
-- Mobile app
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Contact
-
-**SMAT Concept & Innovative Solutions Ltd.**
-- 📱 WhatsApp: +234 810 123 5007
-- 📧 Email: info@smatconcept.com
-- 🌐 Website: [Coming Soon]
-
-## 📄 License
-
-This project is proprietary software owned by SMAT Concept & Innovative Solutions Ltd.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for full production configuration details.
 
 ---
 
-*Built with ❤️ for Africa's digital transformation*
-=======
-# smat-concept-website
-company wbsite
->>>>>>> e2880c8de0e1dc72ef35c5bd221593786a888a61
+*Built for Africa's digital future by SMAT Concept & Innovative Solutions Ltd.*

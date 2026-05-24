@@ -1,5 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://smatconcept.com"),
@@ -18,8 +21,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-[#080B16] text-gray-100 antialiased">{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body className="bg-[#080B16] text-gray-100 antialiased font-sans">{children}</body>
     </html>
   );
 }

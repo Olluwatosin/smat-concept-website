@@ -5,17 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Database, Leaf, Shield, Cpu, Zap, Home, Globe, CheckSquare,
   Menu, X, ChevronDown, ArrowRight, Phone, Mail, Users, BookOpen,
-  DollarSign, Star, Heart, Briefcase
+  DollarSign, Star, Heart, Briefcase, BarChart3, Binary
 } from "lucide-react";
+import Image from "next/image";
 
 const services = [
-  { id: "task-management", name: "Task Management", icon: CheckSquare, description: "Productivity systems & workflow tools", color: "from-amber-500 to-yellow-400", href: "/services/task-management" },
-  { id: "web-development", name: "Web Development", icon: Globe, description: "Full-stack web apps & platforms", color: "from-blue-500 to-cyan-400", href: "/services/web-development" },
+  { id: "data-analysis", name: "Data Analysis", icon: BarChart3, description: "Expert insights & visualization", color: "from-blue-600 to-indigo-500", href: "/services/data-analysis" },
+  { id: "ai-workspace", name: "AI Workspace Apps", icon: Binary, description: "Intelligent automation tools", color: "from-purple-600 to-pink-500", href: "/services/ai-workspace" },
+  { id: "web-development", name: "Web Development", icon: Globe, description: "Full-stack web apps & platforms", color: "from-cyan-500 to-blue-400", href: "/services/web-development" },
   { id: "smart-farming", name: "Smart Farming", icon: Leaf, description: "IoT-powered agriculture revolution", color: "from-green-500 to-emerald-400", href: "/services/smart-farming" },
-  { id: "home-automation", name: "Home Automation & CCTV", icon: Home, description: "Smart home systems & surveillance", color: "from-purple-500 to-violet-400", href: "/services/home-automation" },
+  { id: "home-automation", name: "Home Automation & CCTV", icon: Home, description: "Smart home systems & surveillance", color: "from-amber-500 to-orange-400", href: "/services/home-automation" },
   { id: "document-digitalization", name: "Document Digitalization", icon: Database, description: "Paper to digital intelligence", color: "from-rose-500 to-pink-400", href: "/services/document-digitalization" },
   { id: "networking", name: "Networking & Security", icon: Shield, description: "Enterprise-grade protection", color: "from-indigo-500 to-blue-400", href: "/services/networking" },
-  { id: "iot", name: "IoT Solutions", icon: Cpu, description: "Connected device ecosystems", color: "from-teal-500 to-cyan-400", href: "/services/iot" },
   { id: "energy", name: "Energy Solutions", icon: Zap, description: "Sustainable power systems", color: "from-orange-500 to-amber-400", href: "/services/energy" },
 ];
 
@@ -70,7 +71,7 @@ export default function TechHeader() {
                   animate={{ boxShadow: ['0 0 20px rgba(212,175,55,0.3)', '0 0 40px rgba(212,175,55,0.6)', '0 0 20px rgba(212,175,55,0.3)'] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <img src="/mainlogo.png" alt="SMAT Concept Logo" className="w-8 h-8 lg:w-10 lg:h-10 object-contain relative z-10" />
+                  <Image src="/mainlogo.png" alt="SMAT Concept Logo" fill className="object-contain p-2 relative z-10" />
                 </motion.div>
               </div>
               <div>
