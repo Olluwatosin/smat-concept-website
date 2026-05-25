@@ -20,19 +20,19 @@ const team = [
   {
     name: "Salami Muhydeen.O",
     role: "CEO & CTO",
-    photo: "/ceo.jpg",
-    bio: "Visionary technologist and entrepreneur with over a decade of experience building digital infrastructure across Africa. Salami founded SMAT Concept in 2019 with a singular conviction: that African businesses deserve world-class technology solutions built right here on the continent.",
+    photo: "/ceo.png",
+    bio: "Nigerian technology entrepreneur and self-taught developer focused on building practical digital solutions like RentInDex and digital verification platforms. Salami founded SMAT Concept in 2024 to create world-class, African-built technology.",
   },
   {
     name: "Alaketu A Muhydeen",
     role: "Data Analyst & COO",
-    photo: "/cto.jpg",
+    photo: "/coo.png",
     bio: "Expert in data strategy and operational excellence. Alaketu leads the data analysis initiatives and ensures that SMAT Concept's internal operations and client projects are delivered with maximum efficiency and strategic insight.",
   },
   {
     name: "Olabamiji Tolase",
     role: "Customer Service Rep",
-    photo: "/Hoo.jpg",
+    photo: "/customer_service.png",
     bio: "The face of SMAT Concept's client relations. Olabamiji is dedicated to providing exceptional customer support and ensuring that every partner's voice is heard and their needs are met with professionalism and care.",
   },
 ];
@@ -55,10 +55,10 @@ const timeline = [
 ];
 
 const stats = [
-  { icon: Briefcase, value: "150+", label: "Projects Delivered" },
-  { icon: Users, value: "50+", label: "Happy Clients" },
-  { icon: Clock, value: "5+", label: "Years of Excellence" },
-  { icon: Map, value: "8", label: "Service Areas" },
+  { icon: Briefcase, value: "Verified", label: "Project Success" },
+  { icon: Users, value: "Premium", label: "Client Partners" },
+  { icon: Clock, value: "24/7", label: "Dedicated Support" },
+  { icon: Map, value: "Global", label: "Standard Delivery" },
 ];
 
 export default function AboutPage() {
@@ -100,8 +100,9 @@ export default function AboutPage() {
               <div className="absolute -inset-1 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.3), transparent)" }} />
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-square lg:aspect-[4/5] max-h-[600px]">
                 <Image
-                  src="/ceo.jpg"
-                  alt="Salami Muhydeen — Founder & CEO"
+                  src="/ceo.png"
+                  alt="Salami Muhydeen.O — CEO & CTO"
+
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"

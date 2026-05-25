@@ -549,13 +549,13 @@ export default function Home() {
                 className="glass-card rounded-3xl p-6 md:col-span-2 relative min-h-[300px] overflow-hidden group"
               >
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-2">Predictive Analytics Dashboard</h3>
-                  <p className="text-sm text-gray-400 max-w-sm mb-6">Real-time revenue and growth forecasting powered by our custom statistical models.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Real-time Operational Analytics</h3>
+                  <p className="text-sm text-gray-400 max-w-sm mb-6">Custom dashboard built for TheRecord Consults, featuring case tracking and SLA monitoring.</p>
                 </div>
                 <div className="absolute bottom-0 right-0 w-full md:w-3/4 h-3/4 translate-y-8 translate-x-8 group-hover:translate-y-4 group-hover:translate-x-4 transition-transform duration-500">
                   <Image 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Analytics Dashboard" 
+                    src="/real_analytics1.png" 
+                    alt="TheRecord Consults Dashboard" 
                     fill 
                     className="object-cover rounded-tl-2xl border-t border-l border-white/10 shadow-2xl"
                   />
@@ -629,9 +629,24 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Salami Muhydeen.O", role: "CEO & CTO", image: "/ceo.jpg", bio: "Visionary leader driving technical innovation and ensuring every solution is built to world-class standards." },
-              { name: "Alaketu A Muhydeen", role: "Data Analyst & COO", image: "/cto.jpg", bio: "Expert in data strategy and operational excellence, ensuring seamless project delivery." },
-              { name: "Olabamiji Tolase", role: "Customer Service Rep", image: "/Hoo.jpg", bio: "Dedicated to client success and providing world-class support to all our partners." },
+              { 
+                name: "Salami Muhydeen.O", 
+                role: "CEO & CTO", 
+                image: "/ceo.png", 
+                bio: "Nigerian technology entrepreneur focused on building practical digital solutions like RentInDex and digital verification platforms." 
+              },
+              { 
+                name: "Alaketu A Muhydeen", 
+                role: "Data Analyst & COO", 
+                image: "/coo.png", 
+                bio: "Expert in data strategy and operational excellence, ensuring seamless project delivery." 
+              },
+              { 
+                name: "Olabamiji Tolase", 
+                role: "Customer Service Rep", 
+                image: "/customer_service.png", 
+                bio: "Dedicated to client success and providing world-class support to all our partners." 
+              },
             ].map((person, i) => (
               <motion.div
                 key={person.role}
@@ -690,10 +705,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                text: "SMAT Concept transformed our entire document workflow. What used to take days now takes minutes. Their team is truly world-class.",
-                author: "Olowo Gabriel",
-                role: "Director of Operations",
-                company: "Lagos Agri-Tech Corp",
+                text: "SMAT Concept helped transform our workflow from manual documentation and spreadsheets into a centralized digital workspace. The custom dashboard introduced real-time case tracking and operational analytics, allowing for faster, informed decisions.",
+                author: "Management Team",
+                role: "Operations Division",
+                company: "TheRecord Consults",
                 verified: true
               },
               {
