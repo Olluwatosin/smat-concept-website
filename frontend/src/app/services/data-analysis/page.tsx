@@ -80,7 +80,38 @@ export default function DataAnalysisPage() {
         </div>
       </section>
 
-      {/* OVERVIEW */}
+      {/* DASHBOARD SHOWCASE (Moved UP) */}
+      <section className="section-divider py-24 px-4 bg-navy-light/10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Built for <span className="text-gold-gradient">Real Impact</span></h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">A showcase of the actual dashboards and reporting systems we've deployed for our partners.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[1, 2, 3, 4].map((num) => (
+              <motion.div 
+                key={num} 
+                {...fadeUp} 
+                transition={{ delay: num * 0.1 }}
+                className="glass-card rounded-3xl overflow-hidden aspect-video relative group"
+              >
+                <Image 
+                  src={`/real_analytics${num}.JPG`} 
+                  alt={`Dashboard Showcase ${num}`} 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                  <p className="text-white font-bold text-lg">Deployable Insight Dashboard 0{num}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OVERVIEW (Moved DOWN) */}
       <section className="section-divider py-24 max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div {...fadeUp}>
@@ -115,37 +146,6 @@ export default function DataAnalysisPage() {
                   <Check size={20} className="text-gold" />
                 </div>
                 <span className="text-gray-200 font-semibold leading-tight">{f}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DASHBOARD SHOWCASE (New Section) */}
-      <section className="section-divider py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Built for <span className="text-gold-gradient">Real Impact</span></h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">A showcase of the actual dashboards and reporting systems we've deployed for our partners.</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[1, 2, 3, 4].map((num) => (
-              <motion.div 
-                key={num} 
-                {...fadeUp} 
-                transition={{ delay: num * 0.1 }}
-                className="glass-card rounded-3xl overflow-hidden aspect-video relative group"
-              >
-                <Image 
-                  src={`/real_analytics${num}.JPG`} 
-                  alt={`Dashboard Showcase ${num}`} 
-                  fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                  <p className="text-white font-bold text-lg">Deployable Insight Dashboard 0{num}</p>
-                </div>
               </motion.div>
             ))}
           </div>
