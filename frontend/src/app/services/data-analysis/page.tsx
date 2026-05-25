@@ -97,8 +97,8 @@ export default function DataAnalysisPage() {
           <motion.div {...fadeUp} transition={{ delay: 0.2 }} className="glass-card rounded-3xl p-8 relative overflow-hidden aspect-video flex items-center justify-center">
              <LineChart size={120} className="text-gold/20 absolute -bottom-10 -right-10" />
              <div className="text-center relative z-10">
-                <div className="text-6xl font-black text-gold-gradient mb-2">25% +</div>
-                <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">Average Revenue Improvement Identified</p>
+                <div className="text-6xl font-black text-gold-gradient mb-2">Significant</div>
+                <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">Revenue Improvement Potential Identified</p>
              </div>
           </motion.div>
         </div>

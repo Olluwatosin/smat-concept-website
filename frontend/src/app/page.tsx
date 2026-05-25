@@ -25,7 +25,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     description: "Our data experts help you unlock the hidden potential in your business data. From predictive modeling to real-time dashboards, we provide the clarity you need to grow.",
     features: ["Predictive business modeling", "Real-time performance dashboards", "Customer behavior analysis", "Advanced statistical reporting", "Data cleaning & architecture", "AI-driven trend forecasting"],
-    stat: "45%",
+    stat: "Proven",
     statLabel: "revenue growth insights",
   },
   {
@@ -39,8 +39,8 @@ const services = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
     description: "We build custom internal tools and workspace applications supercharged with AI. Automate your most repetitive tasks and let your team focus on high-value work.",
     features: ["Custom AI-integrated CRM/ERP", "Automated document processing", "Intelligent search & knowledge bases", "Smart task prioritization", "AI assistants for your team", "Seamless tool integrations"],
-    stat: "10x",
-    statLabel: "faster workflows",
+    stat: "Verified",
+    statLabel: "workflow acceleration",
   },
   {
     id: "task-management",
@@ -53,8 +53,8 @@ const services = [
     image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "We design and build custom task management solutions like Veriflow (for verification companies) and CivicDesk. We eliminate chaos and drive team performance with enterprise-grade workflow platforms.",
     features: ["Custom project boards & Kanban views", "Team collaboration & real-time sync", "Automated reminders & deadlines", "Analytics & productivity reports", "Mobile app accessibility", "Seamless team onboarding"],
-    stat: "3× faster",
-    statLabel: "project delivery",
+    stat: "Proven",
+    statLabel: "project efficiency",
   },
   {
     id: "web-development",
@@ -67,8 +67,8 @@ const services = [
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "High-performance web development from sleek landing pages to complex SaaS platforms. We build custom architectures that scale with your business goals.",
     features: ["Custom frontend development", "Robust backend API architecture", "E-commerce & payment integration", "Progressive Web Apps (PWA)", "SEO-optimised architecture", "Performance & security audits"],
-    stat: "98%",
-    statLabel: "client satisfaction",
+    stat: "World-Class",
+    statLabel: "development standards",
   },
   {
     id: "smart-farming",
@@ -81,8 +81,8 @@ const services = [
     image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Transform your farm with precision agriculture technology. Our smart farming solutions combine IoT sensors, real-time monitoring, and data analytics to maximise your yield.",
     features: ["Soil moisture & nutrient sensors", "Automated irrigation systems", "Greenhouse climate control", "Crop health monitoring (AI-powered)", "Livestock tracking systems", "Farm management dashboards"],
-    stat: "40%",
-    statLabel: "yield increase",
+    stat: "Verified",
+    statLabel: "yield optimization",
   },
   {
     id: "home-automation",
@@ -95,8 +95,8 @@ const services = [
     image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "We install smart home systems AND professional CCTV surveillance — lights, gates, AC, cameras all controllable from your phone, anywhere in the world.",
     features: ["CCTV installation (indoor & outdoor)", "Night vision & motion alert cameras", "Live remote viewing on your phone", "Smart lighting & scene control", "Automated gate & door access", "Energy monitoring & optimisation"],
-    stat: "35%",
-    statLabel: "energy savings",
+    stat: "Proven",
+    statLabel: "energy efficiency",
   },
   {
     id: "document-digitalization",
@@ -109,8 +109,22 @@ const services = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Eliminate paper chaos. We scan, classify, extract, and organise your physical documents into searchable digital systems that teams can actually use.",
     features: ["High-volume document scanning", "OCR & intelligent data extraction", "Automated document classification", "Secure cloud storage & backup", "Full-text search across archives", "Compliance & audit trail"],
-    stat: "99%",
+    stat: "Verified",
     statLabel: "accuracy rate",
+  },
+  {
+    id: "networking",
+    name: "Networking & Security",
+    tagline: "Enterprise-grade protection",
+    icon: Shield,
+    color: "from-indigo-500 to-blue-400",
+    glow: "rgba(99,102,241,0.3)",
+    href: "/services/networking",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description: "Comprehensive network infrastructure design, installation, and security solutions. We protect your business from threats while keeping your team connected.",
+    features: ["Network design & installation", "Firewall & endpoint security", "CCTV & surveillance systems", "VPN & remote access solutions", "Penetration testing", "24/7 network monitoring"],
+    stat: "World-Class",
+    statLabel: "uptime standards",
   },
   {
     id: "energy",
@@ -123,16 +137,16 @@ const services = [
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Solar installations, battery storage, smart inverters, and energy management systems. End grid dependency with clean, reliable power for homes and businesses.",
     features: ["Solar panel installation", "Battery storage systems", "Smart inverter setup", "Energy monitoring dashboards", "Generator integration & ATS", "Maintenance & warranties"],
-    stat: "60%",
+    stat: "Proven",
     statLabel: "cost reduction",
   },
 ];
 
 const stats = [
-  { value: "150+", label: "Projects Delivered", icon: Award },
-  { value: "50+", label: "Happy Clients", icon: Users },
-  { value: "5+", label: "Years of Excellence", icon: TrendingUp },
-  { value: "24/7", label: "Support Available", icon: Star },
+  { value: "Verified", label: "Project Excellence", icon: Award },
+  { value: "Premium", label: "Business Partners", icon: Users },
+  { value: "Proven", label: "Technical Insight", icon: TrendingUp },
+  { value: "24/7", label: "Expert Support", icon: Star },
 ];
 
 /* ─── Service Modal ─────────────────────────────────────────── */
@@ -719,7 +733,7 @@ export default function Home() {
                 verified: true
               },
               {
-                text: "The data analysis insights we received were eye-opening. We identified a 25% revenue leak we didn't even know existed.",
+                text: "The data analysis insights we received were eye-opening. We identified significant revenue leaks and operational inefficiencies we didn't even know existed.",
                 author: "Musa Ibrahim",
                 role: "Head of Strategy",
                 company: "Northern Logistics Ltd",

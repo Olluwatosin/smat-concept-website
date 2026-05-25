@@ -113,12 +113,12 @@ export default function AboutPage() {
             </motion.div>
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }}>
               <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#D4AF37" }}>Meet the Founder</p>
-              <h2 className="text-4xl font-bold text-white mb-2">Salami Muhydeen</h2>
-              <p className="text-lg mb-6" style={{ color: "#D4AF37" }}>Founder & Chief Executive Officer</p>
+              <h2 className="text-4xl font-bold text-white mb-2">Salami Muhydeen.O</h2>
+              <p className="text-lg mb-6" style={{ color: "#D4AF37" }}>Founder & CEO / CTO</p>
               <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>Muhydeen is a self-taught software engineer turned entrepreneur who grew up witnessing the friction that poor technology infrastructure caused for African businesses — from manual record-keeping to unreliable power and the constant search for affordable digital tools.</p>
-                <p>Armed with deep technical expertise spanning web development, IoT, and enterprise systems, he built SMAT Concept from a one-person consultancy in 2019 into a multi-disciplinary technology company serving clients across West and East Africa.</p>
-                <p>His leadership philosophy centres on empathy, craftsmanship, and an unshakeable belief that homegrown African tech solutions, when built right, can compete and win on the global stage.</p>
+                <p>Salami Muhydeen is a Nigerian technology entrepreneur and self-taught developer focused on building practical digital solutions for African businesses and everyday challenges.</p>
+                <p>In 2024, he founded SMAT Concept & Innovative Solutions, a technology company working across AI integration, digitization, smart systems, data analysis, and web technologies — developing platforms such as RentInDex and digital verification solutions that improve transparency, accessibility, and operational efficiency.</p>
+                <p>Driven by a strong belief that African-built technology can compete globally when built right, he is committed to creating scalable solutions that solve real problems and deliver meaningful impact across Africa.</p>
               </div>
             </motion.div>
           </div>

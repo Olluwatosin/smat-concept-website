@@ -37,9 +37,9 @@ const steps = [
 ];
 
 const benefits = [
-  { icon: Sparkles, title: "10x Productivity", desc: "Automate 80% of repetitive administrative work, allowing your team to focus on high-impact strategy." },
-  { icon: Bot, title: "Consistent Quality", desc: "AI doesn't get tired. Ensure every customer interaction and document process meets your exact standards." },
-  { icon: Zap, title: "Instant Scaling", desc: "Handle 1,000x the volume without increasing your headcount. AI scales with your ambition." },
+  { icon: Sparkles, title: "Massive Productivity", desc: "Automate repetitive administrative work, allowing your team to focus on high-impact strategy." },
+  { icon: Bot, title: "Consistent Quality", desc: "Ensure every customer interaction and document process meets your exact standards with AI precision." },
+  { icon: Zap, title: "Rapid Scaling", desc: "Handle increased volume without proportional headcount growth. AI scales with your ambition." },
 ];
 
 export default function AIWorkspacePage() {
@@ -97,7 +97,7 @@ export default function AIWorkspacePage() {
           <motion.div {...fadeUp} transition={{ delay: 0.2 }} className="glass-card rounded-3xl p-8 relative overflow-hidden aspect-video flex items-center justify-center">
              <Bot size={120} className="text-gold/20 absolute -bottom-10 -right-10" />
              <div className="text-center relative z-10">
-                <div className="text-6xl font-black text-gold-gradient mb-2">80%</div>
+                <div className="text-6xl font-black text-gold-gradient mb-2">Proven</div>
                 <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">Reduction in Manual Task Time</p>
              </div>
           </motion.div>
