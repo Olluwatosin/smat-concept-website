@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Clock, ArrowRight, Search, Tag } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Image from "next/image";
 
 const categories = [
   "All",
@@ -240,10 +241,13 @@ export default function BlogPage() {
           >
             {/* Image */}
             <div className="relative h-72 lg:h-auto overflow-hidden">
-              <img
+              <Image
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
               <div
                 className="absolute inset-0"
@@ -372,11 +376,12 @@ export default function BlogPage() {
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={article.image}
                       alt={article.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                     <div
                       className="absolute inset-0"

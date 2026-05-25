@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -250,14 +251,15 @@ export default function GoodwillPage() {
                 }}
               />
               <div
-                className="rounded-3xl overflow-hidden"
+                className="rounded-3xl overflow-hidden relative h-[460px]"
                 style={{ border: "1px solid rgba(212,175,55,0.2)" }}
               >
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
                   alt="Community empowerment through technology"
-                  loading="lazy"
-                  className="w-full h-[460px] object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div
                   className="absolute inset-0 rounded-3xl pointer-events-none"

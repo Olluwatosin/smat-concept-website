@@ -6,6 +6,7 @@ import { ArrowRight, Tag, ExternalLink, Layers, Star } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
 import Link from "next/link";
+import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -20,19 +21,19 @@ const CATEGORIES: Category[] = ["All", "Task Management", "Web Dev", "Smart Farm
 const projects = [
   {
     id: 1,
-    name: "SMAT Task Flow",
+    name: "Veriflow",
     category: "Task Management" as Category,
-    description: "A full-featured task and project management platform for a Lagos-based NGO, replacing spreadsheets with custom Kanban workflows and automated reporting.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
+    description: "A custom verification and audit platform built for a major verification company, streamlining field agent workflows and real-time reporting.",
+    tech: ["Next.js", "FastAPI", "PostgreSQL", "Redis"],
     image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80",
     featured: true,
   },
   {
     id: 2,
-    name: "OpsDesk Pro",
+    name: "CivicDesk",
     category: "Task Management" as Category,
-    description: "Internal operations management tool for an Abuja logistics company — ticket system, SLA tracking, and team performance dashboards.",
-    tech: ["React", "Express", "MongoDB", "Socket.io"],
+    description: "A robust public sector data management and team collaboration portal, designed for operational efficiency across government agencies.",
+    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
     featured: false,
   },
@@ -184,8 +185,14 @@ export default function PortfolioPage() {
               className="glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-0"
               style={{ border: "1px solid rgba(212,175,55,0.3)", boxShadow: "0 0 60px rgba(212,175,55,0.08)" }}>
               <div className="relative h-72 md:h-auto overflow-hidden">
-                <img src={featuredProject.image} alt={featuredProject.name} loading="lazy"
-                  className="w-full h-full object-cover" />
+                <Image 
+                  src={featuredProject.image} 
+                  alt={featuredProject.name} 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent, rgba(8,11,22,0.6))" }} />
               </div>
               <div className="p-8 md:p-10 flex flex-col justify-center">
@@ -239,8 +246,13 @@ export default function PortfolioPage() {
                     exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.35, delay: i * 0.05 }}
                     className="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col transition-all duration-300 group">
                     <div className="relative h-48 overflow-hidden">
-                      <img src={project.image} alt={project.name} loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <Image 
+                        src={project.image} 
+                        alt={project.name} 
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
                       <div className="absolute top-3 left-3">
                         <span className="text-xs font-bold px-2 py-1 rounded-full"
                           style={{ background: "rgba(8,11,22,0.85)", color: "#D4AF37", border: "1px solid rgba(212,175,55,0.3)" }}>

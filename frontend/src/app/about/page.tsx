@@ -8,6 +8,7 @@ import {
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
 import Link from "next/link";
+import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -97,13 +98,17 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative">
               <div className="absolute -inset-1 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.3), transparent)" }} />
-              <img
-                src="/ceo.jpg"
-                alt="Salami Muhydeen — Founder & CEO"
-                loading="lazy"
-                className="relative rounded-2xl w-full object-cover max-h-[520px]"
-                style={{ border: "1px solid rgba(212,175,55,0.25)" }}
-              />
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-square lg:aspect-[4/5] max-h-[600px]">
+                <Image
+                  src="/ceo.jpg"
+                  alt="Salami Muhydeen — Founder & CEO"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
+              </div>
             </motion.div>
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }}>
               <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#D4AF37" }}>Meet the Founder</p>
@@ -129,9 +134,14 @@ export default function AboutPage() {
               {team.map((member, i) => (
                 <motion.div key={member.name} {...fadeUp} transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300">
-                  <div className="relative h-64 overflow-hidden">
-                    <img src={member.photo} alt={member.name} loading="lazy"
-                      className="w-full h-full object-cover object-top" />
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image 
+                      src={member.photo} 
+                      alt={member.name} 
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,11,22,0.9) 0%, transparent 60%)" }} />
                   </div>
                   <div className="p-6">

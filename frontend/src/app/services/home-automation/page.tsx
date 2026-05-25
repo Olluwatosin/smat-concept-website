@@ -9,6 +9,7 @@ import {
 import TechHeader from "../../components/TechHeader";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
 import Link from "next/link";
+import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -125,11 +126,12 @@ export default function HomeAutomationPage() {
 
           {/* Camera image banner */}
           <motion.div {...fadeUp} transition={{ delay: 0.15 }} className="relative rounded-2xl overflow-hidden mb-12 h-56 md:h-72">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
               alt="CCTV Security Camera Installation"
-              loading="lazy"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1200px) 100vw, 1200px"
             />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,11,22,0.85) 0%, rgba(8,11,22,0.2) 100%)" }} />
             <div className="absolute inset-0 flex items-center px-10">
