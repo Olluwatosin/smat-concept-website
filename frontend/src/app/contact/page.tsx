@@ -401,7 +401,6 @@ export default function ContactPage() {
                 {[
                   { label: "Verified Excellence", sub: "Proven industry expertise" },
                   { label: "High-Performance Solutions", sub: "Delivered across sectors" },
-...
                   { label: "24/7 Support", sub: "Always here when you need us" },
                   { label: "Expert Local Team", sub: "Deep knowledge, real results" },
                 ].map((item) => (
