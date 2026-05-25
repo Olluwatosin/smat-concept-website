@@ -11,6 +11,7 @@ import Image from "next/image";
 
 const services = [
   { id: "data-analysis", name: "Data Analysis", icon: BarChart3, description: "Expert insights & visualization", color: "from-blue-600 to-indigo-500", href: "/services/data-analysis" },
+  { id: "digital-training", name: "Digital Training", icon: Users, description: "Programming & tech classes", color: "from-indigo-600 to-violet-500", href: "/services/digital-training" },
   { id: "ai-workspace", name: "AI Workspace Apps", icon: Binary, description: "Intelligent automation tools", color: "from-purple-600 to-pink-500", href: "/services/ai-workspace" },
   { id: "web-development", name: "Web Development", icon: Globe, description: "Full-stack web apps & platforms", color: "from-cyan-500 to-blue-400", href: "/services/web-development" },
   { id: "smart-farming", name: "Smart Farming", icon: Leaf, description: "IoT-powered agriculture revolution", color: "from-green-500 to-emerald-400", href: "/services/smart-farming" },

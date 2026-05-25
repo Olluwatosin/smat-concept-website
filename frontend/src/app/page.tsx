@@ -113,6 +113,20 @@ const services = [
     statLabel: "accuracy rate",
   },
   {
+    id: "digital-training",
+    name: "Digital Training & Classes",
+    tagline: "Empowering the next generation of tech talent",
+    icon: Users,
+    color: "from-indigo-600 to-violet-500",
+    glow: "rgba(79,70,229,0.3)",
+    href: "/services/digital-training",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
+    description: "We provide intensive, practical training in programming, digital literacy, and emerging technologies. Our classes are designed to bridge the skill gap and prepare talent for the global stage.",
+    features: ["Full-stack Web Development", "Data Science & Analysis", "IoT & Hardware Programming", "Digital Literacy for Business", "One-on-one Mentorship", "Certification & Projects"],
+    stat: "Proven",
+    statLabel: "talent empowerment",
+  },
+  {
     id: "networking",
     name: "Networking & Security",
     tagline: "Enterprise-grade protection",
@@ -560,19 +574,23 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="glass-card rounded-3xl p-6 md:col-span-2 relative min-h-[300px] overflow-hidden group"
+                className="glass-card rounded-3xl p-6 md:col-span-2 relative min-h-[400px] overflow-hidden group"
               >
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-2">Real-time Operational Analytics</h3>
-                  <p className="text-sm text-gray-400 max-w-sm mb-6">Custom dashboard built for TheRecord Consults, featuring case tracking and SLA monitoring.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Interactive Operational Analytics</h3>
+                  <p className="text-sm text-gray-400 max-w-sm mb-6">Real-world dashboards built for logistics and verification partners, featuring real-time tracking.</p>
                 </div>
-                <div className="absolute bottom-0 right-0 w-full md:w-3/4 h-3/4 translate-y-8 translate-x-8 group-hover:translate-y-4 group-hover:translate-x-4 transition-transform duration-500">
-                  <Image 
-                    src="/real_analytics1.png" 
-                    alt="TheRecord Consults Dashboard" 
-                    fill 
-                    className="object-cover rounded-tl-2xl border-t border-l border-white/10 shadow-2xl"
-                  />
+                <div className="absolute bottom-0 right-0 w-full h-2/3 flex gap-4 translate-y-4 translate-x-4">
+                  {[1, 2].map((num) => (
+                    <div key={num} className="relative w-full h-full group-hover:-translate-y-4 transition-transform duration-700" style={{ transitionDelay: `${num * 100}ms` }}>
+                      <Image 
+                        src={`/real_analytics${num}.JPG`} 
+                        alt={`Dashboard ${num}`} 
+                        fill 
+                        className="object-cover rounded-tl-2xl border-t border-l border-white/10 shadow-2xl"
+                      />
+                    </div>
+                  ))}
                 </div>
               </motion.div>
 
@@ -646,19 +664,19 @@ export default function Home() {
               { 
                 name: "Salami Muhydeen.O", 
                 role: "CEO & CTO", 
-                image: "/ceo.png", 
+                image: "/ceo.PNG", 
                 bio: "Nigerian technology entrepreneur focused on building practical digital solutions like RentInDex and digital verification platforms." 
               },
               { 
                 name: "Alaketu A Muhydeen", 
                 role: "Data Analyst & COO", 
-                image: "/coo.png", 
+                image: "/coo.PNG", 
                 bio: "Expert in data strategy and operational excellence, ensuring seamless project delivery." 
               },
               { 
                 name: "Olabamiji Tolase", 
                 role: "Customer Service Rep", 
-                image: "/customer_service.png", 
+                image: "/customer_service.PNG", 
                 bio: "Dedicated to client success and providing world-class support to all our partners." 
               },
             ].map((person, i) => (

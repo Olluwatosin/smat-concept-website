@@ -20,19 +20,19 @@ const team = [
   {
     name: "Salami Muhydeen.O",
     role: "CEO & CTO",
-    photo: "/ceo.png",
+    photo: "/ceo.PNG",
     bio: "Nigerian technology entrepreneur and self-taught developer focused on building practical digital solutions like RentInDex and digital verification platforms. Salami founded SMAT Concept in 2024 to create world-class, African-built technology.",
   },
   {
     name: "Alaketu A Muhydeen",
     role: "Data Analyst & COO",
-    photo: "/coo.png",
+    photo: "/coo.PNG",
     bio: "Expert in data strategy and operational excellence. Alaketu leads the data analysis initiatives and ensures that SMAT Concept's internal operations and client projects are delivered with maximum efficiency and strategic insight.",
   },
   {
     name: "Olabamiji Tolase",
     role: "Customer Service Rep",
-    photo: "/customer_service.png",
+    photo: "/customer_service.PNG",
     bio: "The face of SMAT Concept's client relations. Olabamiji is dedicated to providing exceptional customer support and ensuring that every partner's voice is heard and their needs are met with professionalism and care.",
   },
 ];
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <div className="absolute -inset-1 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.3), transparent)" }} />
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-square lg:aspect-[4/5] max-h-[600px]">
                 <Image
-                  src="/ceo.png"
+                  src="/ceo.PNG"
                   alt="Salami Muhydeen.O — CEO & CTO"
 
                   fill
