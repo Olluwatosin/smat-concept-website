@@ -21,10 +21,11 @@ const stats = [
 
 const featuredTestimonial = {
   quote:
-    "SMAT Concept didn't just deliver a software solution — they transformed how our entire organisation operates. Within three months of implementing their task management system, our team's productivity increased by over 60% and we finally had full visibility into every project in real time. Salami and his team are the real deal.",
-  name: "Adewale O.",
-  role: "CEO, Orisun Logistics Ltd",
-  service: "Task Management",
+    "SMAT Concept & Innovative Solutions helped transform our workflow from a manual documentation and spreadsheet-based process into a centralized digital workspace tailored to our operations. The custom dashboard introduced real-time case tracking, operational analytics, SLA monitoring, and improved workflow visibility, allowing management to make faster and more informed decisions. We highly recommend them to organizations looking to modernize.",
+  name: "Management Team",
+  role: "Operations Division",
+  company: "TheRecord Consults",
+  service: "Digital Workspace",
   rating: 5,
 };
 
@@ -308,7 +309,7 @@ export default function TestimonialsPage() {
 
               <div className="flex-1 min-w-0">
                 <p className="font-bold text-white text-lg">{featuredTestimonial.name}</p>
-                <p className="text-gray-400 text-sm">{featuredTestimonial.role}</p>
+                <p className="text-gray-400 text-sm">{featuredTestimonial.role} • {featuredTestimonial.company}</p>
               </div>
 
               <div className="flex flex-col items-end gap-2">
