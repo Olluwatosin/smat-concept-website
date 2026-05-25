@@ -24,7 +24,7 @@ const team = [
     bio: "Nigerian technology entrepreneur and self-taught developer focused on building practical digital solutions like RentInDex and digital verification platforms. Salami founded SMAT Concept in 2024 to create world-class, African-built technology.",
   },
   {
-    name: "Alaketu A Muhydeen",
+    name: "Alaketu A Muyideen",
     role: "Data Analyst & COO",
     photo: "/coo.PNG",
     bio: "Expert in data strategy and operational excellence. Alaketu leads the data analysis initiatives and ensures that SMAT Concept's internal operations and client projects are delivered with maximum efficiency and strategic insight.",

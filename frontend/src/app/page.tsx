@@ -668,7 +668,7 @@ export default function Home() {
                 bio: "Nigerian technology entrepreneur focused on building practical digital solutions like RentInDex and digital verification platforms." 
               },
               { 
-                name: "Alaketu A Muhydeen", 
+                name: "Alaketu A Muyideen", 
                 role: "Data Analyst & COO", 
                 image: "/coo.PNG", 
                 bio: "Expert in data strategy and operational excellence, ensuring seamless project delivery." 
