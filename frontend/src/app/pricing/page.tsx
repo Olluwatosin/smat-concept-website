@@ -117,10 +117,7 @@ export default function PricingPage() {
 
             <div className="text-center">
               <Link 
-                href={{
-                  pathname: "/contact",
-                  query: { interest: selectedNeeds.join(",") }
-                }}
+                href={`/contact?interest=${selectedNeeds.join(",")}`}
                 className="btn-gold px-12 py-5 rounded-full font-black text-lg inline-flex items-center gap-3 group"
               >
                 Request Your Personalised Quote <ArrowRight className="group-hover:translate-x-2 transition-transform" />

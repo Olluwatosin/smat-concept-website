@@ -18,7 +18,18 @@ const categories = [
   "Business",
 ];
 
-const featuredArticle = {
+interface Article {
+  title: string;
+  excerpt: string;
+  content?: string;
+  author: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+}
+
+const featuredArticle: Article = {
   title: "How IoT is Revolutionising Agriculture in Nigeria",
   excerpt:
     "From soil moisture sensors in Kano to automated irrigation in Ogun State, Nigerian farmers are embracing connected technology to boost yields, reduce waste, and secure food for millions. Here's how SMAT Concept is leading that charge from the ground up.",
@@ -30,7 +41,7 @@ const featuredArticle = {
   image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&q=80",
 };
 
-const articles = [
+const articles: Article[] = [
   {
     title: "5 Signs Your Business Needs a Task Management System",
     excerpt:
@@ -73,7 +84,7 @@ const fadeUp = {
 };
 
 /* ─── Article Modal ─────────────────────────────────────────── */
-function ArticleModal({ article, onClose }: { article: any; onClose: () => void }) {
+function ArticleModal({ article, onClose }: { article: Article; onClose: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -152,7 +163,7 @@ function ArticleModal({ article, onClose }: { article: any; onClose: () => void 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedArticle, setSelectedArticle] = useState<any>(null);
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
