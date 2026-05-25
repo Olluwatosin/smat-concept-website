@@ -18,22 +18,22 @@ const fadeUp = {
 
 const team = [
   {
-    name: "Salami Muhydeen",
-    role: "Founder & CEO",
+    name: "Salami Muhydeen.O",
+    role: "CEO & CTO",
     photo: "/ceo.jpg",
-    bio: "Visionary technologist and entrepreneur with over a decade of experience building digital infrastructure across Africa. Muhydeen founded SMAT Concept in 2019 with a singular conviction: that African businesses deserve world-class technology solutions built right here on the continent.",
+    bio: "Visionary technologist and entrepreneur with over a decade of experience building digital infrastructure across Africa. Salami founded SMAT Concept in 2019 with a singular conviction: that African businesses deserve world-class technology solutions built right here on the continent.",
   },
   {
-    name: "Adebayo Tunde",
-    role: "Chief Technology Officer",
+    name: "Alaketu A Muhydeen",
+    role: "Data Analyst & COO",
     photo: "/cto.jpg",
-    bio: "Full-stack engineer and IoT architect with deep expertise in embedded systems, cloud infrastructure, and scalable web platforms. Adebayo leads the engineering team, translating ambitious product visions into robust, production-ready systems.",
+    bio: "Expert in data strategy and operational excellence. Alaketu leads the data analysis initiatives and ensures that SMAT Concept's internal operations and client projects are delivered with maximum efficiency and strategic insight.",
   },
   {
-    name: "Fatima Bello",
-    role: "Head of Operations",
+    name: "Olabamiji Tolase",
+    role: "Customer Service Rep",
     photo: "/Hoo.jpg",
-    bio: "Operations strategist with a background in project delivery and client success. Fatima ensures every engagement runs on time, within scope, and exceeds the client's expectations — driving the systems that keep SMAT Concept at peak performance.",
+    bio: "The face of SMAT Concept's client relations. Olabamiji is dedicated to providing exceptional customer support and ensuring that every partner's voice is heard and their needs are met with professionalism and care.",
   },
 ];
 

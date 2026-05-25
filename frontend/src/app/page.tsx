@@ -629,9 +629,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Salami Muhydeen", role: "CEO & Founder", image: "/ceo.jpg", bio: "Pioneering Africa's digital transformation with passion and unwavering commitment to excellence." },
-              { name: "Chief Technology Officer", role: "CTO", image: "/cto.jpg", bio: "Driving technical innovation and ensuring every solution is built to world-class standards." },
-              { name: "Head of Operations", role: "HOO", image: "/Hoo.jpg", bio: "Ensuring seamless project delivery and operational excellence across every engagement." },
+              { name: "Salami Muhydeen.O", role: "CEO & CTO", image: "/ceo.jpg", bio: "Visionary leader driving technical innovation and ensuring every solution is built to world-class standards." },
+              { name: "Alaketu A Muhydeen", role: "Data Analyst & COO", image: "/cto.jpg", bio: "Expert in data strategy and operational excellence, ensuring seamless project delivery." },
+              { name: "Olabamiji Tolase", role: "Customer Service Rep", image: "/Hoo.jpg", bio: "Dedicated to client success and providing world-class support to all our partners." },
             ].map((person, i) => (
               <motion.div
                 key={person.role}
