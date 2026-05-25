@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckSquare, Globe, Leaf, Home as HomeIcon, Database, Shield, Cpu, Zap,
-  ArrowRight, X, ChevronRight, Star, Users, Award, TrendingUp,
+  ArrowRight, ChevronRight, Star, Users, Award, TrendingUp,
   CheckCircle, MessageCircle, Phone, Mail, BarChart3, Binary
 } from "lucide-react";
 import TechHeader from "./components/TechHeader";
@@ -163,59 +163,6 @@ const stats = [
   { value: "24/7", label: "Expert Support", icon: Star },
 ];
 
-/* ─── Service Card ─────────────────────────────────────────── */
-function ServiceCard({ service }: { service: typeof services[0] }) {
-  const Icon = service.icon;
-  return (
-    <Link href={service.href}>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        whileHover={{ y: -6, scale: 1.02 }}
-        transition={{ duration: 0.3 }}
-        className="glass-card glass-card-hover rounded-2xl overflow-hidden cursor-pointer group h-full"
-        style={{ boxShadow: '0 4px 40px rgba(0,0,0,0.3)' }}
-      >
-        {/* Image */}
-        <div className="relative h-44 overflow-hidden">
-          <Image 
-            src={service.image} 
-            alt={service.name} 
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          />
-          <div className="absolute inset-0" style={{ background: `linear-gradient(to top, rgba(12,15,30,0.95) 0%, rgba(12,15,30,0.3) 100%)` }} />
-          <div className="absolute bottom-4 left-4 flex items-center gap-3">
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`} style={{ boxShadow: `0 0 15px ${service.glow}` }}>
-              <Icon className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h3 className="font-bold text-white text-sm">{service.name}</h3>
-              <p className="text-xs" style={{ color: 'rgba(212,175,55,0.8)' }}>{service.tagline}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Body */}
-        <div className="p-5">
-          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">{service.description}</p>
-          <div className="flex items-center justify-between">
-            <div>
-              <span className="text-xl font-black text-gold-gradient">{service.stat}</span>
-              <span className="text-xs text-gray-500 ml-2">{service.statLabel}</span>
-            </div>
-            <div className="flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2" style={{ color: '#D4AF37' }}>
-              Learn More <ChevronRight className="w-4 h-4" />
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </Link>
-  );
-}
-
 /* ─── Home Page ─────────────────────────────────────────────── */
 export default function Home() {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -238,6 +185,7 @@ export default function Home() {
           <div className="absolute inset-0 dot-grid opacity-40" />
         </div>
 
+        {/* Gold orbs */}
         <motion.div
           animate={{ y: [-30, 30, -30], x: [-10, 10, -10] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
@@ -308,6 +256,7 @@ export default function Home() {
             </motion.a>
           </motion.div>
 
+          {/* Hero stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
