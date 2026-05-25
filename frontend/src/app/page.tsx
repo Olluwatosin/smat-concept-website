@@ -737,7 +737,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                text: "SMAT Concept helped transform our workflow from manual documentation and spreadsheets into a centralized digital workspace. The custom dashboard introduced real-time case tracking and operational analytics, allowing for faster, informed decisions.",
+                text: "SMAT Concept & Innovative Solutions helped transform our workflow from a manual documentation and spreadsheet-based process into a centralized digital workspace tailored to our operations. The custom dashboard introduced real-time case tracking, operational analytics, and improved visibility, allowing for faster decisions and significantly improved accountability.",
                 author: "Management Team",
                 role: "Operations Division",
                 company: "TheRecord Consults",
