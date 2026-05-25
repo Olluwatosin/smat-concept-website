@@ -6,6 +6,7 @@ import { BookOpen, Clock, ArrowRight, Search, Tag, X, User, Calendar, Share2 } f
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   "All",
