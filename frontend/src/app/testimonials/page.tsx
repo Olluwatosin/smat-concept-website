@@ -13,10 +13,10 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: "50+", label: "Happy Clients", icon: Users },
-  { value: "150+", label: "Projects Delivered", icon: Briefcase },
-  { value: "5+", label: "Years Experience", icon: TrendingUp },
-  { value: "4.9★", label: "Average Rating", icon: Award },
+  { value: "Premium", label: "Client Partners", icon: Users },
+  { value: "Verified", label: "Project Success", icon: Briefcase },
+  { value: "Proven", label: "Technical Insight", icon: TrendingUp },
+  { value: "World-Class", label: "Quality Standard", icon: Award },
 ];
 
 const featuredTestimonial = {
@@ -181,7 +181,7 @@ export default function TestimonialsPage() {
             }}
           >
             <Star className="w-4 h-4" fill="#D4AF37" />
-            50+ Happy Clients Across Nigeria
+            Verified Success Stories Across Nigeria
           </motion.div>
 
           <motion.h1
@@ -202,7 +202,7 @@ export default function TestimonialsPage() {
             technology that actually works.
           </motion.p>
 
-          {/* 5-star display */}
+          {/* quality display */}
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -219,9 +219,9 @@ export default function TestimonialsPage() {
               ))}
             </div>
             <span className="text-3xl font-black" style={{ color: "#D4AF37" }}>
-              4.9
+              Verified
             </span>
-            <span className="text-gray-400 text-base">/ 5 average rating</span>
+            <span className="text-gray-400 text-base"> Excellence</span>
           </motion.div>
         </div>
       </section>
@@ -509,7 +509,7 @@ export default function TestimonialsPage() {
               </h2>
 
               <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-                Join 50+ Nigerian businesses that have already transformed their
+                Join our growing list of Nigerian businesses that have already transformed their
                 operations with SMAT Concept. Let's build something great together.
               </p>
 
