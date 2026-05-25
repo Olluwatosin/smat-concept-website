@@ -47,11 +47,11 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2019", title: "SMAT Concept Founded", desc: "Salami Muhydeen registered SMAT Concept in Lagos, Nigeria with a focus on custom software for small businesses." },
-  { year: "2020", title: "First Enterprise Client", desc: "Secured our first enterprise contract — a document digitalisation project for a mid-sized Lagos law firm." },
-  { year: "2021", title: "IoT & Smart Farming Division Launched", desc: "Expanded into hardware-software integration with sensor-based solutions for farms in Ogun and Oyo States." },
-  { year: "2023", title: "50+ Projects Milestone", desc: "Crossed 50 completed projects across six service verticals, spanning clients in Nigeria, Ghana, and Kenya." },
-  { year: "2025", title: "150+ Projects & Pan-African Vision", desc: "Today SMAT Concept operates across 8 service areas with a team of 20+ specialists, serving 50+ active clients continent-wide." },
+  { year: "2024", title: "SMAT Concept Founded", desc: "Salami Muhydeen.O founded SMAT Concept & Innovative Solutions to bridge the gap between African businesses and world-class technology." },
+  { year: "2024", title: "Flagship Platforms Launched", desc: "Developed and deployed RentInDex and digital verification solutions, improving transparency and operational efficiency." },
+  { year: "2025", title: "AI & Data Expansion", desc: "Introduced advanced AI integration and expert data analysis service lines, serving enterprise clients like TheRecord Consults." },
+  { year: "2025", title: "Digital Talent Initiative", desc: "Launched Digital Training and Programming classes to empower the next generation of African tech talent." },
+  { year: "2026", title: "Pan-African Vision", desc: "Expanding impact across Africa with scalable, high-performance digital infrastructure and smart systems." },
 ];
 
 const stats = [
