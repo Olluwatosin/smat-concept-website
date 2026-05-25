@@ -163,7 +163,7 @@ export default function PortfolioPage() {
             </motion.p>
             <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap justify-center gap-6">
-              {[["150+", "Projects Delivered"], ["8", "Service Areas"], ["50+", "Clients Served"], ["5+", "Years Building"]].map(([val, lab]) => (
+              {[["Verified", "Project Success"], ["8", "Service Areas"], ["Premium", "Business Partners"], ["Proven", "Standards"]].map(([val, lab]) => (
                 <div key={lab} className="glass-card rounded-xl px-6 py-4 text-center"
                   style={{ border: "1px solid rgba(212,175,55,0.2)" }}>
                   <div className="text-2xl font-extrabold text-gold-gradient">{val}</div>

@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import TechHeader from "./components/TechHeader";
 import WhatsAppWidget from "./components/WhatsAppWidget";
-import ServiceCalculator from "./components/ServiceCalculator";
 
 /* ─── Service data ─────────────────────────────────────────── */
 const services = [

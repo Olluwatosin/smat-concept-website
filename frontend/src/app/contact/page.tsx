@@ -399,8 +399,9 @@ export default function ContactPage() {
 
               <ul className="space-y-4 relative">
                 {[
-                  { label: "5+ Years of Excellence", sub: "Proven industry expertise" },
-                  { label: "150+ Successful Projects", sub: "Delivered across sectors" },
+                  { label: "Verified Excellence", sub: "Proven industry expertise" },
+                  { label: "High-Performance Solutions", sub: "Delivered across sectors" },
+...
                   { label: "24/7 Support", sub: "Always here when you need us" },
                   { label: "Expert Local Team", sub: "Deep knowledge, real results" },
                 ].map((item) => (

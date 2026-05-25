@@ -61,10 +61,10 @@ const initiatives = [
 ];
 
 const impactNumbers = [
-  { value: "200+", label: "People Trained", icon: Users },
-  { value: "15", label: "Communities Reached", icon: Globe },
-  { value: "30+", label: "Students Mentored", icon: Star },
-  { value: "₦5M+", label: "Value Donated", icon: Heart },
+  { value: "Verified", label: "Talent Empowerment", icon: Users },
+  { value: "Proven", label: "Community Reach", icon: Globe },
+  { value: "Sustained", label: "Strategic Mentorship", icon: Star },
+  { value: "Continuous", label: "Value Investment", icon: Heart },
 ];
 
 const involvementOptions = [
@@ -174,7 +174,7 @@ export default function GoodwillPage() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="text-gray-400 text-lg max-w-2xl mx-auto mt-8"
           >
-            — Salami Muhydeen, Founder, SMAT Concept
+            — Salami Muhydeen.O, Founder, SMAT Concept
           </motion.p>
         </div>
       </section>
@@ -501,7 +501,7 @@ export default function GoodwillPage() {
                   SM
                 </div>
                 <div>
-                  <p className="text-white font-black text-lg">Salami Muhydeen</p>
+                  <p className="text-white font-black text-lg">Salami Muhydeen.O</p>
                   <p className="text-gray-400 text-sm">
                     Founder & CEO, SMAT Concept Innovative Solutions Ltd.
                   </p>
@@ -670,9 +670,9 @@ export default function GoodwillPage() {
                 ))}
               </div>
               <p className="text-gray-400 text-sm">
-                Join{" "}
+                Join our{" "}
                 <span className="font-bold" style={{ color: "#D4AF37" }}>
-                  50+ businesses
+                  growing network
                 </span>{" "}
                 already making a difference
               </p>
