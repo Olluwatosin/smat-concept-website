@@ -64,11 +64,11 @@ export default function TaskManagementPage() {
             <span className="text-sm font-medium" style={{ color: "#D4AF37" }}>Task Management</span>
           </motion.div>
           <motion.h1 {...fadeUp} transition={{ delay: 0.1, duration: 0.55 }} className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
-            <span className="text-gold-gradient">Productivity Systems</span>
-            <br /><span className="text-white">That Actually Work</span>
+            <span className="text-gold-gradient">Proven Systems Like</span>
+            <br /><span className="text-white">Veriflow & CivicDesk</span>
           </motion.h1>
           <motion.p {...fadeUp} transition={{ delay: 0.2, duration: 0.55 }} className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            We design and implement task management ecosystems built around how your team actually operates — not generic templates.
+            We design and implement custom task management ecosystems — like our work on Veriflow and CivicDesk — that scale with your team's ambition.
           </motion.p>
           <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.55 }} className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="btn-gold px-7 py-3 rounded-lg font-semibold flex items-center gap-2">
@@ -86,10 +86,10 @@ export default function TaskManagementPage() {
         <motion.h2 {...fadeUp} className="text-3xl font-bold mb-6 text-gold-gradient">What Is This Service?</motion.h2>
         <div className="grid md:grid-cols-2 gap-8 text-gray-300 leading-relaxed">
           <motion.p {...fadeUp} transition={{ delay: 0.1 }}>
-            SMAT Concept's Task Management service goes beyond software setup. We analyse your organisation's unique workflow, design a custom task architecture, and implement a system — whether Notion, ClickUp, Asana, Monday.com, or a bespoke build — that fits your team like a glove. Every board, every automation, every integration is intentional.
+            SMAT Concept's Task Management service goes beyond software setup. We've built industry-leading platforms like **Veriflow** (custom verification systems) and **CivicDesk**. We analyse your organisation's unique workflow to implement a command centre that fits your team like a glove.
           </motion.p>
           <motion.p {...fadeUp} transition={{ delay: 0.2 }}>
-            Ideal for SMEs, startups, agencies, and corporate teams struggling with missed deadlines, siloed communication, or over-reliance on WhatsApp groups. If your team's work lives in scattered spreadsheets and email threads, this service brings everything into one intelligent, automated command centre.
+            Whether you're a verification company needing streamlined audits or a public sector organization requiring robust data management, our systems eliminate chaos. If your team's work lives in scattered spreadsheets and email threads, this service brings everything into one intelligent command centre.
           </motion.p>
         </div>
       </section>

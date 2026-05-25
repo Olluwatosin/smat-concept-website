@@ -18,8 +18,8 @@ const fadeUp = {
 };
 
 const features = [
-  "Next.js & React frontend development",
-  "Node.js & Django backend APIs",
+  "Custom high-performance frontend development",
+  "Secure and scalable backend API architecture",
   "Full e-commerce integration (Shopify, WooCommerce)",
   "Progressive Web Apps (PWA) with offline support",
   "Technical SEO & Core Web Vitals optimisation",
@@ -86,7 +86,7 @@ export default function WebDevelopmentPage() {
         <motion.h2 {...fadeUp} className="text-3xl font-bold mb-6 text-gold-gradient">What Is This Service?</motion.h2>
         <div className="grid md:grid-cols-2 gap-8 text-gray-300 leading-relaxed">
           <motion.p {...fadeUp} transition={{ delay: 0.1 }}>
-            SMAT Concept delivers end-to-end web development — from pixel-perfect frontends built with Next.js and React, to robust backend systems powered by Node.js and Django. We don't use cookie-cutter themes; every project is architected for your specific business model, audience, and growth targets.
+            SMAT Concept delivers end-to-end web development — from pixel-perfect frontends to robust backend systems. We don't use cookie-cutter themes; every project is architected for your specific business model, audience, and growth targets.
           </motion.p>
           <motion.p {...fadeUp} transition={{ delay: 0.2 }}>
             Whether you need a corporate website, a multi-vendor e-commerce platform, an internal tool, or a customer-facing SaaS product, we have the full-stack capability to bring it to production — fast. Our clients include fintech companies, retailers, logistics firms, and government agencies across West Africa.

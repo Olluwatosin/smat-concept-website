@@ -43,6 +43,20 @@ const services = [
     statLabel: "faster workflows",
   },
   {
+    id: "task-management",
+    name: "Task Management",
+    tagline: "Proven systems like Veriflow & CivicDesk",
+    icon: CheckSquare,
+    color: "from-amber-500 to-yellow-400",
+    glow: "rgba(245,158,11,0.3)",
+    href: "/services/task-management",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description: "We design and build custom task management solutions like Veriflow (for verification companies) and CivicDesk. We eliminate chaos and drive team performance with enterprise-grade workflow platforms.",
+    features: ["Custom project boards & Kanban views", "Team collaboration & real-time sync", "Automated reminders & deadlines", "Analytics & productivity reports", "Mobile app accessibility", "Seamless team onboarding"],
+    stat: "3× faster",
+    statLabel: "project delivery",
+  },
+  {
     id: "web-development",
     name: "Web Development",
     tagline: "Fast, beautiful, revenue-generating apps",
@@ -51,8 +65,8 @@ const services = [
     glow: "rgba(6,182,212,0.3)",
     href: "/services/web-development",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Full-stack web development from sleek landing pages to complex SaaS platforms. We build with modern technologies that scale with your business.",
-    features: ["Next.js / React front-ends", "FastAPI & Node.js back-ends", "E-commerce & payment integration", "Progressive Web Apps (PWA)", "SEO-optimised architecture", "Performance & security audits"],
+    description: "High-performance web development from sleek landing pages to complex SaaS platforms. We build custom architectures that scale with your business goals.",
+    features: ["Custom frontend development", "Robust backend API architecture", "E-commerce & payment integration", "Progressive Web Apps (PWA)", "SEO-optimised architecture", "Performance & security audits"],
     stat: "98%",
     statLabel: "client satisfaction",
   },
@@ -97,20 +111,6 @@ const services = [
     features: ["High-volume document scanning", "OCR & intelligent data extraction", "Automated document classification", "Secure cloud storage & backup", "Full-text search across archives", "Compliance & audit trail"],
     stat: "99%",
     statLabel: "accuracy rate",
-  },
-  {
-    id: "networking",
-    name: "Networking & Security",
-    tagline: "Enterprise-grade protection",
-    icon: Shield,
-    color: "from-indigo-500 to-blue-400",
-    glow: "rgba(99,102,241,0.3)",
-    href: "/services/networking",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Comprehensive network infrastructure design, installation, and security solutions. We protect your business from threats while keeping your team connected.",
-    features: ["Network design & installation", "Firewall & endpoint security", "CCTV & surveillance systems", "VPN & remote access solutions", "Penetration testing", "24/7 network monitoring"],
-    stat: "99.9%",
-    statLabel: "uptime guaranteed",
   },
   {
     id: "energy",
@@ -327,8 +327,8 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 leading-[1] text-white tracking-tight"
           >
-            Mastering the
-            <span className="block text-gold-gradient mt-2">Digital Frontier</span>
+            Your Fastest Route to
+            <span className="block text-gold-gradient mt-2">the Digital World</span>
           </motion.h1>
 
           <motion.p
@@ -337,8 +337,8 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
           >
-            From AI-powered workspace apps to expert data analysis, we build the high-performance 
-            technology that scales African businesses to world-class standards.
+            We build high-performance technology — from AI-powered workspace apps 
+            to smart automation — that scales African businesses to world-class standards.
           </motion.p>
 
           <motion.div
@@ -641,15 +641,15 @@ export default function Home() {
                 transition={{ delay: i * 0.15 }}
                 className="glass-card rounded-2xl overflow-hidden text-center"
               >
-                <div className="h-56 overflow-hidden relative">
+                <div className="aspect-square overflow-hidden relative">
                   <Image 
                     src={person.image} 
                     alt={person.role} 
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(12,15,30,0.9) 0%, transparent 60%)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(12,15,30,0.8) 0%, transparent 50%)' }} />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-white mb-0.5">{person.name}</h3>
