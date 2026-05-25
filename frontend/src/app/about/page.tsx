@@ -30,10 +30,10 @@ const team = [
     bio: "Expert in data strategy and operational excellence. Alaketu leads the data analysis initiatives and ensures that SMAT Concept's internal operations and client projects are delivered with maximum efficiency and strategic insight.",
   },
   {
-    name: "Olabamiji Tolase",
+    name: "Oyebamiji Tolase",
     role: "Customer Service Rep",
     photo: "/customer_service.PNG",
-    bio: "The face of SMAT Concept's client relations. Olabamiji is dedicated to providing exceptional customer support and ensuring that every partner's voice is heard and their needs are met with professionalism and care.",
+    bio: "The face of SMAT Concept's client relations. Oyebamiji is dedicated to providing exceptional customer support and ensuring that every partner's voice is heard and their needs are met with professionalism and care.",
   },
 ];
 

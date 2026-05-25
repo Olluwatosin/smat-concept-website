@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -162,145 +163,62 @@ const stats = [
   { value: "24/7", label: "Expert Support", icon: Star },
 ];
 
-/* ─── Service Modal ─────────────────────────────────────────── */
-function ServiceModal({ service, onClose }: { service: typeof services[0]; onClose: () => void }) {
+/* ─── Service Card ─────────────────────────────────────────── */
+function ServiceCard({ service }: { service: typeof services[0] }) {
   const Icon = service.icon;
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-      style={{ background: 'rgba(8,11,22,0.9)', backdropFilter: 'blur(12px)' }}
-      onClick={onClose}
-    >
+    <Link href={service.href}>
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 40 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9, y: 40 }}
-        transition={{ type: "spring", damping: 28, stiffness: 300 }}
-        className="w-full max-w-2xl rounded-3xl overflow-hidden"
-        style={{ background: '#0C0F1E', border: '1px solid rgba(212,175,55,0.2)', boxShadow: `0 40px 100px rgba(0,0,0,0.8), 0 0 60px ${service.glow}` }}
-        onClick={(e) => e.stopPropagation()}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        whileHover={{ y: -6, scale: 1.02 }}
+        transition={{ duration: 0.3 }}
+        className="glass-card glass-card-hover rounded-2xl overflow-hidden cursor-pointer group h-full"
+        style={{ boxShadow: '0 4px 40px rgba(0,0,0,0.3)' }}
       >
-        {/* Header image */}
-        <div className="relative h-48 overflow-hidden">
+        {/* Image */}
+        <div className="relative h-44 overflow-hidden">
           <Image 
             src={service.image} 
             alt={service.name} 
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 640px"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0C0F1E 0%, rgba(12,15,30,0.4) 100%)' }} />
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all z-10"
-            style={{ background: 'rgba(8,11,22,0.8)', backdropFilter: 'blur(8px)', border: '1px solid rgba(212,175,55,0.2)' }}
-          >
-            <X className="w-4 h-4 text-gray-300" />
-          </button>
-          <div className="absolute bottom-4 left-6 flex items-center gap-3">
-            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`} style={{ boxShadow: `0 0 20px ${service.glow}` }}>
-              <Icon className="w-6 h-6 text-white" />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to top, rgba(12,15,30,0.95) 0%, rgba(12,15,30,0.3) 100%)` }} />
+          <div className="absolute bottom-4 left-4 flex items-center gap-3">
+            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`} style={{ boxShadow: `0 0 15px ${service.glow}` }}>
+              <Icon className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">{service.name}</h3>
-              <p className="text-sm" style={{ color: '#D4AF37' }}>{service.tagline}</p>
+              <h3 className="font-bold text-white text-sm">{service.name}</h3>
+              <p className="text-xs" style={{ color: 'rgba(212,175,55,0.8)' }}>{service.tagline}</p>
             </div>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6">
-          <p className="text-gray-300 leading-relaxed mb-6">{service.description}</p>
-
-          {/* Key stat */}
-          <div className="flex items-center gap-4 mb-6 p-4 rounded-2xl" style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.15)' }}>
-            <div className="text-3xl font-black text-gold-gradient">{service.stat}</div>
-            <div className="text-sm text-gray-400">{service.statLabel}</div>
-          </div>
-
-          {/* Features */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-            {service.features.map((f) => (
-              <div key={f} className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
-                <span className="text-sm text-gray-300">{f}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="flex gap-3">
-            <a href="/contact" className="btn-gold flex-1 text-center py-3 rounded-xl font-bold text-sm">
-              Get a Quote
-            </a>
-            <a href={service.href} className="btn-gold-outline flex-1 text-center py-3 rounded-xl font-bold text-sm">
-              Learn More <ArrowRight className="inline w-4 h-4 ml-1" />
-            </a>
+        {/* Body */}
+        <div className="p-5">
+          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">{service.description}</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-xl font-black text-gold-gradient">{service.stat}</span>
+              <span className="text-xs text-gray-500 ml-2">{service.statLabel}</span>
+            </div>
+            <div className="flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2" style={{ color: '#D4AF37' }}>
+              Learn More <ChevronRight className="w-4 h-4" />
+            </div>
           </div>
         </div>
       </motion.div>
-    </motion.div>
-  );
-}
-
-/* ─── Service Card ─────────────────────────────────────────── */
-function ServiceCard({ service, onClick }: { service: typeof services[0]; onClick: () => void }) {
-  const Icon = service.icon;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -6, scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-      className="glass-card glass-card-hover rounded-2xl overflow-hidden cursor-pointer group"
-      onClick={onClick}
-      style={{ boxShadow: '0 4px 40px rgba(0,0,0,0.3)' }}
-    >
-      {/* Image */}
-      <div className="relative h-44 overflow-hidden">
-        <Image 
-          src={service.image} 
-          alt={service.name} 
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        />
-        <div className="absolute inset-0" style={{ background: `linear-gradient(to top, rgba(12,15,30,0.95) 0%, rgba(12,15,30,0.3) 100%)` }} />
-        <div className="absolute bottom-4 left-4 flex items-center gap-3">
-          <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`} style={{ boxShadow: `0 0 15px ${service.glow}` }}>
-            <Icon className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <h3 className="font-bold text-white text-sm">{service.name}</h3>
-            <p className="text-xs" style={{ color: 'rgba(212,175,55,0.8)' }}>{service.tagline}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Body */}
-      <div className="p-5">
-        <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">{service.description}</p>
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-xl font-black text-gold-gradient">{service.stat}</span>
-            <span className="text-xs text-gray-500 ml-2">{service.statLabel}</span>
-          </div>
-          <div className="flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2" style={{ color: '#D4AF37' }}>
-            View Details <ChevronRight className="w-4 h-4" />
-          </div>
-        </div>
-      </div>
-    </motion.div>
+    </Link>
   );
 }
 
 /* ─── Home Page ─────────────────────────────────────────────── */
 export default function Home() {
-  const [activeService, setActiveService] = useState<typeof services[0] | null>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
 
   return (
     <div className="min-h-screen bg-[#080B16]">
@@ -308,7 +226,6 @@ export default function Home() {
 
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background */}
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
@@ -321,7 +238,6 @@ export default function Home() {
           <div className="absolute inset-0 dot-grid opacity-40" />
         </div>
 
-        {/* Gold orbs */}
         <motion.div
           animate={{ y: [-30, 30, -30], x: [-10, 10, -10] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
@@ -335,7 +251,6 @@ export default function Home() {
           style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%)' }}
         />
 
-        {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -393,7 +308,6 @@ export default function Home() {
             </motion.a>
           </motion.div>
 
-          {/* Hero stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -409,7 +323,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -421,36 +334,103 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── SERVICES ──────────────────────────────────────────── */}
-      <section id="services" className="py-16 md:py-28 relative">
-        <div className="absolute inset-0 dot-grid opacity-20" />
+      {/* ── INTERACTIVE SERVICES SLIDESHOW ────────────────────── */}
+      <section id="services" className="py-24 relative overflow-hidden bg-[#0a0d1d]">
+        <div className="absolute inset-0 dot-grid opacity-10" />
+        
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)', color: '#D4AF37' }}>
-              What We Do
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-5">
-              8 Ways We Transform<br />
-              <span className="text-gold-gradient">Your Business</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Click any service card to see full details, features, and how we can help you.
-            </p>
-          </motion.div>
+          <div className="mb-16">
+             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)', color: '#D4AF37' }}>
+                Our Core Business Divisions
+             </div>
+             <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                Transforming Africa Through<br />
+                <span className="text-gold-gradient">Integrated Excellence</span>
+              </h2>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                onClick={() => setActiveService(service)}
-              />
-            ))}
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            {/* Sidebar Navigation */}
+            <div className="lg:col-span-4 space-y-2">
+              {services.map((service, idx) => (
+                <button
+                  key={service.id}
+                  onClick={() => setActiveIdx(idx)}
+                  className={`w-full text-left p-6 rounded-2xl transition-all duration-500 group relative overflow-hidden ${activeIdx === idx ? 'bg-white/5 border-l-4 border-gold' : 'hover:bg-white/[0.02] border-l-4 border-transparent'}`}
+                  style={{ borderColor: activeIdx === idx ? '#D4AF37' : 'transparent' }}
+                >
+                  <h3 className={`text-xl font-bold transition-colors ${activeIdx === idx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
+                    {service.name}
+                  </h3>
+                  <p className={`text-sm mt-1 transition-colors ${activeIdx === idx ? 'text-gold italic' : 'text-gray-600'}`} style={{ color: activeIdx === idx ? '#D4AF37' : undefined }}>
+                    {service.tagline}
+                  </p>
+                </button>
+              ))}
+            </div>
+
+            {/* Content Display Area */}
+            <div className="lg:col-span-8 relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={services[activeIdx].id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="grid md:grid-cols-2 gap-8 items-center"
+                >
+                  {/* Words by the side */}
+                  <div className="order-2 md:order-1">
+                    <h4 className="text-2xl font-black text-white mb-4 leading-tight">
+                      {services[activeIdx].tagline}
+                    </h4>
+                    <p className="text-gray-400 leading-relaxed mb-8">
+                      {services[activeIdx].description}
+                    </p>
+                    <ul className="space-y-3 mb-10">
+                      {services[activeIdx].features.slice(0, 4).map((f) => (
+                        <li key={f} className="flex items-center gap-3 text-sm text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-gold flex-shrink-0" style={{ color: '#D4AF37' }} />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link 
+                      href={services[activeIdx].href}
+                      className="btn-gold inline-flex items-center gap-3 px-10 py-4 rounded-full font-bold text-lg shadow-[0_10px_40px_rgba(212,175,55,0.2)]"
+                    >
+                      Enter Division <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </div>
+
+                  {/* Dashboard Image (Visible a bit, then Bold on click) */}
+                  <div className="order-1 md:order-2 group">
+                    <Link href={services[activeIdx].href}>
+                      <div className="relative aspect-video rounded-3xl overflow-hidden glass-card cursor-pointer transform transition-all duration-700 hover:scale-105 group-hover:shadow-[0_0_60px_rgba(212,175,55,0.2)]">
+                        <Image 
+                          src={services[activeIdx].image}
+                          alt={services[activeIdx].name}
+                          fill
+                          className="object-cover opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#080B16] via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity" />
+                        
+                        {/* Status tag */}
+                        <div className="absolute top-6 right-6">
+                           <div className="px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-gold text-xs font-bold uppercase tracking-widest" style={{ color: '#D4AF37' }}>
+                             {services[activeIdx].statLabel}
+                           </div>
+                        </div>
+                      </div>
+                    </Link>
+                    <p className="text-center text-[10px] uppercase tracking-[0.2em] text-gray-600 mt-4 font-bold group-hover:text-gold transition-colors">
+                      Click image to explore full intelligence
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </section>
@@ -673,7 +653,7 @@ export default function Home() {
                 bio: "Expert in data strategy and operational excellence, ensuring seamless project delivery." 
               },
               { 
-                name: "Olabamiji Tolase", 
+                name: "Oyebamiji Tolase", 
                 role: "Customer Service Rep", 
                 image: "/customer_service.PNG", 
                 bio: "Dedicated to client success and providing world-class support to all our partners." 
@@ -903,13 +883,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Service Modal */}
-      <AnimatePresence>
-        {activeService && (
-          <ServiceModal service={activeService} onClose={() => setActiveService(null)} />
-        )}
-      </AnimatePresence>
 
       <WhatsAppWidget />
     </div>

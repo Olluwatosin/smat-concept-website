@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   BarChart3, Check, ArrowRight, MessageCircle,
@@ -43,39 +44,77 @@ const benefits = [
 ];
 
 export default function DataAnalysisPage() {
+  const [isBold, setIsBold] = useState(false);
+
   return (
-    <div className="min-h-screen bg-navy-dark text-gray-100">
+    <div className="min-h-screen bg-[#080B16] text-gray-100">
       <TechHeader />
 
       {/* HERO */}
-      <section className="relative pt-20 lg:pt-24 pb-16 overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-16 overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0 dot-grid opacity-30" />
-        <div className="absolute inset-0">
-          <Image 
-            src="/real_analytics1.JPG"
-            alt="Data Analysis"
-            fill
-            className="object-cover opacity-20"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/70 via-navy-dark/90 to-navy-dark" />
         
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center py-20">
-          <motion.div {...fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 glass-card">
-            <BarChart3 size={16} className="text-gold" />
-            <span className="text-sm font-bold text-gold uppercase tracking-wider">Data Analysis & Insights</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div {...fadeUp}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 glass-card" style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)' }}>
+              <BarChart3 size={16} className="text-gold" style={{ color: '#D4AF37' }} />
+              <span className="text-sm font-bold uppercase tracking-wider" style={{ color: '#D4AF37' }}>Data Analysis & Insights</span>
+            </div>
+            <h1 className="text-4xl md:text-7xl font-black mb-6 leading-tight tracking-tight text-white">
+              Turn Your Raw Data Into<br />
+              <span className="text-gold-gradient">Strategic Intelligence</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed">
+              We help African businesses unlock the hidden stories in their data, providing the clarity needed to dominate their industry.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/contact" className="btn-gold px-8 py-4 rounded-full font-bold flex items-center gap-2">
+                Get an Expert Audit <ArrowRight size={18} />
+              </Link>
+            </div>
           </motion.div>
-          <motion.h1 {...fadeUp} transition={{ delay: 0.1 }} className="text-4xl md:text-7xl font-black mb-6 leading-tight tracking-tight">
-            Turn Your Raw Data Into<br />
-            <span className="text-gold-gradient">Strategic Intelligence</span>
-          </motion.h1>
-          <motion.p {...fadeUp} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            We help African businesses unlock the hidden stories in their data, providing the clarity needed to dominate their industry.
-          </motion.p>
-          <motion.div {...fadeUp} transition={{ delay: 0.3 }} className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-gold px-8 py-4 rounded-full font-bold flex items-center gap-2">
-              Get an Expert Audit <ArrowRight size={18} />
-            </Link>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            <div 
+              className={`relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden glass-card transition-all duration-700 cursor-pointer ${isBold ? 'scale-105 shadow-[0_0_80px_rgba(212,175,55,0.3)]' : 'opacity-70 grayscale-[0.5]'}`}
+              onClick={() => setIsBold(!isBold)}
+              style={{ border: '1px solid rgba(212,175,55,0.2)' }}
+            >
+              <Image 
+                src="/real_analytics1.JPG"
+                alt="Data Analysis Dashboard"
+                fill
+                className={`object-cover transition-all duration-700 ${isBold ? 'opacity-100 grayscale-0' : 'opacity-60 grayscale'}`}
+                priority
+              />
+              <div className={`absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-transparent transition-opacity duration-700 ${isBold ? 'opacity-20' : 'opacity-60'}`} />
+              
+              {!isBold && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="bg-black/40 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-white font-bold text-sm">
+                      Click to Expand Dashboard
+                   </div>
+                </div>
+              )}
+            </div>
+
+            {/* Overlapping small card to add "visible a bit" effect */}
+            <div 
+              className={`absolute -bottom-10 -left-6 md:-left-12 w-2/3 aspect-video glass-card rounded-2xl overflow-hidden transition-all duration-700 z-20 ${isBold ? 'translate-x-10 translate-y-10 opacity-0' : 'translate-x-0 translate-y-0 opacity-100'}`}
+              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.5)', border: '1px solid rgba(212,175,55,0.1)' }}
+            >
+              <Image 
+                src="/real_analytics2.JPG"
+                alt="Dashboard Preview"
+                fill
+                className="object-cover opacity-80"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
