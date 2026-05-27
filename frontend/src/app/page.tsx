@@ -3,12 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
   CheckSquare, Globe, Leaf, Home as HomeIcon, Database, Shield, Cpu, Zap,
   ArrowRight, Star, Users, Award, TrendingUp,
   CheckCircle, MessageCircle, Phone, Mail, BarChart3, Binary,
-  ChevronRight, Sparkles, Rocket, Brain
+  Sparkles, Rocket, Brain
 } from "lucide-react";
 import TechHeader from "./components/TechHeader";
 import WhatsAppWidget from "./components/WhatsAppWidget";
@@ -20,11 +20,6 @@ const fadeUp = {
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
   transition: { duration: 0.6 },
-};
-
-const stagger = {
-  initial: {},
-  animate: { transition: { staggerChildren: 0.08 } },
 };
 
 /* ─── Service data ──────────────────────────────────────── */
@@ -188,8 +183,6 @@ const processSteps = [
 
 /* ─── Home Page ─────────────────────────────────────────── */
 export default function Home() {
-  const [activeIdx, setActiveIdx] = useState(0);
-
   return (
     <div className="min-h-screen bg-[#080B16]">
       <TechHeader />
@@ -325,111 +318,252 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── SERVICES ──────────────────────────────────────── */}
+      {/* ── SERVICES BENTO GRID ───────────────────────────── */}
       <section id="services" className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-20" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="mb-16">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-14 max-w-2xl"
+          >
             <div className="section-badge mb-5">Our Core Business Divisions</div>
             <h2 className="font-display text-4xl md:text-6xl font-black text-white leading-[1.05]">
               Transforming Africa Through<br />
               <span className="text-gold-gradient">Integrated Excellence</span>
             </h2>
+            <p className="text-gray-400 mt-4 text-lg leading-relaxed">
+              Ten specialist divisions. One integrated team. Proven real-world results.
+            </p>
+          </motion.div>
+
+          {/* ── Row 1: Featured cards ──────────────────────── */}
+          <div className="grid lg:grid-cols-3 gap-4 mb-4">
+
+            {/* DATA ANALYSIS — large featured card with real dashboards */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer min-h-[340px]"
+              style={{ background: "rgba(15,22,41,0.7)", border: "1px solid rgba(212,175,55,0.12)" }}
+            >
+              <Link href="/services/data-analysis" className="absolute inset-0 z-20" aria-label="Data Analysis" />
+
+              {/* Dashboard image collage — fills right half */}
+              <div className="absolute inset-y-0 right-0 w-[55%] grid grid-rows-2 gap-1 p-1 opacity-40 group-hover:opacity-70 transition-all duration-700">
+                {["/real_analytics1.JPG", "/real_analytics2.JPG", "/real_analytics3.JPG", "/real_analytics4.JPG"].map((src, i) => (
+                  <div key={i} className={`relative overflow-hidden rounded-lg ${i === 0 || i === 3 ? "col-span-1" : ""}`}
+                    style={{ transform: `translateY(${i % 2 === 0 ? "0" : "0"})`, gridRow: i < 2 ? 1 : 2 }}
+                  >
+                    <Image src={src} alt={`Dashboard ${i + 1}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                ))}
+              </div>
+
+              {/* Gradient fade from left */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#080B16] via-[#080B16]/90 to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/60 to-transparent z-10" />
+
+              {/* Gold top accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent z-10" />
+
+              {/* Content */}
+              <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(37,99,235,0.2)", border: "1px solid rgba(37,99,235,0.3)" }}>
+                    <BarChart3 className="w-6 h-6" style={{ color: "#60a5fa" }} />
+                  </div>
+                  <div className="section-badge mb-3" style={{ fontSize: "10px" }}>Real Client Work</div>
+                  <h3 className="font-display text-2xl md:text-3xl font-black text-white mb-2 leading-tight">
+                    Data Analysis<br />&amp; Insights
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
+                    Turn raw business data into strategic intelligence — predictive models, live dashboards, and AI-driven forecasting built for real operations.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {["Predictive business modeling", "Real-time dashboards", "Customer behavior analysis", "AI trend forecasting"].map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-xs text-gray-300">
+                        <CheckCircle className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#D4AF37" }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="inline-flex items-center gap-2 text-sm font-bold group-hover:gap-3 transition-all" style={{ color: "#D4AF37" }}>
+                  Explore Division <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* AI WORKSPACE — tall companion card */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="relative rounded-2xl overflow-hidden group cursor-pointer min-h-[340px] flex flex-col"
+              style={{ background: "linear-gradient(135deg, rgba(147,51,234,0.12) 0%, rgba(15,22,41,0.7) 60%)", border: "1px solid rgba(147,51,234,0.2)" }}
+            >
+              <Link href="/services/ai-workspace" className="absolute inset-0 z-10" aria-label="AI Workspace" />
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#9333ea] to-transparent" />
+
+              {/* Animated grid background */}
+              <div className="absolute inset-0 mesh-grid opacity-30" />
+
+              {/* Glow orb */}
+              <div className="absolute top-8 right-8 w-32 h-32 rounded-full blur-2xl" style={{ background: "rgba(147,51,234,0.2)" }} />
+
+              <div className="relative z-10 p-7 flex flex-col h-full">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(147,51,234,0.2)", border: "1px solid rgba(147,51,234,0.3)" }}>
+                  <Binary className="w-6 h-6" style={{ color: "#c084fc" }} />
+                </div>
+                <h3 className="font-display text-xl font-black text-white mb-2">AI Workspace Apps</h3>
+                <p className="text-xs text-gray-400 leading-relaxed mb-5">Custom internal tools supercharged with AI — automate repetitive work so your team focuses on high-value output.</p>
+                <ul className="space-y-2 flex-1">
+                  {["Custom LLM integration", "Automated document AI", "Intelligent knowledge bases", "AI team assistants"].map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-xs text-gray-300">
+                      <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#c084fc" }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold group-hover:gap-3 transition-all" style={{ color: "#c084fc" }}>
+                  Explore Division <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-10 items-start">
-            {/* Sidebar */}
-            <div className="lg:col-span-4 space-y-1">
-              {services.map((service, idx) => {
-                const Icon = service.icon;
-                const isActive = activeIdx === idx;
-                return (
-                  <button
-                    key={service.id}
-                    onClick={() => setActiveIdx(idx)}
-                    className={`w-full text-left px-5 py-4 rounded-xl transition-all duration-300 group flex items-center gap-3 ${
-                      isActive ? "bg-white/[0.06]" : "hover:bg-white/[0.025]"
-                    }`}
-                    style={{
-                      borderLeft: `3px solid ${isActive ? "#D4AF37" : "transparent"}`,
-                    }}
-                  >
-                    <div
-                      className={`w-8 h-8 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center flex-shrink-0 transition-opacity ${isActive ? "opacity-100" : "opacity-40 group-hover:opacity-70"}`}
-                    >
-                      <Icon className="w-4 h-4 text-white" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className={`text-sm font-bold transition-colors ${isActive ? "text-white" : "text-gray-500 group-hover:text-gray-300"}`}>
-                        {service.name}
-                      </p>
-                      <p className={`text-xs mt-0.5 truncate transition-colors ${isActive ? "text-gold-DEFAULT" : "text-gray-600"}`} style={{ color: isActive ? "#D4AF37" : undefined }}>
-                        {service.tagline}
-                      </p>
-                    </div>
-                    <ChevronRight className={`w-4 h-4 flex-shrink-0 ml-auto transition-all ${isActive ? "text-gold opacity-100" : "opacity-0"}`} style={{ color: isActive ? "#D4AF37" : undefined }} />
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Content */}
-            <div className="lg:col-span-8">
-              <AnimatePresence mode="wait">
+          {/* ── Row 2: 3-col grid ──────────────────────────── */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+            {[
+              {
+                id: "web-development", name: "Web Development", tagline: "Fast, beautiful, revenue-generating apps",
+                icon: Globe, accent: "#06b6d4", bg: "rgba(6,182,212,0.1)", border: "rgba(6,182,212,0.2)",
+                features: ["Custom frontend & backend", "E-commerce integration", "PWA & mobile-ready"],
+                href: "/services/web-development",
+              },
+              {
+                id: "task-management", name: "Task Management", tagline: "Veriflow, CivicDesk & more",
+                icon: CheckSquare, accent: "#f59e0b", bg: "rgba(245,158,11,0.1)", border: "rgba(245,158,11,0.2)",
+                features: ["Custom Kanban boards", "Team real-time sync", "Automated reporting"],
+                href: "/services/task-management",
+              },
+              {
+                id: "smart-farming", name: "Smart Farming", tagline: "IoT-powered agriculture",
+                icon: Leaf, accent: "#22c55e", bg: "rgba(34,197,94,0.1)", border: "rgba(34,197,94,0.2)",
+                features: ["Soil & climate sensors", "Auto-irrigation control", "AI crop monitoring"],
+                href: "/services/smart-farming",
+              },
+              {
+                id: "home-automation", name: "Home Automation & CCTV", tagline: "Smart home. Total control.",
+                icon: HomeIcon, accent: "#f97316", bg: "rgba(249,115,22,0.1)", border: "rgba(249,115,22,0.2)",
+                features: ["CCTV installation", "Remote phone control", "Smart gate & lighting"],
+                href: "/services/home-automation",
+              },
+            ].map((svc, i) => {
+              const Icon = svc.icon;
+              return (
                 <motion.div
-                  key={services[activeIdx].id}
-                  initial={{ opacity: 0, x: 16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -16 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  key={svc.id}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07 }}
+                  className="relative rounded-2xl overflow-hidden group cursor-pointer p-6 flex flex-col"
+                  style={{ background: svc.bg, border: `1px solid ${svc.border}`, backdropFilter: "blur(12px)" }}
                 >
-                  {/* Service image */}
-                  <Link href={services[activeIdx].href}>
-                    <div className="relative aspect-video rounded-2xl overflow-hidden glass-card mb-8 group cursor-pointer">
-                      <Image
-                        src={services[activeIdx].image}
-                        alt={services[activeIdx].name}
-                        fill
-                        className="object-cover opacity-60 group-hover:opacity-90 grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080B16] via-transparent to-transparent opacity-70 group-hover:opacity-30 transition-opacity" />
-                      <div className="absolute top-4 right-4">
-                        <div className="px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-widest" style={{ color: "#D4AF37" }}>
-                          Click to explore
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                  <Link href={svc.href} className="absolute inset-0 z-10" aria-label={svc.name} />
+                  <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: `linear-gradient(90deg, ${svc.accent}, transparent)` }} />
 
-                  <div className="grid md:grid-cols-2 gap-8">
-                    {/* Description */}
-                    <div>
-                      <h3 className="font-display text-xl font-black text-white mb-3">{services[activeIdx].tagline}</h3>
-                      <p className="text-gray-400 leading-relaxed text-sm">{services[activeIdx].description}</p>
-                    </div>
-
-                    {/* Features + CTA */}
-                    <div>
-                      <ul className="space-y-2.5 mb-6">
-                        {services[activeIdx].features.map((f) => (
-                          <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
-                            <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#D4AF37" }} />
-                            {f}
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href={services[activeIdx].href}
-                        className="btn-gold inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold"
-                      >
-                        Enter Division <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 flex-shrink-0" style={{ background: `${svc.bg}`, border: `1px solid ${svc.border}` }}>
+                    <Icon className="w-5 h-5" style={{ color: svc.accent }} />
+                  </div>
+                  <h3 className="font-display text-base font-black text-white mb-1 leading-tight">{svc.name}</h3>
+                  <p className="text-xs mb-4 font-medium" style={{ color: svc.accent }}>{svc.tagline}</p>
+                  <ul className="space-y-1.5 flex-1">
+                    {svc.features.map((f) => (
+                      <li key={f} className="flex items-start gap-1.5 text-xs text-gray-400">
+                        <div className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: svc.accent }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold group-hover:gap-2.5 transition-all" style={{ color: svc.accent }}>
+                    Explore <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </motion.div>
-              </AnimatePresence>
-            </div>
+              );
+            })}
+          </div>
+
+          {/* ── Row 3: remaining 4 services ────────────────── */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                id: "document-digitalization", name: "Document Digitalization", tagline: "Paper to searchable intelligence",
+                icon: Database, accent: "#f43f5e", bg: "rgba(244,63,94,0.08)", border: "rgba(244,63,94,0.18)",
+                features: ["High-volume OCR scanning", "Auto-classification", "Full-text search"],
+                href: "/services/document-digitalization",
+              },
+              {
+                id: "digital-training", name: "Digital Training", tagline: "Empowering Africa's tech talent",
+                icon: Users, accent: "#818cf8", bg: "rgba(129,140,248,0.08)", border: "rgba(129,140,248,0.18)",
+                features: ["Full-stack development", "Data science classes", "1-on-1 mentorship"],
+                href: "/services/digital-training",
+              },
+              {
+                id: "networking", name: "Networking & Security", tagline: "Enterprise-grade protection",
+                icon: Shield, accent: "#38bdf8", bg: "rgba(56,189,248,0.08)", border: "rgba(56,189,248,0.18)",
+                features: ["Network design & install", "Firewall & VPN", "24/7 monitoring"],
+                href: "/services/networking",
+              },
+              {
+                id: "energy", name: "Energy Solutions", tagline: "Reliable power for Africa",
+                icon: Zap, accent: "#fb923c", bg: "rgba(251,146,60,0.08)", border: "rgba(251,146,60,0.18)",
+                features: ["Solar panel installation", "Battery storage", "Energy dashboards"],
+                href: "/services/energy",
+              },
+            ].map((svc, i) => {
+              const Icon = svc.icon;
+              return (
+                <motion.div
+                  key={svc.id}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07 }}
+                  className="relative rounded-2xl overflow-hidden group cursor-pointer p-6 flex flex-col"
+                  style={{ background: svc.bg, border: `1px solid ${svc.border}`, backdropFilter: "blur(12px)" }}
+                >
+                  <Link href={svc.href} className="absolute inset-0 z-10" aria-label={svc.name} />
+                  <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: `linear-gradient(90deg, ${svc.accent}, transparent)` }} />
+
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 flex-shrink-0" style={{ background: svc.bg, border: `1px solid ${svc.border}` }}>
+                    <Icon className="w-5 h-5" style={{ color: svc.accent }} />
+                  </div>
+                  <h3 className="font-display text-base font-black text-white mb-1 leading-tight">{svc.name}</h3>
+                  <p className="text-xs mb-4 font-medium" style={{ color: svc.accent }}>{svc.tagline}</p>
+                  <ul className="space-y-1.5 flex-1">
+                    {svc.features.map((f) => (
+                      <li key={f} className="flex items-start gap-1.5 text-xs text-gray-400">
+                        <div className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: svc.accent }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold group-hover:gap-2.5 transition-all" style={{ color: svc.accent }}>
+                    Explore <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
