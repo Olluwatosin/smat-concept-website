@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import TechHeader from "../../components/TechHeader";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
+import Footer from "../../components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -229,6 +230,7 @@ export default function DataAnalysisPage() {
         </div>
       </section>
 
+      <Footer />
       <WhatsAppWidget />
     </div>
   );

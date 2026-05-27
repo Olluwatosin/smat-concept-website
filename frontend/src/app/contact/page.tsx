@@ -5,6 +5,7 @@ import { Mail, Phone, MessageCircle, Send, Clock, CheckCircle, Star } from "luci
 import { useState } from "react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Footer from "../components/Footer";
 
 const inputClass =
   "w-full px-4 py-3 rounded-lg text-white placeholder-gray-500 outline-none transition-all duration-200 " +
@@ -422,6 +423,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <Footer />
       <WhatsAppWidget />
     </div>
   );

@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)'],
+        display: ['var(--font-space-grotesk)', 'var(--font-inter)', 'sans-serif'],
       },
       colors: {
         gold: {
@@ -37,6 +38,9 @@ module.exports = {
         'float': 'float 6s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        'marquee': 'marquee 30s linear infinite',
+        'marquee-rev': 'marquee 30s linear infinite reverse',
+        'border-spin': 'border-spin 4s linear infinite',
       },
       keyframes: {
         float: {
@@ -50,6 +54,14 @@ module.exports = {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'border-spin': {
+          '0%': { '--border-angle': '0deg' },
+          '100%': { '--border-angle': '360deg' },
         },
       },
     },

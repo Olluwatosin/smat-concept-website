@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Star, Quote, Users, Briefcase, TrendingUp, Award, ArrowRight, CheckCircle } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Footer from "../components/Footer";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -539,6 +540,7 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
+      <Footer />
       <WhatsAppWidget />
     </div>
   );

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Footer from "../components/Footer";
 import Image from "next/image";
 
 const fadeUp = {
@@ -681,6 +682,7 @@ export default function GoodwillPage() {
         </div>
       </section>
 
+      <Footer />
       <WhatsAppWidget />
     </div>
   );

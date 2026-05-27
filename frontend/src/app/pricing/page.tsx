@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Footer from "../components/Footer";
 import Link from "next/link";
 
 const fadeUp = {
@@ -181,19 +182,9 @@ export default function PricingPage() {
            </div>
         </section>
 
-        {/* ── Footer ── */}
-        <footer className="section-divider py-10 px-4">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} SMAT Concept. All rights reserved.</p>
-            <div className="flex gap-6 text-sm text-gray-400">
-              {[["Home", "/"], ["About", "/about"], ["Portfolio", "/portfolio"], ["Contact", "/contact"]].map(([label, href]) => (
-                <Link key={label} href={href} className="hover:text-yellow-400 transition-colors">{label}</Link>
-              ))}
-            </div>
-          </div>
-        </footer>
       </main>
 
+      <Footer />
       <WhatsAppWidget />
     </div>
   );

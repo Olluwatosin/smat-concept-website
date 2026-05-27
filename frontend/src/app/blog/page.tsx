@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, Clock, ArrowRight, Search, Tag, X, User, Calendar, Share2 } from "lucide-react";
 import TechHeader from "../components/TechHeader";
 import WhatsAppWidget from "../components/WhatsAppWidget";
+import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -291,6 +292,7 @@ export default function BlogPage() {
         )}
       </AnimatePresence>
 
+      <Footer />
       <WhatsAppWidget />
     </div>
   );
