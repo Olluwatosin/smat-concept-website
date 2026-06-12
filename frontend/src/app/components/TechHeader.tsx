@@ -244,7 +244,7 @@ export default function TechHeader() {
               className="lg:hidden overflow-hidden"
               style={{ background: 'rgba(8,11,22,0.98)', backdropFilter: 'blur(24px)', borderTop: '1px solid rgba(212,175,55,0.15)' }}
             >
-              <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+              <div className="max-w-7xl mx-auto px-4 py-6 space-y-6 max-h-[75vh] overflow-y-auto">
 
                 {/* Services */}
                 <div>

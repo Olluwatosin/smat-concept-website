@@ -184,7 +184,7 @@ const processSteps = [
 /* ─── Home Page ─────────────────────────────────────────── */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#080B16]">
+    <div className="min-h-screen bg-[#080B16] overflow-x-hidden">
       <TechHeader />
 
       {/* ── HERO ──────────────────────────────────────────── */}
@@ -712,12 +712,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            <div className="lg:col-span-7 grid grid-cols-2 gap-4">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="glass-card rounded-2xl p-6 col-span-2 relative min-h-[340px] overflow-hidden group"
+                className="glass-card rounded-2xl p-6 col-span-1 sm:col-span-2 relative min-h-[340px] overflow-hidden group"
               >
                 <div className="relative z-10 mb-4">
                   <h3 className="text-lg font-bold text-white">Live Operational Dashboards</h3>

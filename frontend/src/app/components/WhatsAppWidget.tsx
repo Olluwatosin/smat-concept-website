@@ -21,7 +21,8 @@ export default function WhatsAppWidget() {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2.5, type: "spring", stiffness: 200 }}
-      className="fixed bottom-6 right-6 z-50"
+      className="fixed right-6 z-50"
+      style={{ bottom: "max(1.5rem, calc(1.5rem + env(safe-area-inset-bottom, 0px)))" }}
     >
       <motion.button
         whileHover={{ scale: 1.1 }}

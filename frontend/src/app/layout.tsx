@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -8,6 +8,13 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   weight: ["400", "500", "600", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://smatconcept.com"),
