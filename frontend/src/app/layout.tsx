@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://smatconcept.com"),
+  metadataBase: new URL("https://smatconcept.com.ng"),
   title: {
     default: "SMAT Concept & Innovative Solutions Ltd",
     template: "%s | SMAT Concept",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "SMAT Concept & Innovative Solutions Ltd",
     description:
       "Transforming Africa through cutting-edge technology — AI · Data · Web · IoT · Automation",
-    url: "https://smatconcept.com",
+    url: "https://smatconcept.com.ng",
     siteName: "SMAT Concept",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SMAT Concept — Your Fastest Route to the Digital World" }],
     type: "website",
@@ -59,8 +59,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "SMAT Concept & Innovative Solutions Ltd",
-  url: "https://smatconcept.com",
-  logo: "https://smatconcept.com/mainlogo.png",
+  url: "https://smatconcept.com.ng",
+  logo: "https://smatconcept.com.ng/mainlogo.png",
   email: "smatconceptsolutions@gmail.com",
   telephone: "+2348101235007",
   description:

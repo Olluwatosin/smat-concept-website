@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
         <div className="glass-card rounded-2xl p-8 md:p-12">
           <Section title="1. Who We Are">
-            <p>SMAT Concept & Innovative Solutions Ltd (&quot;SMAT Concept&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is a technology company registered in Nigeria. Our website is <strong className="text-white">smatconcept.com</strong> and we can be reached at <a href="mailto:smatconceptsolutions@gmail.com" className="underline" style={{ color: "#D4AF37" }}>smatconceptsolutions@gmail.com</a>.</p>
+            <p>SMAT Concept & Innovative Solutions Ltd (&quot;SMAT Concept&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is a technology company registered in Nigeria. Our website is <strong className="text-white">smatconcept.com.ng</strong> and we can be reached at <a href="mailto:smatconceptsolutions@gmail.com" className="underline" style={{ color: "#D4AF37" }}>smatconceptsolutions@gmail.com</a>.</p>
           </Section>
 
           <Section title="2. Information We Collect">

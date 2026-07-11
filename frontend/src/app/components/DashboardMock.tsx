@@ -242,7 +242,7 @@ function Panel({ title, children, className = "" }: { title: string; children: R
 /* ── Full dashboard ───────────────────────────────────────── */
 export default function DashboardMock({ className = "" }: { className?: string }) {
   return (
-    <Frame url="app.smatconcept.com/operations" className={className}>
+    <Frame url="app.smatconcept.com.ng/operations" className={className}>
       <div className="p-3 sm:p-4 space-y-3">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           <Kpi label="Revenue MTD" value="₦4.2M" delta="+18%" accent={MARK.teal} />
@@ -266,7 +266,7 @@ export default function DashboardMock({ className = "" }: { className?: string }
 /* ── Compact variant (bento cards / side panels) ──────────── */
 export function DashboardMockCompact({ className = "" }: { className?: string }) {
   return (
-    <Frame url="app.smatconcept.com/insights" className={className}>
+    <Frame url="app.smatconcept.com.ng/insights" className={className}>
       <div className="p-3 space-y-3">
         <div className="grid grid-cols-2 gap-2">
           <Kpi label="Revenue MTD" value="₦4.2M" delta="+18%" accent={MARK.teal} />
@@ -286,7 +286,7 @@ export function DashboardMockCompact({ className = "" }: { className?: string })
 /* ── Trend-only variant ───────────────────────────────────── */
 export function DashboardMockTrend({ className = "" }: { className?: string }) {
   return (
-    <Frame url="app.smatconcept.com/growth" className={className}>
+    <Frame url="app.smatconcept.com.ng/growth" className={className}>
       <div className="p-3 space-y-3">
         <div className="grid grid-cols-2 gap-2">
           <Kpi label="Growth YTD" value="+66%" accent={MARK.blue} />

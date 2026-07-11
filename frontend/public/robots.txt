@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smatconcept.com/sitemap.xml
+Sitemap: https://smatconcept.com.ng/sitemap.xml

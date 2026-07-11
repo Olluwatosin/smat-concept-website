@@ -30,7 +30,7 @@ export default function TermsPage() {
 
         <div className="glass-card rounded-2xl p-8 md:p-12">
           <Section title="1. Acceptance of Terms">
-            <p>By accessing or using the website at smatconcept.com or engaging SMAT Concept & Innovative Solutions Ltd (&quot;SMAT Concept&quot;, &quot;we&quot;, &quot;us&quot;) for any service, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.</p>
+            <p>By accessing or using the website at smatconcept.com.ng or engaging SMAT Concept & Innovative Solutions Ltd (&quot;SMAT Concept&quot;, &quot;we&quot;, &quot;us&quot;) for any service, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.</p>
           </Section>
 
           <Section title="2. Services">

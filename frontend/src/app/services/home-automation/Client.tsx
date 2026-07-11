@@ -240,7 +240,7 @@ export default function HomeAutomationPage() {
           </a>
         </motion.div>
         <motion.p {...fadeUp} transition={{ delay: 0.3 }} className="mt-6 text-sm text-gray-500">
-          Or email us at <span style={{ color: "#D4AF37" }}>hello@smatconcept.com</span>
+          Or email us at <span style={{ color: "#D4AF37" }}>hello@smatconcept.com.ng</span>
         </motion.p>
       </section>
 
