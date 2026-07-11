@@ -734,18 +734,18 @@ export default function Home() {
                 initials: "TC",
               },
               {
-                text: "The AI workspace app they built has increased our team's productivity tenfold. It's like having five extra employees working 24/7 on the most repetitive parts of our operations.",
-                author: "Sarah J. Boateng",
-                role: "CEO & Founder",
-                company: "FinTech Solutions West Africa",
-                initials: "SB",
+                text: "Before SMAT, our car records lived in notebooks and WhatsApp chats. Now every vehicle, document, and buyer sits in one place — we can see what is selling, what is sitting too long, and share a clean car profile to any serious buyer in seconds.",
+                author: "Management",
+                role: "DealerOS",
+                company: "Folat Autos",
+                initials: "FA",
               },
               {
-                text: "The data analysis insights were eye-opening. We identified revenue leaks and operational inefficiencies we didn't even know existed — and fixed them within the quarter.",
-                author: "Musa Ibrahim",
-                role: "Head of Strategy",
-                company: "Northern Logistics Ltd",
-                initials: "MI",
+                text: "The SMAT team handled our camera installation neatly and professionally — tidy cabling, clean mounting, and before they left we were watching every corner of the lounge live from a phone. Real peace of mind.",
+                author: "Management",
+                role: "CCTV & Surveillance",
+                company: "Damzz Beauty Lounge",
+                initials: "DB",
               },
             ].map((t, i) => (
               <motion.div

@@ -33,88 +33,44 @@ const featuredTestimonial = {
 const testimonials = [
   {
     quote:
-      "We had thousands of paper files going back fifteen years. SMAT digitalized everything in under a month — searchable, secured, and backed up. I honestly didn't think it was possible at that scale. Our admin team now saves hours every single day.",
-    name: "Ngozi E.",
-    role: "Director of Admin, Emeka & Sons Ltd",
-    service: "Document Digitalization",
+      "Before SMAT, our car records lived in notebooks and WhatsApp chats. Now every vehicle, document, and buyer sits in one place — we can see what is selling, what is sitting too long, and share a clean car profile to any serious buyer in seconds.",
+    name: "Management",
+    role: "Folat Autos",
+    service: "DealerOS",
     rating: 5,
   },
   {
     quote:
-      "The smart irrigation system they installed on my 12-acre farm in Ogun State has been a game changer. I used to lose at least 30% of my crops to over or under-watering. This season was the best we've ever had. SMAT truly understands Nigerian agriculture.",
-    name: "Bello A.",
-    role: "Farmer & Agri-entrepreneur, Ogun State",
-    service: "Smart Farming",
+      "We can finally see the business without standing in it. Daily sales and expenses reach us in real time, and the end-of-day reconciliation that used to cause arguments is now just a glance at the dashboard.",
+    name: "Management",
+    role: "Folat Restaurant",
+    service: "ShopSight",
     rating: 5,
   },
   {
     quote:
-      "Our new website launched on time, looks stunning, and actually converts visitors into enquiries. The team at SMAT understood exactly what we needed as a Nigerian professional services firm. Highly recommended.",
-    name: "Chukwuemeka I.",
-    role: "Managing Partner, CI & Co. Solicitors",
-    service: "Web Development",
-    rating: 5,
-  },
-  {
-    quote:
-      "I was sceptical about home automation — thought it was just for tech people. SMAT set up my entire home in Lekki and now I control everything from my phone. My electricity bills dropped by 40% in just two months.",
-    name: "Fatimah K.",
-    role: "Private Client, Lekki Lagos",
-    service: "Home Automation",
-    rating: 5,
-  },
-  {
-    quote:
-      "Our company's network was a mess — slow, insecure, and always going down. SMAT redesigned our entire infrastructure. We haven't had a single outage in eight months. Peace of mind is priceless.",
-    name: "Tunde B.",
-    role: "IT Manager, Brightfield Manufacturing",
-    service: "Networking & Security",
-    rating: 5,
-  },
-  {
-    quote:
-      "The IoT dashboard they built for our warehouse gives us live inventory tracking, temperature monitoring, and automated alerts. We avoided a ₦2M spoilage incident because the system flagged a cold room fault before it became critical.",
-    name: "Amaka O.",
-    role: "Operations Lead, FreshStore Nigeria",
-    service: "IoT Solutions",
-    rating: 5,
-  },
-  {
-    quote:
-      "Before SMAT, our task assignments were a WhatsApp nightmare. Now every project has a clear owner, deadline, and status. Our clients even noticed the improvement in delivery. This is how businesses should operate.",
-    name: "Olumide F.",
-    role: "Founder, Fems Creative Agency",
-    service: "Task Management",
-    rating: 4,
-  },
-  {
-    quote:
-      "They deployed a hybrid solar and grid monitoring system in our school. We now have uninterrupted power and can see our energy consumption in real time. The investment paid for itself within the first year.",
-    name: "Mrs. Lawal R.",
-    role: "Principal, Greenleaf Academy Ibadan",
-    service: "Energy Solutions",
-    rating: 5,
-  },
-  {
-    quote:
-      "SMAT built us a full e-commerce platform that handles our product catalogue, orders, and customer data. Their ongoing support has been exceptional — they treat our business like it's their own. Worth every naira.",
-    name: "Precious N.",
-    role: "Founder, TrendzHub Online Store",
-    service: "Web Development",
+      "The SMAT team handled our camera installation neatly and professionally — tidy cabling, clean mounting, and before they left we were watching every corner of the lounge live from a phone. Real peace of mind.",
+    name: "Management",
+    role: "Damzz Beauty Lounge",
+    service: "CCTV & Surveillance",
     rating: 5,
   },
 ];
 
 const clientBadges = [
-  "Orisun Logistics Ltd",
-  "Emeka & Sons Ltd",
-  "CI & Co. Solicitors",
-  "FreshStore Nigeria",
-  "Brightfield Manufacturing",
-  "Greenleaf Academy",
-  "TrendzHub",
-  "Fems Creative Agency",
+  "TheRecord Consults",
+  "Folat Autos",
+  "Folat Restaurant",
+  "Damzz Beauty Lounge",
 ];
+
+/* Two-letter monogram, robust for single-word names — prefers the
+   company/role name so "Management · Folat Autos" reads as "FA". */
+function initials(name: string, org?: string) {
+  const source = org && org.trim() ? org : name;
+  const words = source.trim().split(/\s+/);
+  return ((words[0]?.[0] ?? "") + (words[1]?.[0] ?? words[0]?.[1] ?? "")).toUpperCase();
+}
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -136,14 +92,9 @@ export default function TestimonialsPage() {
 
   const serviceFilters = [
     "All",
-    "Task Management",
-    "Web Development",
-    "Smart Farming",
-    "Home Automation",
-    "Document Digitalization",
-    "IoT Solutions",
-    "Networking & Security",
-    "Energy Solutions",
+    "DealerOS",
+    "ShopSight",
+    "CCTV & Surveillance",
   ];
 
   const filtered =
@@ -304,8 +255,7 @@ export default function TestimonialsPage() {
                 className="w-14 h-14 rounded-full flex items-center justify-center text-lg font-black flex-shrink-0"
                 style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5D56A 100%)", color: "#080B16" }}
               >
-                {featuredTestimonial.name.split(" ")[0][0]}
-                {featuredTestimonial.name.split(" ")[1][0]}
+                {initials(featuredTestimonial.name, featuredTestimonial.company)}
               </div>
 
               <div className="flex-1 min-w-0">
@@ -405,8 +355,7 @@ export default function TestimonialsPage() {
                       color: "#D4AF37",
                     }}
                   >
-                    {testimonial.name.split(" ")[0][0]}
-                    {testimonial.name.split(" ")[1][0]}
+                    {initials(testimonial.name, testimonial.role)}
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-white text-sm truncate">
