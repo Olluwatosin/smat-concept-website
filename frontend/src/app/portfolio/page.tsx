@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Client from "./Client";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Our Products & Work",
   description:
-    "Selected projects and case studies from SMAT Concept across AI, data analytics, web, IoT, and automation.",
+    "Real products built in-house by SMAT Concept — Veriflow, EduTracker360, CivicDesk, SchoolPro Elite, EasyServe, ShopSight, DealerOS, and RentInDex — plus hands-on CCTV field installations.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
-    title: "Portfolio | SMAT Concept",
+    title: "Our Products & Work | SMAT Concept",
     description:
-      "Selected projects and case studies from SMAT Concept across AI, data analytics, web, IoT, and automation.",
+      "Real products built in-house by SMAT Concept — Veriflow, EduTracker360, CivicDesk, SchoolPro Elite, EasyServe, ShopSight, DealerOS, and RentInDex — plus hands-on CCTV field installations.",
     url: "/portfolio",
   },
 };

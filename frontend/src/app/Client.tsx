@@ -23,8 +23,8 @@ function spot(e: React.MouseEvent<HTMLElement>) {
   e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
 }
 
-/* Platforms built by SMAT — hero social-proof strip */
-const builtPlatforms = ["CivicDesk", "Veriflow", "RentInDex", "Kolade Realty", "Afrik Eats", "TheRecord"];
+/* Platforms built by SMAT — hero social-proof strip (all real products) */
+const builtPlatforms = ["Veriflow", "EduTracker360", "CivicDesk", "SchoolPro Elite", "EasyServe", "ShopSight", "DealerOS", "RentInDex"];
 
 /* ─── Animation variants ────────────────────────────────── */
 const fadeUp = {
