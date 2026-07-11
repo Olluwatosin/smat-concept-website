@@ -20,6 +20,13 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      // Literal apostrophes/quotes in JSX text render fine and are used
+      // throughout the marketing copy — no need to HTML-escape them.
+      "react/no-unescaped-entities": "off",
+    },
+  },
 ];
 
 export default eslintConfig;

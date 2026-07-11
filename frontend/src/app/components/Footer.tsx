@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, TrendingUp, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -194,12 +193,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 section-divider flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Bottom bar — right padding keeps the WhatsApp widget from covering text */}
+        <div className="pt-8 pb-2 section-divider flex flex-col md:flex-row justify-between items-center gap-4 lg:pr-44">
           <p className="text-xs text-gray-600">
-            © 2025 SMAT Concept & Innovative Solutions Ltd. All rights reserved.
+            © {new Date().getFullYear()} SMAT Concept & Innovative Solutions Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap justify-center">
             {legal.map((l) => (
               <Link key={l.href} href={l.href} className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
                 {l.label}

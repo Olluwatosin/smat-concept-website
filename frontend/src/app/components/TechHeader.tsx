@@ -1,24 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Database, Leaf, Shield, Cpu, Zap, Home, Globe, CheckSquare,
-  Menu, X, ChevronDown, ArrowRight, Phone, Mail, Users, BookOpen,
-  DollarSign, Star, Heart, Briefcase, BarChart3, Binary
-} from "lucide-react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { Database, Leaf, Shield, Zap, Home, Globe, Menu, X, ChevronDown, ArrowRight, Phone, Mail, Users, BookOpen, DollarSign, Star, Heart, Briefcase, BarChart3, Binary } from "lucide-react";
 import Image from "next/image";
 
 const services = [
-  { id: "data-analysis", name: "Data Analysis", icon: BarChart3, description: "Expert insights & visualization", color: "from-blue-600 to-indigo-500", href: "/services/data-analysis" },
-  { id: "digital-training", name: "Digital Training", icon: Users, description: "Programming & tech classes", color: "from-indigo-600 to-violet-500", href: "/services/digital-training" },
-  { id: "ai-workspace", name: "AI Workspace Apps", icon: Binary, description: "Intelligent automation tools", color: "from-purple-600 to-pink-500", href: "/services/ai-workspace" },
-  { id: "web-development", name: "Web Development", icon: Globe, description: "Full-stack web apps & platforms", color: "from-cyan-500 to-blue-400", href: "/services/web-development" },
-  { id: "smart-farming", name: "Smart Farming", icon: Leaf, description: "IoT-powered agriculture revolution", color: "from-green-500 to-emerald-400", href: "/services/smart-farming" },
-  { id: "home-automation", name: "Home Automation & CCTV", icon: Home, description: "Smart home systems & surveillance", color: "from-amber-500 to-orange-400", href: "/services/home-automation" },
-  { id: "document-digitalization", name: "Document Digitalization", icon: Database, description: "Paper to digital intelligence", color: "from-rose-500 to-pink-400", href: "/services/document-digitalization" },
-  { id: "networking", name: "Networking & Security", icon: Shield, description: "Enterprise-grade protection", color: "from-indigo-500 to-blue-400", href: "/services/networking" },
-  { id: "energy", name: "Energy Solutions", icon: Zap, description: "Sustainable power systems", color: "from-orange-500 to-amber-400", href: "/services/energy" },
+  { id: "data-analysis", name: "Data Analysis", icon: BarChart3, description: "Expert insights & visualization", href: "/services/data-analysis" },
+  { id: "digital-training", name: "Digital Training", icon: Users, description: "Programming & tech classes", href: "/services/digital-training" },
+  { id: "ai-workspace", name: "AI Workspace Apps", icon: Binary, description: "Intelligent automation tools", href: "/services/ai-workspace" },
+  { id: "web-development", name: "Web Development", icon: Globe, description: "Full-stack web apps & platforms", href: "/services/web-development" },
+  { id: "smart-farming", name: "Smart Farming", icon: Leaf, description: "IoT-powered agriculture revolution", href: "/services/smart-farming" },
+  { id: "home-automation", name: "Home Automation & CCTV", icon: Home, description: "Smart home systems & surveillance", href: "/services/home-automation" },
+  { id: "document-digitalization", name: "Document Digitalization", icon: Database, description: "Paper to digital intelligence", href: "/services/document-digitalization" },
+  { id: "networking", name: "Networking & Security", icon: Shield, description: "Enterprise-grade protection", href: "/services/networking" },
+  { id: "energy", name: "Energy Solutions", icon: Zap, description: "Sustainable power systems", href: "/services/energy" },
 ];
 
 const companyLinks = [
@@ -38,6 +34,8 @@ export default function TechHeader() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, restDelta: 0.001 });
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -65,19 +63,15 @@ export default function TechHeader() {
               className="flex items-center gap-3 group"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative">
-                <motion.div
-                  className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center relative overflow-hidden"
-                  style={{ background: 'linear-gradient(135deg, #D4AF37 0%, #F5D56A 50%, #A08A1E 100%)' }}
-                  animate={{ boxShadow: ['0 0 20px rgba(212,175,55,0.3)', '0 0 40px rgba(212,175,55,0.6)', '0 0 20px rgba(212,175,55,0.3)'] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <Image src="/mainlogo.png" alt="SMAT Concept Logo" fill className="object-contain p-2 relative z-10" />
-                </motion.div>
+              <div
+                className="w-10 h-10 lg:w-11 lg:h-11 rounded-xl flex items-center justify-center relative overflow-hidden flex-shrink-0 transition-colors duration-300 group-hover:border-[rgba(212,175,55,0.5)]"
+                style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.25)' }}
+              >
+                <Image src="/mainlogo.png" alt="SMAT Concept Logo" fill className="object-contain p-1.5" />
               </div>
               <div>
-                <h1 className="text-xl lg:text-2xl font-black text-gold-gradient">SMAT Concept</h1>
-                <p className="text-xs lg:text-sm font-medium" style={{ color: 'rgba(212,175,55,0.7)' }}>Innovative Solutions Ltd.</p>
+                <p className="font-display text-lg lg:text-xl font-black leading-none text-gold-gradient">SMAT Concept</p>
+                <p className="text-[10px] lg:text-xs font-medium tracking-wide mt-0.5" style={{ color: 'rgba(212,175,55,0.55)' }}>Innovative Solutions Ltd.</p>
               </div>
             </motion.a>
 
@@ -124,8 +118,8 @@ export default function TechHeader() {
                                 style={{ background: 'rgba(255,255,255,0.02)' }}
                                 whileHover={{ background: 'rgba(212,175,55,0.08)', x: 3 }}
                               >
-                                <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center flex-shrink-0`}>
-                                  <Icon className="w-4 h-4 text-white" />
+                                <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.2)' }}>
+                                  <Icon className="w-4 h-4" style={{ color: '#D4AF37' }} />
                                 </div>
                                 <div className="min-w-0">
                                   <p className="text-sm font-semibold text-white group-hover:text-[#D4AF37] transition-colors truncate">{service.name}</p>
@@ -260,8 +254,8 @@ export default function TechHeader() {
                           className="flex items-center gap-2 p-3 rounded-xl"
                           style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.1)' }}
                         >
-                          <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center flex-shrink-0`}>
-                            <Icon className="w-3.5 h-3.5 text-white" />
+                          <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(212,175,55,0.12)' }}>
+                            <Icon className="w-3.5 h-3.5" style={{ color: '#D4AF37' }} />
                           </div>
                           <span className="text-sm font-medium text-white leading-tight">{service.name}</span>
                         </a>
@@ -312,6 +306,12 @@ export default function TechHeader() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Scroll progress bar */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
+          style={{ scaleX: progress, background: 'linear-gradient(90deg, #D4AF37, #F5D56A)' }}
+        />
       </header>
     </>
   );
