@@ -33,7 +33,9 @@ export default function ContactPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          // Web3Forms access keys are public by design (always shipped to the
+          // browser); env var takes precedence, hardcoded key is the fallback.
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "3e2f17ad-db7c-48ca-940b-74da6359fde0",
           subject: `New Enquiry from ${formData.name} — SMAT Concept`,
           from_name: formData.name,
           ...formData,
